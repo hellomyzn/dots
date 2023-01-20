@@ -1,0 +1,18 @@
+################################################
+# ALIAS
+################################################
+alias spotify-dl='
+	mkdir -p ~/Downloads/spotify &&
+	export DOCKER_CONTENT_TRUST=0 &&
+	docker run -it -v ~/Downloads/spotify:/download --rm spotify-dl '
+# Tmux
+# alias t4='tmux new-session \; source-file ~/.config/tmux/4session'
+# alias t3='tmux new-session \; source-file ~/.config/tmux/3columns'
+alias tmux_vim='tmux source-file ~/.config/tmux/sessions/vim'
+alias tmux_3columns='tmux source-file ~/.config/tmux/sessions/logs'
+
+# ls: A=all, G=color, l=more information
+alias ls="ls -AFGl"
+
+# add time on history
+alias history='history -t "%F %T"'
