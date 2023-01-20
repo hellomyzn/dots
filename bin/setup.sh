@@ -26,6 +26,23 @@ done
 
 
 # tmux
+# tmux conf
+PATH_TMUX="${HOME}/.tmux.conf"
+if [ -d $PATH_TMUX ]; then
+    echo -e "${WARNING} : $PATH_TMUX exists"
+    read -p "Do you want to update ${PATH_TMUX}? [y/n]: " yn
+    if [ $yn = "y" ]; then 
+        cp .config/tmux/.tmux.conf $PATH_TMUX
+        echo -e "${SUCCESS} : Copied: ${PATH_TMUX}\n"
+    else
+        echo -e "${CANCEL} : Canceled: ${PATH_TMUX}\n"
+    fi
+else
+    cp .config/tmux/.tmux.conf $PATH_TMUX
+    echo -e "${SUCCESS} : Copied: ${PATH_TMUX}\n"
+fi
+
+# sessions
 PATH_SESSIONS=".config/tmux/sessions"
 if [ -d $HOME/$PATH_SESSIONS ]; then
     echo -e "${WARNING} : $PATH_SESSIONS exists"
