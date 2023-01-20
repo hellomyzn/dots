@@ -33,8 +33,8 @@ alias spotify-dl='
 # Tmux
 # alias t4='tmux new-session \; source-file ~/.config/tmux/4session'
 # alias t3='tmux new-session \; source-file ~/.config/tmux/3columns'
-alias t4='tmux source-file ~/.config/tmux/vim'
-alias t3='tmux source-file ~/.config/tmux/logs'
+alias tmux_vim='tmux source-file ~/.config/tmux/sessions/vim'
+alias tmux_3columns='tmux source-file ~/.config/tmux/sessions/logs'
 
 # ls: A=all, G=color, l=more information
 alias ls="ls -AFGl"
