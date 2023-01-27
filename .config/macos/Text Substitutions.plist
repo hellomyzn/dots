@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>phrase</key>
+		<string>■ 
+&gt;&gt;
+Why: 
+Ex: 
+- hoge
+- fuga
+- piyo
+</string>
+		<key>shortcut</key>
+		<string>temp:c</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>Ex: 
+- hoge
+- fuga
+- piyo</string>
+		<key>shortcut</key>
+		<string>temp:e</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>- OK: 
+- NG: </string>
+		<key>shortcut</key>
+		<string>temp:o</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>○○を実行すると、○○というエラーになる問題で困っています。
+原因または解決策をご存知の方はいらっしゃいませんか。
+
+私の行った手順は以下です。
+(1)
+(2)
+(3)
+
+すると、以下のような結果になりました。
+
+【表示されたものをコピー＆ペーストする】
+
+私は【予想結果】になると思いました。
+なぜなら、【参考資料】には、
+以下のように書かれているからです。
+
+&gt; 【適切な分量の引用】
+&gt; 【適切な分量の引用】
+&gt; 【適切な分量の引用】
+
+原因を確かめるため、以下のようなテストを行ってみましたが、
+問題の解決には至りませんでした。
+
+(a) 入力を○○ではなく××にしてみた
+→上記と同じ結果になった
+
+(b) ソースプログラムの○○をやめて、××にした
+→以下のようなコンパイルエラーになった
+
+【エラーメッセージのコピー＆ペースト】
+
+なお、私の環境は以下の通りです。
+【マシン, メモリ量, 関連周辺機器, OS, 利用ソフト, バージョンなどを箇条書きに】
+
+検索エンジンで○○、××、△△を検索しましたが、
+◎◎に関するページばかりで、解決に役立つ情報は見つかりませんでした。
+このメーリングリストの過去ログも調べましたが、
+○○に関する話題は見つかりませんでした。</string>
+		<key>shortcut</key>
+		<string>temp:q</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>Step: 
+1. hoge
+2. fuga
+3. piyo</string>
+		<key>shortcut</key>
+		<string>temp:s</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>Tips:
+- hoge
+- fuga
+- piyo</string>
+		<key>shortcut</key>
+		<string>temp:t</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>←</string>
+		<key>shortcut</key>
+		<string>zhzh</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>↓</string>
+		<key>shortcut</key>
+		<string>zjzj</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>↑</string>
+		<key>shortcut</key>
+		<string>zkzk</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>→</string>
+		<key>shortcut</key>
+		<string>zlzl</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>ありがとうございます 🙇‍♂️</string>
+		<key>shortcut</key>
+		<string>あり</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>英志</string>
+		<key>shortcut</key>
+		<string>えい</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>お疲れ様です。</string>
+		<key>shortcut</key>
+		<string>おつ</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>お願いします 🙇‍♂️</string>
+		<key>shortcut</key>
+		<string>おね</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>お願い致します。</string>
+		<key>shortcut</key>
+		<string>おね</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>◎ </string>
+		<key>shortcut</key>
+		<string>こみだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>様、お世話になっております。</string>
+		<key>shortcut</key>
+		<string>さま</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>さん、お疲れ様です。</string>
+		<key>shortcut</key>
+		<string>さん</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>さん、おはようございます。</string>
+		<key>shortcut</key>
+		<string>さん</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>承知しました 🙇‍♂️</string>
+		<key>shortcut</key>
+		<string>しょ</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [相談]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [連絡]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [共有]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [お礼]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [依頼]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [決済]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>■ [確認]</string>
+		<key>shortcut</key>
+		<string>みだし</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>宮園</string>
+		<key>shortcut</key>
+		<string>みや</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>宮園英志</string>
+		<key>shortcut</key>
+		<string>みや</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>よろしくお願いします 🙇‍♂️</string>
+		<key>shortcut</key>
+		<string>よろ</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>よろしくお願い致します。</string>
+		<key>shortcut</key>
+		<string>よろ</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>了解です 🙇‍♂️</string>
+		<key>shortcut</key>
+		<string>りょ</string>
+	</dict>
+</array>
+</plist>

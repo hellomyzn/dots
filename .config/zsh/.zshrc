@@ -7,7 +7,10 @@ touch ~/.hushlogin
 ################################################
 # PROMPT
 ################################################
-export PS1="%1~  "
+export PS1="%F{1}%1~ %f "
+# If you want color prompt
+# export PS1="%F{1}%1~ $%f "
+
 # Add 2 lines between this and ptevious line
 precmd() { print "\n\n" }
 

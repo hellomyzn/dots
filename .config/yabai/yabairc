@@ -1,0 +1,66 @@
+#!/usr/bin/env sh
+
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# global settings
+# focus window that your mouse hovers on (disabled due to right click bugs)
+yabai -m config focus_follows_mouse          off 
+# move mouse to focused window
+yabai -m config mouse_follows_focus          off
+yabai -m config window_placement             second_child
+# floating windows always stay on top
+yabai -m config window_topmost               on
+# enable borders
+yabai -m config window_border                on
+yabai -m config window_border_width          4 
+# yabai -m config active_window_border_color   0xffba422b 
+yabai -m config active_window_border_color   0xffd6af7c 
+yabai -m config normal_window_border_color   0xff212634
+# no clue what this is
+yabai -m config insert_feedback_color        0xffba422b 
+yabai -m config split_ratio                  0.50
+# don't automatically rebalance windows
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+# swap windows if moved with mouse
+yabai -m config mouse_action1                move
+# resize windows if resized with mouse
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
+yabai -m config window_origin_display        default
+yabai -m config window_topmost               off
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  15
+yabai -m config bottom_padding               15
+yabai -m config left_padding                 15
+yabai -m config right_padding                15
+yabai -m config window_gap                   15
+
+# apps to not manage (ignore)
+yabai -m rule --add app=Finder manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Wally$" manage=off
+yabai -m rule --add app="^Pika$" manage=off
+yabai -m rule --add app="^balenaEtcher$" manage=off
+yabai -m rule --add app="^Creative Cloud$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="Raycast" manage=off
+yabai -m rule --add app="^Music$" manage=off
+
+# SIP Required
+# prevent border from being under the active window
+yabai -m config active_window_border_topmost on
+yabai -m config window_shadow                off
+yabai -m config window_opacity               on
+yabai -m config window_opacity_duration      0.0
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.9
+
+echo "yabai configuration loaded.."
