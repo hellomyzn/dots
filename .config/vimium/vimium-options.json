@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.67.4",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "map h goBack\nmap l goForward\nmap H previousTab\nmap L nextTab\n\n\n\"----- ページ内ブックマークツール -----\n\"ページにマークをセット ※「m」の押下後、特定のキーでマークをセットする\nmap m Marks.activateCreateMode\n\n\"マークをセットしたところに移動する ※「Shift + m」の押下後、特定のキーを押下する\nmap M Marks.activateGotoMode\n\n\n\"----- クリップボードツール -----\n\"現在のページURLをクリップボードにコピー\nmap e copyCurrentUrl\n\n\"ページ内のリンクのURLをクリップボードにコピー\nmap E LinkHints.activateModeToCopyLinkUrl\n\n\"クリップボードの内容で現在のタブでGoogle検索する\nmap p openCopiedUrlInCurrentTab\n\n\"クリップボードの内容で新しいタブでGoogle検索する\nmap P openCopiedUrlInNewTab\n\n\n\n\"------------- 履歴ツール -------------\n\"履歴を検索して開く\nmap y Vomnibar.activate\n\n\"履歴を検索して新しいタブで開く\nmap Y Vomnibar.activateInNewTab\n\n\n\"--------- ページ内検索ツール ---------\n\"ページ内検索\nmap / enterFindMode\n\n\"検索にマッチしたものを次のフォーカスへ\nmap n performFind\n\n\"検索にマッチしたものを前のフォーカスへ\nmap N performBackwardsFind\n\n\"参考\n\"https://github.com/philc/vimium/blob/master/background_scripts/commands.js\n\n\"--------------- その他 ---------------\n\"ヘルプを表示\nmap ? showHelp\n\nAdd Comment",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#565756),\ncolor-stop(100%,#444444));\nborder: 1px solid #E4E4E4;\nopacity: 1.0;\ntext-shadow: none !important;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ntext-shadow: -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black, 1px 1px 2px black;\ncolor: #33cccc;\nfont-size: 14px;\nfont-family: Overpass, \"ヒラギノ角ゴ Pro\", Avenir, sans-serif;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\ncolor: #FF8700;\n}"
+}
