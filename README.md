@@ -28,3 +28,9 @@ start: zshrc
     end: zsh_profile
 end: zshrc
 ```
+
+
+TIPS
+```
+$ chmod +x filename
+```

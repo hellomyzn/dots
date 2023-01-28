@@ -10,12 +10,19 @@ which brew >/dev/null 2>&1 && brew update
 echo "ok. run brew upgrade..."
 brew upgrade
 
-formulas=(
-        git
-)
-
 echo "brew tap"
 brew tap homebrew/cask-fonts
+brew tap FelixKratz/formulae
+
+formulas=(
+    neofetch
+    git
+    koekeishiya/formulae/skhd
+    koekeishiya/formulae/yabai
+    sketchybar
+    jq
+    switchaudio-osx
+)
 
 echo "brew install formula"
 for formula in "${formulas[@]}"; do
@@ -32,6 +39,11 @@ casks=(
     firefox
     spacelauncher
     istat-menus
+    spectacle
+    sequel-ace
+    font-hack-nerd-font
+    sf-symbols
+    kindle
 )
 
 
@@ -43,3 +55,12 @@ done
 
 brew cleanup
 echo "brew installed"
+
+
+echo "brew services start"
+brew services start skhd
+brew services start sketchybar
+brew services start yabai
+  
+
+
