@@ -22,6 +22,7 @@ formulas=(
     sketchybar
     jq
     switchaudio-osx
+    nnn
 )
 
 echo "brew install formula"
