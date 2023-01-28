@@ -55,12 +55,13 @@ alt - d : \
     sketchybar --trigger windows_on_spaces
 # Move space left
 alt - b : \
-     yabai -m space --move prev ; \
-     sketchybar --trigger windows_on_spaces
+    yabai -m space --move prev ; \
+    sketchybar --trigger windows_on_spaces ; \
 # Move space right
 alt - f : \
+    SPACE="$(yabai -m query --spaces --space  | jq '.index')" ; \
     yabai -m space --move next ; \
-    sketchybar --trigger windows_on_spaces
+    sketchybar --trigger windows_on_spaces ; \
 # Send space to display 2 (by display arrangement index)
 # yabai -m space --display 2
 
