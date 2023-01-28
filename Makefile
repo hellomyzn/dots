@@ -1,3 +1,5 @@
-
+macos:
+	${PWD}/bin/setup.sh
+	${PWD}/bin/brew.sh
 setup:
-	bash ./bin/setup.sh
+	${PWD}/bin/setup.sh
