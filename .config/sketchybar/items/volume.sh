@@ -7,7 +7,7 @@ sketchybar --add slider volume right                          \
                         label.drawing=off                     \
                         padding_left=0                        \
                         padding_right=0                       \
-                        slider.highlight_color=$YELLOW          \
+                        slider.highlight_color=$YELLOW        \
                         slider.background.height=5            \
                         slider.background.corner_radius=3     \
                         slider.background.color=$BACKGROUND_2 \

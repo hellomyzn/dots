@@ -14,39 +14,38 @@ alt - n : yabai -m space --focus next || yabai -m space --focus first ; sketchyb
 # Focus previous space by mission-control index if one exists, otherwise focus the last space
 alt - p : yabai -m space --focus prev || yabai -m space --focus last ; sketchybar --trigger windows_on_spaces
 # Focus space with mission-control index
-alt - 0 : \
+alt - 1 : \
     yabai -m space --focus 1 ; \
     sketchybar --trigger windows_on_spaces
-alt - 1 : \
+alt - 2 : \
     yabai -m space --focus 2 ; \
     sketchybar --trigger windows_on_spaces
-alt - 2 : \
+alt - 3 : \
     yabai -m space --focus 3 ; \
     sketchybar --trigger windows_on_spaces    
-alt - 3 : \
+alt - 4 : \
     yabai -m space --focus 4 ; \
     sketchybar --trigger windows_on_spaces
-alt - 4 : \
+alt - 5 : \
     yabai -m space --focus 5 ; \
     sketchybar --trigger windows_on_spaces
-alt - 5 : \
+alt - 6 : \
     yabai -m space --focus 6 ; \
     sketchybar --trigger windows_on_spaces
-alt - 6 : \
+alt - 7 : \
     yabai -m space --focus 7 ; \
     sketchybar --trigger windows_on_spaces
-alt - 7 : \
+alt - 8 : \
     yabai -m space --focus 8 ; \
     sketchybar --trigger windows_on_spaces
-alt - 8 : \
+alt - 9 : \
     yabai -m space --focus 9 ; \
     sketchybar --trigger windows_on_spaces    
 # Create space on the active display
 alt - c : \
     yabai -m space --create ; \
-    sketchybar --trigger window_state ; \
     yabai -m space --focus last ; \
-    sketchybar --trigger windows_on_spaces
+    sketchybar --trigger window_state ; \
     
 # Delete focused space and focus first space on display
 alt - d : \
@@ -101,31 +100,31 @@ alt + shift - c : yabai -m window --toggle float;\
 # toggle window split type
 # alt - e : yabai -m window --toggle split
 # Move focus window to space (workspace)
-shift + alt - 0 : \
+shift + alt - 1 : \
     yabai -m window --space 1 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 1 : \
+shift + alt - 2 : \
     yabai -m window --space 2 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 2 : \
+shift + alt - 3 : \
     yabai -m window --space 3 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 3 : \
+shift + alt - 4 : \
     yabai -m window --space 4 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 4 : \
+shift + alt - 5 : \
     yabai -m window --space 5 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 5 : \
+shift + alt - 6 : \
     yabai -m window --space 6 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 6 : \
+shift + alt - 7 : \
     yabai -m window --space 7 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 7 : \
+shift + alt - 8 : \
     yabai -m window --space 8 ; \
     sketchybar --trigger windows_on_spaces
-shift + alt - 8 : \
+shift + alt - 9 : \
     yabai -m window --space 9 ; \
     sketchybar --trigger windows_on_spaces
 
