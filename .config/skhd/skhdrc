@@ -41,6 +41,10 @@ alt - 8 : \
 alt - 9 : \
     yabai -m space --focus 9 ; \
     sketchybar --trigger windows_on_spaces    
+# workspace 5 is usually used by music
+alt - m : \
+    yabai -m space --focus 5 ; \
+    sketchybar --trigger windows_on_spaces
 # Create space on the active display
 alt - c : \
     yabai -m space --create ; \
