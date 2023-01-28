@@ -18,7 +18,7 @@ precmd() { print "\n\n" }
 ################################################
 # PATH
 ################################################
-export PATH="$PATH:/opt/homebrew/bin/"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/bin/3rd_party"
