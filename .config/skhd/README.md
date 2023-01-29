@@ -1,0 +1,1 @@
+Hex keyboaed code: https://github.com/koekeishiya/skhd/issues/1
