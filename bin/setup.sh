@@ -16,53 +16,45 @@ do
 done
 
 # tmux
-FROM="${PWD}/.config/tmux/"
+DIR_PATH=".config/tmux"
+FILE=.tmux.conf
+FROM=$PWD/$DIR_PATH
 TO=$HOME
-FILE=".tmux.conf"
 copy_file $FROM $TO $FILE
 
-# tmux sessions
-mkdir -p $HOME/.config/tmux/sessions
-PATH_TMUX_SESSIONS=".config/tmux/sessions"
-FROM=$PWD/$PATH_TMUX_SESSIONS
-TO=$HOME/$PATH_TMUX_SESSIONS
-SESSION_FILES=$(ls $FROM)
-
-for f in $SESSION_FILES; do
-    copy_file $FROM $TO $f
-done
+FROM=$PWD/$DIR_PATH
+TO=$HOME/$DIR_PATH
+copy_dir $FROM $TO
 
 # yabai
-mkdir -p $HOME/.config/yabai
 DIR_PATH=".config/yabai"
 FROM=$PWD/$DIR_PATH
 TO=$HOME/$DIR_PATH
-FILE="yabairc"
-copy_file $FROM $TO $FILE
+copy_dir $FROM $TO
 
 # skhd
-mkdir -p $HOME/.config/skhd
 DIR_PATH=".config/skhd"
 FROM=$PWD/$DIR_PATH
 TO=$HOME/$DIR_PATH
-FILE="skhdrc"
-copy_file $FROM $TO $FILE
+copy_dir $FROM $TO
 
 # sketchybar
 DIR_PATH=".config/sketchybar"
 FROM=$PWD/$DIR_PATH
 TO=$HOME/$DIR_PATH
-ln -snfv $FROM $TO
+copy_dir $FROM $TO
 
 # neofetch
-mkdir -p $HOME/.config/neofetch
 DIR_PATH=".config/neofetch"
 FROM=$PWD/$DIR_PATH
 TO=$HOME/$DIR_PATH
-FILE="config.conf"
-copy_file $FROM $TO $FILE
+copy_dir $FROM $TO
 
-
+# nnn
+DIR_PATH=".config/nnn"
+FROM=$PWD/$DIR_PATH
+TO=$HOME/$DIR_PATH
+copy_dir $FROM $TO
 
 
 
@@ -74,4 +66,15 @@ copy_file $FROM $TO $FILE
 #     # シンボリックリンクを貼る
 #     # ln -snfv $PWD/$f $TO/$f
     
+# done
+
+# tmux sessions
+# mkdir -p $HOME/.config/tmux/sessions
+# PATH_TMUX_SESSIONS=".config/tmux/sessions"
+# FROM=$PWD/$PATH_TMUX_SESSIONS
+# TO=$HOME/$PATH_TMUX_SESSIONS
+# SESSION_FILES=$(ls $FROM)
+
+# for f in $SESSION_FILES; do
+#     copy_file $FROM $TO $f
 # done
