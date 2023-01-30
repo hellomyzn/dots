@@ -14,7 +14,9 @@ export PS1="%F{3}%1~ %f "
 # export PS1="%F{1}%1~ $%f "
 
 # Add 2 lines between this and ptevious line
-precmd() { print "\n\n" }
+precmd() { 
+     print "\n\n" 
+}
 
 
 ################################################
