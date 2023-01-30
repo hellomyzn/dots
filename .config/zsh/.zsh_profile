@@ -11,6 +11,11 @@ chpwd() {
 	fi
 }
 
+# Add 2 lines between this and ptevious line
+precmd() { 
+     print "\n\n" 
+}
+
 # SketchyBar: brew status
 # https://github.com/FelixKratz/SketchyBar
 # https://github.com/FelixKratz/dotfiles/blob/master/.config/yabai/yabairc

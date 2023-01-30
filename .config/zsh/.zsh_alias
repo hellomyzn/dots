@@ -17,3 +17,6 @@ alias n3="nnn -de"
 
 # add time on history
 alias history='history -t "%F %T"'
+
+# trash-cli
+alias rm=trash-put
