@@ -53,6 +53,8 @@ casks=(
     # for sketchybar
     font-hack-nerd-font
     sf-symbols
+    # torrent
+    transmission
 )
 
 
