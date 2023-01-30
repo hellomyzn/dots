@@ -26,6 +26,7 @@ formulas=(
     jq
     switchaudio-osx
     nnn
+    trash-cli
 )
 
 echo "${INFO}brew install formula"

@@ -6,7 +6,7 @@ export DOCKER_CONTENT_TRUST=1
 # show ls after cd
 # https://qiita.com/2357gi/items/0ab1297357dedb90bbb1
 chpwd() {
-	if [[ $(pwd) != $HOME ]]; then;
+	if [[ ${pwd} != $HOME ]]; then
 		ls
 	fi
 }
