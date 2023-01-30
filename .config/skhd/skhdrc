@@ -54,6 +54,10 @@ alt - 0x2F : \
 alt - 0x2C : \
     yabai -m space --focus 4 ; \
     sketchybar --trigger windows_on_spaces
+alt - 0x5E : \
+    yabai -m space --focus 5 ; \
+    sketchybar --trigger windows_on_spaces
+
 
 # Arrow Keys
 ctrl - b : skhd -k "left"
