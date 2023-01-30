@@ -23,10 +23,13 @@ formulas=(
     koekeishiya/formulae/skhd
     koekeishiya/formulae/yabai
     sketchybar
+    # for sketchybar
     jq
     switchaudio-osx
     nnn
+    # for nnn
     trash-cli
+    pkg-config
 )
 
 echo "${INFO}brew install formula"
@@ -46,9 +49,10 @@ casks=(
     istat-menus
     spectacle
     sequel-ace
+    kindle
+    # for sketchybar
     font-hack-nerd-font
     sf-symbols
-    kindle
 )
 
 

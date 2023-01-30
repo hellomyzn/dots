@@ -20,3 +20,7 @@ if [ -f $HOME/.zsh_profile ]; then
      source $HOME/.zsh_profile
 fi
 
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
