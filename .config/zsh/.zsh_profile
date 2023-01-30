@@ -1,3 +1,5 @@
+# /bin/bash
+
 # Docker Content Trust（DCT）を有効にする。DCTは、Dockerイメージを「なりすまし」と「改ざん」から保護するセキュリティ機能です。
 export DOCKER_CONTENT_TRUST=1
 

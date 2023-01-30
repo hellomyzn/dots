@@ -1,8 +1,10 @@
+# /bin/bash
+
 # show .files in finder
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
 # remove text when login zsh: Last login: Mon Feb 23 00:10:48 on ttys000
-touch ~/.hushlogin
+touch $HOME/.hushlogin
 
 ################################################
 # PROMPT
@@ -28,10 +30,10 @@ export PATH="$PATH:$HOME/bin/3rd_party"
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 
-if [ -f ~/.zsh_alias ]; then
-     source ~/.zsh_alias
+if [ -f $HOME/.zsh_alias ]; then
+     source $HOME/.zsh_alias
 fi
 
-if [ -f ~/.zsh_profile ]; then
-     source ~/.zsh_profile
+if [ -f $HOME/.zsh_profile ]; then
+     source $HOME/.zsh_profile
 fi

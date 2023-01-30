@@ -1,16 +1,19 @@
-echo "installing homebrew..."
+# /bin/bash
+source ./bin/logging.sh
+
+echo "${INFO}installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "run brew doctor..."
+echo "${INFO}run brew doctor..."
 which brew >/dev/null 2>&1 && brew doctor
 
-echo "run brew update..."
+echo "${INFO}run brew update..."
 which brew >/dev/null 2>&1 && brew update
 
-echo "ok. run brew upgrade..."
+echo "${INFO}ok. run brew upgrade..."
 brew upgrade
 
-echo "brew tap"
+echo "${INFO}brew tap"
 brew tap homebrew/cask-fonts
 brew tap FelixKratz/formulae
 
@@ -25,7 +28,7 @@ formulas=(
     nnn
 )
 
-echo "brew install formula"
+echo "${INFO}brew install formula"
 for formula in "${formulas[@]}"; do
     brew install $formula || brew upgrade $formula
 done
@@ -48,20 +51,11 @@ casks=(
 )
 
 
-echo "brew casks"
+echo "${INFO}brew casks"
 for cask in "${casks[@]}"; do
     brew install --cask $cask
 done
 
 
 brew cleanup
-echo "brew installed"
-
-
-echo "brew services start"
-brew services start skhd
-brew services start sketchybar
-brew services start yabai
-  
-
-
+echo "${INFO}brew installed"

@@ -12,7 +12,7 @@ for FILE in ${ZSH_FILES[@]}
 do
     FROM="${PWD}/.config/zsh/${FILE}"
     TO=$HOME/$FILE
-    copy_file $FROM $TO
+    copy_file $FROM $TO "            "
 done
 
 # tmux
@@ -20,7 +20,7 @@ DIR_PATH=".config/tmux"
 FILE=".tmux.conf"
 FROM=$PWD/$DIR_PATH/$FILE
 TO=$HOME/$FILE
-copy_file $FROM $TO
+copy_file $FROM $TO "            "
 
 
 CONFIG_PATH=".config"
@@ -37,7 +37,7 @@ for FILE in ${CONFIG_DIRS[@]}
 do
     FROM="${PWD}/${CONFIG_PATH}/$FILE"
     TO="$HOME/${CONFIG_PATH}/$FILE"
-    copy_dir $FROM $TO
+    copy_dir $FROM $TO "            "
 done
 
 
