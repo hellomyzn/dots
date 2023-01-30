@@ -1,3 +1,4 @@
+source ./bin/logging.sh
 
 # $1: path copy from
 # $2: path copy to
