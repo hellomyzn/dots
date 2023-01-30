@@ -10,52 +10,35 @@ mkdir -p $HOME/.config
 ZSH_FILES=(.zshenv .zshrc .zsh_profile .zsh_alias)
 for FILE in ${ZSH_FILES[@]}
 do
-    FROM="${PWD}/.config/zsh"
-    TO=$HOME
-    copy_file $FROM $TO $FILE
+    FROM="${PWD}/.config/zsh/${FILE}"
+    TO=$HOME/$FILE
+    copy_file $FROM $TO
 done
 
 # tmux
 DIR_PATH=".config/tmux"
-FILE=.tmux.conf
-FROM=$PWD/$DIR_PATH
-TO=$HOME
-copy_file $FROM $TO $FILE
+FILE=".tmux.conf"
+FROM=$PWD/$DIR_PATH/$FILE
+TO=$HOME/$FILE
+copy_file $FROM $TO
 
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
 
-# yabai
-DIR_PATH=".config/yabai"
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
+CONFIG_PATH=".config"
+CONFIG_DIRS=(
+    "tmux" \
+    "yabai" \
+    "skhd" \
+    "sketchybar" \
+    "neofetch" \
+    "nnn" \
+)
 
-# skhd
-DIR_PATH=".config/skhd"
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
-
-# sketchybar
-DIR_PATH=".config/sketchybar"
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
-
-# neofetch
-DIR_PATH=".config/neofetch"
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
-
-# nnn
-DIR_PATH=".config/nnn"
-FROM=$PWD/$DIR_PATH
-TO=$HOME/$DIR_PATH
-copy_dir $FROM $TO
-
+for FILE in ${CONFIG_DIRS[@]}
+do
+    FROM="${PWD}/${CONFIG_PATH}/$FILE"
+    TO="$HOME/${CONFIG_PATH}/$FILE"
+    copy_dir $FROM $TO
+done
 
 
 # for f in $FROM/*; do

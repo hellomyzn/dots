@@ -1,51 +1,28 @@
-# $1: path copy from (without filename)
+# $1: path copy from
 # $2: path copy to
-# $3: file name you will copy
 function copy_file(){
     # is symbolic link exists? if it's no, ask you want to overwrite?
-    if [ -L $2/$3 ] ; then
-        echo  "\n${WARNING} : ${3} exists as a symbolic link (${2}/${3})"
-        read -p "Do you want to update ${3} ? [y/n]: " yn
+    if [ -L $2 ] ; then
+        echo  "\n${WARNING} : ${2} exists as a symbolic link (${2})"
+        read -p "Do you want to update ${2} ? [y/n]: " yn
         if [ $yn = "y" ]; then 
-            ln -snfv $1/$3 $2/$3
-            echo  "${SUCCESS} : Copied: ${2}/${3}\n"
+            ln -snfv $1 $2
+            echo  "${SUCCESS} : Copied: ${2}\n"
             return
         else
-            echo  "${CANCEL} : Canceled: ${2}/${3}\n"
+            echo  "${CANCEL} : Canceled: ${2}\n"
             return
         fi
     fi
 
     # is file exists? if it's no, ask you want to overwrite?
-    if [ -f $2/$3 ] ; then
-        echo  "\n${WARNING} : ${3} exists as a file (${2}/${3})"
-        read -p "        Do you want to update ${3} ? [y/n]: " yn
+    if [ -f $2 ] ; then
+        echo  "\n${WARNING} : ${2} exists as a file (${2})"
+        read -p "        Do you want to update ${2} ? [y/n]: " yn
         if [ $yn = "y" ]; then 
-            rm $2/$3
-            echo  "${INFO} : Removed: ${2}/${3}"
-            ln -snfv $1/$3 $2/$3
-            echo  "${SUCCESS} : Copied: ${2}/${3}\n"
-            return
-        else
-            echo  "${CANCEL} : Canceled: ${2}/${3}\n"
-            return
-        fi
-    fi
-    
-    ln -snfv $1/$3 $2/$3
-    echo  "${SUCCESS} : Copied: ${2}/${3}\n"
-    
-}
-
-# $1: path copy dir
-# $2: path copy to
-function copy_dir(){
-    # is symbolic link exists? if it's no, ask you want to overwrite?
-    if [ -d $2 ] ; then
-        echo  "\n${WARNING} : ${1} exists as a symbolic link"
-        read -p "Do you want to update ${2} ? [y/n]: " yn
-        if [ $yn = "y" ]; then 
-            ln -snfv $FROM $TO
+            rm $2
+            echo  "${INFO} : Removed: ${2}"
+            ln -snfv $1 $2
             echo  "${SUCCESS} : Copied: ${2}\n"
             return
         else
@@ -54,7 +31,29 @@ function copy_dir(){
         fi
     fi
     
-    ln -snfv $FROM $TO
+    ln -snfv $1 $2
+    echo  "${SUCCESS} : Copied: ${2}\n"
+    
+}
+
+# $1: path copy from
+# $2: path copy to
+function copy_dir(){
+    # is symbolic link exists? if it's no, ask you want to overwrite?
+    if [ -d $2 ] ; then
+        echo  "\n${WARNING} : ${1} exists as a symbolic link"
+        read -p "Do you want to update ${2} ? [y/n]: " yn
+        if [ $yn = "y" ]; then 
+            ln -snfv $1 $2
+            echo  "${SUCCESS} : Copied: ${2}\n"
+            return
+        else
+            echo  "${CANCEL} : Canceled: ${2}\n"
+            return
+        fi
+    fi
+    
+    ln -snfv $1 $2
     echo  "${SUCCESS} : Copied: ${2}\n"
     
 }
