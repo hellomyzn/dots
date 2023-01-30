@@ -1,6 +1,4 @@
 update:
-	@echo "update: .zshenc"
-	@sh ${HOME}/.zshenv
 	@echo "update: .zshrc"
 	@sh ${HOME}/.zshrc
 activate:
