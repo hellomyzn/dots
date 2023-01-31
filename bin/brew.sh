@@ -1,8 +1,11 @@
 # /bin/bash
 source ./bin/logging.sh
 
-echo "${INFO}installing homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+BREW_PATH=$(which brew)
+if [ ! -f $BREW_PATH ]; then
+    echo "${INFO}installing homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 echo "${INFO}run brew doctor..."
 which brew >/dev/null 2>&1 && brew doctor
@@ -30,6 +33,9 @@ formulas=(
     # for nnn
     trash-cli
     pkg-config
+    # for pomodoro
+    terminal-notifier
+    caarlos0/tap/timer
 )
 
 echo "${INFO}brew install formula"
