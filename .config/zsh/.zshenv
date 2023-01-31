@@ -29,11 +29,25 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 
 ################################################
-# NNN: https://github.com/jarun/nnn/tree/master/plugins
+# NNN
 ################################################
 export NNN_TRASH=1
-# export NNN_COLORS="2136"
-export NNN_PLUG='u:davecloud;o:fzopen;c:fzcd;j:autojump;p:preview-tui;t:preview-tabbed;i:imgview;v:vidthumb;d:dragd'
-export NNN_FCOLORS='0000E6310000000000000000'
+export NNN_COLORS="3246"
+# plug: https://github.com/jarun/nnn/tree/master/plugins
+PLUG_C="c:fzcd;"
+PLUG_D="d:dragd;"
+PLUG_I="i:imgview;"
+PLUG_J="j:autojump;"
+PLUG_O="o:fzopen;"
+PLUG_P="p:preview-tui;"
+PLUG_T="t:preview-tabbed;"
+PLUG_U="u:davecloud;"
+PLUG_V="v:vidthumb;"
+export NNN_PLUG="${PLUG_C}${PLUG_D}${PLUG_I}${PLUG_J}${PLUG_O}${PLUG_P}${PLUG_T}${PLUG_U}${PLUG_V}"
+
+# fcolurs: https://github.com/jarun/nnn/wiki/Usage#configuration
+RED="01" GRE="02" YEL="03" BLU="04" MAG="05" CYA="06" WHI="07" BLA="08"
+BLK=$WHI CHR=$WHI DIR=$YEL EXE=$GRE REG=$BLU HARDLINK=$RED SYMLINK=$MAG MISSING=$WHI ORPHAN=$WHI FIFO=$WHI SOCK=$WHI OTHER=$WHI
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 set --export NNN_FIFO="/tmp/nnn.fifo"
 
