@@ -20,3 +20,17 @@ alias history='history -t "%F %T"'
 
 # trash-cli
 alias rm=trash-put
+
+# pomodoro
+# a pop up notification and sound alert (using the built-in sounds for macOS)
+# Requires https://github.com/caarlos0/timer to be installed
+# Mac setup for pomo
+alias work="timer 50m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Downloads/IMG_5210.JPG'\
+        -sound Funk"
+        
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Funk"
