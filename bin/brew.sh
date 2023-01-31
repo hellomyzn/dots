@@ -33,6 +33,15 @@ formulas=(
     # for nnn
     trash-cli
     pkg-config
+    # nnn: fzcd
+    fzf
+    # nnn: auto jump
+    jump
+    # nnn: preview-tui
+    mediainfo
+    unzip
+    tree
+    less
     # for pomodoro
     terminal-notifier
     caarlos0/tap/timer

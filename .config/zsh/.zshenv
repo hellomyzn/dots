@@ -29,7 +29,11 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 
 ################################################
-# NNN
+# NNN: https://github.com/jarun/nnn/tree/master/plugins
 ################################################
 export NNN_TRASH=1
-export NNN_COLORS="2136"
+# export NNN_COLORS="2136"
+export NNN_PLUG='u:davecloud;o:fzopen;c:fzcd;j:autojump;p:preview-tui;t:preview-tabbed;i:imgview;v:vidthumb;d:dragd'
+export NNN_FCOLORS='0000E6310000000000000000'
+set --export NNN_FIFO="/tmp/nnn.fifo"
+
