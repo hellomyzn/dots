@@ -163,6 +163,9 @@ start_preview() {
             if [ "$SPLIT" = "h" ]; then split="horizontally"; else split="vertically"; fi
             osascript <<-EOF
             tell application "iTerm"
+                # tell current session of current window
+                #     create window with default profile command "$command"
+                # end tell
                 tell current session of current window
                     split $split with default profile command "$command"
                 end tell

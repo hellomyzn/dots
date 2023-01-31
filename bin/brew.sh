@@ -42,6 +42,8 @@ formulas=(
     unzip
     tree
     less
+    # nnn: show image
+    viu
     # for pomodoro
     terminal-notifier
     caarlos0/tap/timer
