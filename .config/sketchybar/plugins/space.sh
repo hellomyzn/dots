@@ -6,6 +6,7 @@ update() {
   if [ "$SELECTED" = "true" ]; then
         sketchybar --animate tanh 10 --set $NAME \
             icon.color=$BLACK \
+            icon.background.color=$YELLOW \
             background.color=$YELLOW \
             label.color=$BLACK \
             label.background.color=$YELLOW
@@ -15,6 +16,7 @@ update() {
   else
       sketchybar --animate tanh 20 --set $NAME \
           icon.color=$YELLOW \
+          icon.background.color=$BACKGROUND_1 \
           background.color=$BACKGROUND_1 \
           label.color=$YELLOW \
           label.background.color=$BACKGROUND_1 \
