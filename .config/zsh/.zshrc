@@ -1,5 +1,4 @@
 # /bin/bash
-HISTSIZE=1000000
 # show .files in finder
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
@@ -19,7 +18,6 @@ fi
 if [ -f $HOME/.zsh_profile ]; then
      source $HOME/.zsh_profile
 fi
-
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
