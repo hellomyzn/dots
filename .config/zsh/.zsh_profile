@@ -19,13 +19,13 @@ precmd() {
 # SketchyBar: brew status
 # https://github.com/FelixKratz/SketchyBar
 # https://github.com/FelixKratz/dotfiles/blob/master/.config/yabai/yabairc
-function brew() {
-  command brew "$@" 
+# function brew() {
+#   command brew "$@" 
 
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-  fi
-}
+#   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+#     sketchybar --trigger brew_update
+#   fi
+# }
 
 ################################################
 # NEOFETCH
