@@ -12,7 +12,8 @@ zen_on() {
              --set spotify.anchor drawing=off \
              --set spotify.play updates=off \
              --set brew drawing=off \
-             --set mpd drawing=off
+             --set mpd drawing=off \
+            #  --set pomodoro drawing=on
 }
 
 zen_off() {
@@ -26,7 +27,8 @@ zen_off() {
              --set volume_alias drawing=on \
              --set spotify.play updates=on \
              --set brew drawing=on \
-             --set mpd drawing=on
+             --set mpd drawing=on \
+            #  --set pomodoro drawing=off
 }
 
 if [ "$1" = "on" ]; then
