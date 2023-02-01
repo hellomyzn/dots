@@ -29,7 +29,7 @@ sketchybar --bar     height=39                                         \
                      corner_radius=9                                   \
                      y_offset=10                                       \
                      margin=10                                         \
-                     blur_radius=20                                    \
+                     blur_radius=100                                    \
                      notch_width=0                                     \
                                                                        \
            --default updates=when_shown                                \
@@ -58,6 +58,7 @@ source "$ITEM_DIR/front_app.sh"
 
 # Center
 source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/mpd.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
@@ -66,6 +67,7 @@ source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/cpu.sh"
+
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
