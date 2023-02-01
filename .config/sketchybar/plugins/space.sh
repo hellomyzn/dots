@@ -4,7 +4,7 @@ source "$HOME/.config/sketchybar/colors.sh"
 update() {
   WIDTH="dynamic"
   if [ "$SELECTED" = "true" ]; then
-        sketchybar --animate tanh 10 --set $NAME \
+        sketchybar --animate tanh 20 --set $NAME \
             icon.color=$BLACK \
             icon.background.color=$YELLOW \
             background.color=$YELLOW \
