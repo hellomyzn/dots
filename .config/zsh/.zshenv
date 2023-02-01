@@ -41,9 +41,7 @@ PLUG_J="j:autojump;"
 PLUG_O="o:fzopen;"
 PLUG_P="p:preview-tui;"
 PLUG_T="t:preview-tabbed;"
-PLUG_U="u:davecloud;"
-PLUG_V="v:vidthumb;"
-export NNN_PLUG="${PLUG_C}${PLUG_D}${PLUG_I}${PLUG_J}${PLUG_O}${PLUG_P}${PLUG_T}${PLUG_U}${PLUG_V}"
+export NNN_PLUG="${PLUG_C}${PLUG_D}${PLUG_I}${PLUG_J}${PLUG_O}${PLUG_P}${PLUG_T}"
 
 # fcolurs: https://github.com/jarun/nnn/wiki/Usage#configuration
 RED="01" GRE="02" YEL="03" BLU="04" MAG="05" CYA="06" WHI="07" BLA="08"
