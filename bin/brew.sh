@@ -42,6 +42,12 @@ formulas=(
     unzip
     tree
     less
+    bat
+    atool
+    ffmpeg
+    ffmpegthumbnailer
+    poppler
+    glow
     # nnn: show image
     viu
     # for pomodoro
