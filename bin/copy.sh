@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./bin/logging.sh
 
 # $1: path copy from

@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 
 source ./bin/logging.sh
 source ./bin/copy.sh
