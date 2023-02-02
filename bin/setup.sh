@@ -31,6 +31,7 @@ CONFIG_DIRS=(
     "sketchybar" \
     "neofetch" \
     "nnn" \
+    "nvim" \
 )
 
 for FILE in ${CONFIG_DIRS[@]}
