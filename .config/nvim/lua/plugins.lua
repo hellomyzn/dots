@@ -41,20 +41,22 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
     
-	use({ "wbthomason/packer.nvim" })
-	use({ "nvim-lua/plenary.nvim" }) -- Common utilities
+    use({ "wbthomason/packer.nvim" })
+    use({ "nvim-lua/plenary.nvim" }) -- Common utilities
 
     -- nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
     use {'nvim-treesitter/nvim-treesitter'}
 
     -- nvim-orgmode: https://github.com/nvim-orgmode/orgmode
-    use {'nvim-orgmode/orgmode', config = function()
+    use {'nvim-orgmode/orgmode', 
+        config = function()
         require('orgmode').setup{}
     end}
 
     -- nvim-cmp: https://github.com/hrsh7th/nvim-cmp
     -- RECOMMENDED: orgmode
-    use {'hrsh7th/nvim-cmp', config = function()
+    use {'hrsh7th/nvim-cmp', 
+        config = function()
         require('cmp').setup({
             sources = {
               { name = 'orgmode' }
@@ -79,7 +81,8 @@ return packer.startup(function(use)
 
     -- Org-bullets.nvim: https://github.com/akinsho/org-bullets.nvim
     -- RECOMMENDED: orgmode
-    use {'akinsho/org-bullets.nvim', config = function()
+    use {'akinsho/org-bullets.nvim', 
+        config = function()
         require('org-bullets').setup()
     end}
 
@@ -87,6 +90,19 @@ return packer.startup(function(use)
     -- vim-table-mode: https://github.com/dhruvasagar/vim-table-mode
     -- RECOMMENDED: orgmode
     use {'dhruvasagar/vim-table-mode'}
+
+    -- markdown-preview.nvim: https://github.com/iamcco/markdown-preview.nvim
+    use({"iamcco/markdown-preview.nvim", 
+        run = function() 
+        vim.fn["mkdp#util#install"]()
+    end,})
+    use({"iamcco/markdown-preview.nvim", 
+        run = "cd app && npm install", 
+        setup = function() 
+        vim.g.mkdp_filetypes = { "markdown" } end, 
+        ft = { "markdown" }, 
+    })
+
 
 
     -- Automatically set up your configuration after cloning packer.nvim
