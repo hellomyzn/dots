@@ -27,6 +27,7 @@ formulas=(
     koekeishiya/formulae/skhd
     koekeishiya/formulae/yabai
     sketchybar
+    nvim
     # for sketchybar
     jq
     switchaudio-osx
