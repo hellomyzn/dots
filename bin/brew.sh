@@ -1,4 +1,5 @@
-# /bin/bash
+#!/bin/bash
+
 source ./bin/logging.sh
 
 BREW_PATH=$(which brew)

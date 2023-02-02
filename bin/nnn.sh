@@ -1,4 +1,5 @@
-# /bin/bash
+#!/bin/bash
+
 source ./bin/logging.sh
 
 echo "${INFO}set up nnn"

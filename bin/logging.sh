@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # color
 # ref: https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233
 ESC=$(printf '\033') 
