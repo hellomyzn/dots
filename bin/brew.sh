@@ -32,6 +32,7 @@ formulas=(
     jq
     switchaudio-osx
     nnn
+    ical-buddy
     # for nnn
     trash-cli
     pkg-config
