@@ -24,3 +24,4 @@ alias rm=trash-put
 # pomodoro
 alias work=pomo_work
 alias rest=pomo_rest
+alias pomodoro=cat .pomodoro_history | grep "$(date '+%Y-%m-%d')"
