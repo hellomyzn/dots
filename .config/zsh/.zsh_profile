@@ -68,6 +68,33 @@ pomo_rest() {
 	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [REST] : ${MINS_REST} mins" >> $HOME/$FILE_NAME        
 }
 
+todays_sessions() {
+	TODAYS_POMO=$(cat ${HOME}/.pomodoro_history | grep "$(date '+%Y-%m-%d')")
+	TODAYS_WORK=$(echo $TODAYS_POMO | grep "WORK")
+	TODAYS_REST=$(echo $TODAYS_POMO | grep "REST")
+	# wc -l is counting lines.
+	# tr -d is replace and delete characters(arg1)
+	TODAYS_WORK_SESSIONS=$(echo $TODAYS_WORK | wc -l | tr -d ' ')
+	TODAYS_REST_SESSIONS=$(echo $TODAYS_REST | wc -l | tr -d ' ')
+	SUM_WORK_MINS=$(($MINS_WORK*$TODAYS_WORK_SESSIONS))
+	SUM_WORK_HOURS=0
+	if [ SUM_WORK_MINS > 60 ]; then
+		SUM_WORK_HOURS=$(($SUM_WORK_MINS/60))
+		SUM_WORK_MINS=$(($SUM_WORK_MINS%60))
+	fi
+	echo -e "====================================="
+	echo "Today's pomodoro sessions"
+	echo -e "=====================================\n"
+	echo "${TODAYS_WORK_SESSIONS} sessions (${SUM_WORK_HOURS} hours ${SUM_WORK_MINS} mins) \n"
+	echo -e "-------------------------------------\n"
+	echo $TODAYS_POMO	
+}
+
+# # date of the last monday
+#  echo $(date -v-mon +"%F")
+# # date of the last tueseday
+#  echo $(date -v-mon +"%F")
+
 
 ################################################
 # NEOFETCH
