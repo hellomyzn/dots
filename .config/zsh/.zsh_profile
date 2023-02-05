@@ -54,7 +54,7 @@ pomo_work() {
 			-title 'Work Timer is up! Take a Break 😊'\
 			-appIcon '~/Downloads/IMG_5210.JPG'\
 			-sound Funk && \
-	echo "[WORK] : ${MINS_WORK} mins ($(DATE)) " >> $HOME/$FILE_NAME        
+	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [WORK] : ${MINS_WORK} mins" >> $HOME/$FILE_NAME        
 }
 
 pomo_rest() {
@@ -65,7 +65,7 @@ pomo_rest() {
 			-title 'Break is over! Get back to work 😬'\
 			-appIcon '~/Pictures/pumpkin.png'\
 			-sound Funk && \
-	echo "[REST] : ${MINS_REST} mins ($(DATE)) " >> $HOME/$FILE_NAME        
+	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [REST] : ${MINS_REST} mins" >> $HOME/$FILE_NAME        
 }
 
 
