@@ -49,7 +49,7 @@ is_pomo_history() {
 pomo_work() {
 	is_pomo_history
 
-	timer ${MINS_WORK}s && \
+	timer ${MINS_WORK}m && \
 	terminal-notifier -message 'Pomodoro'\
 			-title 'Work Timer is up! Take a Break 😊'\
 			-appIcon '~/Downloads/IMG_5210.JPG'\
@@ -60,7 +60,7 @@ pomo_work() {
 pomo_rest() {
 	is_pomo_history      		     
 	
-	timer ${MINS_REST}s && \
+	timer ${MINS_REST}m && \
 	terminal-notifier -message 'Pomodoro'\
 			-title 'Break is over! Get back to work 😬'\
 			-appIcon '~/Pictures/pumpkin.png'\
