@@ -35,3 +35,18 @@ TIPS
 ```
 $ chmod +x filename
 ```
+
+
+### Pomodoro
+start work (50m)
+```
+$ work
+```
+start rest (10m)
+```
+$ rest
+```
+you can see the logs in $HOME/.pomodoro_history
+```
+$ cat $HOME/.pomodoro_history
+```

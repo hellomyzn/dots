@@ -31,6 +31,44 @@ precmd() {
 eval "$(jump shell zsh)"
 
 
+# pomodoro
+# a pop up notification and sound alert (using the built-in sounds for macOS)
+# Requires https://github.com/caarlos0/timer to be installed
+# Mac setup for pomo
+
+FILE_NAME=.pomodoro_history
+MINS_WORK=50
+MINS_REST=10
+is_pomo_history() {
+	if [ ! -f $HOME/$FILE_NAME ]; then
+			touch $HOME/$FILE_NAME
+			echo "created a history file (${HOME}/${FILE_NAME})"
+	fi       
+}
+
+pomo_work() {
+	is_pomo_history
+
+	timer ${MINS_WORK}s && \
+	terminal-notifier -message 'Pomodoro'\
+			-title 'Work Timer is up! Take a Break 😊'\
+			-appIcon '~/Downloads/IMG_5210.JPG'\
+			-sound Funk && \
+	echo "[WORK] : ${MINS_WORK} mins ($(DATE)) " >> $HOME/$FILE_NAME        
+}
+
+pomo_rest() {
+	is_pomo_history      		     
+	
+	timer ${MINS_REST}s && \
+	terminal-notifier -message 'Pomodoro'\
+			-title 'Break is over! Get back to work 😬'\
+			-appIcon '~/Pictures/pumpkin.png'\
+			-sound Funk && \
+	echo "[REST] : ${MINS_REST} mins ($(DATE)) " >> $HOME/$FILE_NAME        
+}
+
+
 ################################################
 # NEOFETCH
 ################################################
