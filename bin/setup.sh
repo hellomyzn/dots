@@ -12,7 +12,7 @@ for FILE in ${ZSH_FILES[@]}
 do
     FROM="${PWD}/.config/zsh/${FILE}"
     TO=$HOME/$FILE
-    copy_file $FROM $TO "            "
+    copy_file $FROM $TO
 done
 
 # tmux
@@ -20,8 +20,7 @@ DIR_PATH=".config/tmux"
 FILE=".tmux.conf"
 FROM=$PWD/$DIR_PATH/$FILE
 TO=$HOME/$FILE
-copy_file $FROM $TO "            "
-
+copy_file $FROM $TO
 
 CONFIG_PATH=".config"
 CONFIG_DIRS=(
@@ -34,12 +33,18 @@ CONFIG_DIRS=(
     "nvim" \
 )
 
-for FILE in ${CONFIG_DIRS[@]}
+for DIR in ${CONFIG_DIRS[@]}
 do
-    FROM="${PWD}/${CONFIG_PATH}/$FILE"
-    TO="$HOME/${CONFIG_PATH}/$FILE"
-    copy_dir $FROM $TO "            "
+    FROM="${PWD}/${CONFIG_PATH}/$DIR"
+    TO="$HOME/${CONFIG_PATH}/$DIR"
+    copy_dir $FROM $TO
 done
+
+# emacs
+DIR_NAME=".emacs.d"
+FROM="${PWD}/${CONFIG_PATH}/emacs/${DIR_NAME}"
+TO="$HOME/$DIR_NAME"
+copy_dir $FROM $TO
 
 
 # for f in $FROM/*; do
