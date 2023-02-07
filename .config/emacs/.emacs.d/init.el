@@ -10,12 +10,23 @@
  '(help-key-binding ((t (:foreground "black" :background "yellow"))))
  '(isearch ((t (:background "red" :foreground "white"))))
  '(lazy-highlight ((t (:background "yellow" :foreground "black"))))
- '(menu ((t (:background "yellow" :foreground "black"))))
+ '(menu ((t (:background "black" :foreground "yellow" :underline "yellow"))))
  '(mode-line ((t (:background "yellow" :foreground "black"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "yellow"))))
+ '(org-checkbox ((t (:inherit bold :foreground "white"))))
+ '(org-date ((t (:foreground "yellow" :underline t))))
  '(org-hide ((t (:foreground "black"))))
+ '(org-level-1 ((t (:extend nil :background "yellow" :foreground "black" :weight normal :height 1.3))))
+ '(org-level-2 ((t (:extend nil :foreground "magenta" :weight normal :height 1.2))))
+ '(org-level-3 ((t (:extend nil :foreground "white" :weight normal :height 1.0))))
+ '(org-level-4 ((t (:foreground "blue" :weight normal :height 1.0))))
+ '(org-level-5 ((t (:foreground "green" :weight normal :height 1.0))))
+ '(org-link ((t (:inherit link :foreground "yellow"))))
+ '(org-special-keyword ((t (:inherit font-lock-keyword-face :foreground "blue"))))
  '(show-paren-match ((t (:background "yellow" :foreground "black"))))
  '(vertical-border ((t (:inherit nil :background "black" :foreground "yellow")))))
+
+
 
 
 
@@ -40,6 +51,10 @@
 ;; 現在行を目立たせる
 (setq hl-line-face 'underline)
 (global-hl-line-mode)
+
+;; smooth scroll
+(setq scroll-step            1
+      scroll-conservatively  10000)
 
 
 
@@ -71,13 +86,13 @@
 ;; status color
 (setq org-todo-keyword-faces
   '(
-    ("TODO" . "white") 
-    ("WEEK" . "white") 
-    ("TODAY" . (:foreground "red" :weight bold)) 
-    ("WIP" . (:foreground "red" :weight bold))
-    ("WAIT" . "green")
-    ("CANCELED" . "green")
-    ("DONE" . "blue")
+    ("TODO" . (:foreground "black" :background "yellow")) 
+    ("WEEK" . (:foreground "black" :background "yellow"))
+    ("TODAY" . (:foreground "black" :background "red" :weight bold)) 
+    ("WIP" . (:foreground "black" :background "red"  :weight bold))
+    ("WAIT" . (:foreground "black" :background "green"))
+    ("CANCELED" . (:foreground "black" :background "green"))
+    ("DONE" . (:foreground "black" :background "blue"))
   )
 )
 
@@ -86,7 +101,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
+ )
 ;; setting
 ;; indent heading
 (setq org-startup-indented t)
