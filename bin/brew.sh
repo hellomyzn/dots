@@ -76,6 +76,7 @@ casks=(
     spectacle
     sequel-ace
     kindle
+    vscodium
     # for sketchybar
     font-hack-nerd-font
     sf-symbols
