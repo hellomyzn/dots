@@ -52,7 +52,26 @@ $ cat $HOME/.pomodoro_history
 ```
 
 ### syncthing
+REF: https://qiita.com/MasanoriIwakura/items/555f3bc0f4f322c63cdf
 ```
 # open web browser
 $ syncthing -browser-only
+```
+
+### zerotier-one
+REF: https://qiita.com/RE-yura/items/3b750188e3cff05c55b9
+REF: https://qiita.com/daikiclimate/items/bbffd80bb0b057c409e9
+if it's mac
+```
+# run
+$ sudo launchctl load /Library/LaunchDaemons/com.zerotier.one.plist
+
+# stop
+$ sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist
+
+# show status
+$ sudo zerotier-cli status
+
+# join
+$ sudo zerotier-cli join [network_id]
 ```

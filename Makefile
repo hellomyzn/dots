@@ -14,6 +14,7 @@ emacs:
 	${PWD}/src/emacs.sh
 	${PWD}/src/tmux.sh
 mac:
+	${PWD}/src/zerotier.sh
 	${PWD}/src/zsh.sh
 	${PWD}/src/brew.sh
 	${PWD}/src/neofetch.sh
@@ -24,4 +25,5 @@ mac:
 	${PWD}/src/tmux.sh
 	${PWD}/src/yabai.sh
 	${PWD}/src/mpd.sh
+	${PWD}/src/zerotier.sh
 	@make activate
