@@ -15,6 +15,23 @@ do
     copy_file $FROM $TO
 done
 
+# tmux
+DIR_PATH=".config/tmux"
+FILE=".tmux.conf"
+FROM=$PWD/$DIR_PATH/$FILE
+TO=$HOME/$FILE
+copy_file $FROM $TO
+
+CONFIG_PATH=".config"
+CONFIG_DIRS=(
+    "tmux" \
+    "yabai" \
+    "skhd" \
+    "sketchybar" \
+    "neofetch" \
+    "nnn" \
+    "nvim" \
+)
 
 for DIR in ${CONFIG_DIRS[@]}
 do

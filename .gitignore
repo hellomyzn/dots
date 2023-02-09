@@ -5,3 +5,7 @@
 network-security.data
 *auto-save-list
 elpa
+mpd.db 
+mpd.log 
+mpd.pid 
+mpdstate
