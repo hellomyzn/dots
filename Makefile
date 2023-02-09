@@ -5,7 +5,6 @@ activate:
 	${PWD}/bin/activate.sh
 setup:
 	${PWD}/bin/setup.sh
-	@make update
 nnn:
 	${PWD}/bin/nnn.sh
 macos:
