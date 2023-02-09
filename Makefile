@@ -6,10 +6,19 @@ activate:
 setup:
 	${PWD}/bin/setup.sh
 emacs:
-	${PWD}/src/emacs.sh
 	${PWD}/src/zsh.sh
+	${PWD}/src/emacs.sh
+	${PWD}/src/tmux.sh
 mac:
+	${PWD}/src/zsh.sh
+	${PWD}/src/brew.sh
+	${PWD}/src/neofetch.sh
+	${PWD}/src/nnn.sh
+	${PWD}/src/nvim.sh
+	${PWD}/src/sketchybar.sh
+	${PWD}/src/skhd.sh
+	${PWD}/src/tmux.sh
+	${PWD}/src/yabai.sh
 	${PWD}/src/mpd.sh
-	
 	
 	@make activate
