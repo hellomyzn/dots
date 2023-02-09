@@ -4,9 +4,11 @@ source "${PWD}/helper/logging.sh"
 
 
 echo "${INFO}brew services start"
-brew services start skhd
-brew services start sketchybar
-brew services start yabai
+brew services restart skhd
+brew services restart sketchybar
+brew services restart yabai
+brew services restart mpd
+brew services restart syncthing
 
 echo "${INFO}source zshfiles"
 source ${HOME}/.zshenv

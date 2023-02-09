@@ -26,6 +26,7 @@ formulas=(
     git
     koekeishiya/formulae/skhd
     koekeishiya/formulae/yabai
+    syncthing
     sketchybar
     nvim
     # for sketchybar
@@ -99,7 +100,8 @@ brew cleanup
 echo "${INFO}brew installed"
 
 echo "${INFO}brew services start"
-brew services start skhd
-brew services start sketchybar
-brew services start yabai
-brew services start mpd
+brew services restart skhd
+brew services restart sketchybar
+brew services restart yabai
+brew services restart mpd
+brew services restart syncthing
