@@ -50,3 +50,9 @@ you can see the logs in $HOME/.pomodoro_history
 ```
 $ cat $HOME/.pomodoro_history
 ```
+
+### syncthing
+```
+# open web browser
+$ syncthing -browser-only
+```
