@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./bin/logging.sh
+source "${PWD}/helper/logging.sh"
 
 # $1: path copy from
 # $2: path copy to
