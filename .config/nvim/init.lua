@@ -1,6 +1,5 @@
 require("keymaps")
 require("plugins")
-require("nvim-orgmode")
 require("markdown-preview")
 -- require("highlight")
 

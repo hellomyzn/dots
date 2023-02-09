@@ -9,3 +9,6 @@ mpd.db
 mpd.log 
 mpd.pid 
 mpdstate
+
+# vim
+.config/nvim/plugin
