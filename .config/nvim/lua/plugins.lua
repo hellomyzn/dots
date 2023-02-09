@@ -47,49 +47,6 @@ return packer.startup(function(use)
     -- nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
     use {'nvim-treesitter/nvim-treesitter'}
 
-    -- nvim-orgmode: https://github.com/nvim-orgmode/orgmode
-    use {'nvim-orgmode/orgmode', 
-        config = function()
-        require('orgmode').setup{}
-    end}
-
-    -- nvim-cmp: https://github.com/hrsh7th/nvim-cmp
-    -- RECOMMENDED: orgmode
-    use {'hrsh7th/nvim-cmp', 
-        config = function()
-        require('cmp').setup({
-            sources = {
-              { name = 'orgmode' }
-            }
-          })
-    end}
-
-    -- -- onedark.nvim: https://github.com/navarasu/onedark.nvim
-    -- -- RECOMMENDED: orgmode
-    -- use {'navarasu/onedark.nvim', config = function()
-    --     require('onedark').setup {
-    --         style = 'deep'
-    --     }
-    --     require('onedark').load()
-    -- end}
-
-    -- -- Headlines.nvim: https://github.com/lukas-reineke/headlines.nvim
-    -- -- RECOMMENDED: orgmode
-    -- use {'lukas-reineke/headlines.nvim', config = function()
-    --     require('headlines').setup()
-    -- end}
-
-    -- Org-bullets.nvim: https://github.com/akinsho/org-bullets.nvim
-    -- RECOMMENDED: orgmode
-    use {'akinsho/org-bullets.nvim', 
-        config = function()
-        require('org-bullets').setup()
-    end}
-
-
-    -- vim-table-mode: https://github.com/dhruvasagar/vim-table-mode
-    -- RECOMMENDED: orgmode
-    use {'dhruvasagar/vim-table-mode'}
 
     -- markdown-preview.nvim: https://github.com/iamcco/markdown-preview.nvim
     use({"iamcco/markdown-preview.nvim", 
@@ -102,8 +59,6 @@ return packer.startup(function(use)
     --     vim.g.mkdp_filetypes = { "markdown" } end, 
     --     ft = { "markdown" }, 
     -- })
-
-
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
