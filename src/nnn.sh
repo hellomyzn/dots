@@ -5,7 +5,7 @@ source "${PWD}/helper/logging.sh"
 
 # make config dir if there is no config dir
 HOME_CONFIG_PATH="${HOME}/.config"
-if [ -d $HOME_CONFIG_PATH ]; then
+if [ ! -d $HOME_CONFIG_PATH ]; then
     mkdir $HOME/.config
 fi
 
