@@ -56,6 +56,10 @@ formulas=(
     # for pomodoro
     terminal-notifier
     caarlos0/tap/timer
+    # ncmpcpp: music player
+    ncmpcpp
+    mpd
+    mpc
 )
 
 echo "${INFO}brew install formula"
@@ -93,3 +97,9 @@ done
 
 brew cleanup
 echo "${INFO}brew installed"
+
+echo "${INFO}brew services start"
+brew services start skhd
+brew services start sketchybar
+brew services start yabai
+brew services start mpd

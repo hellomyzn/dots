@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./bin/logging.sh
+source "${PWD}/helper/logging.sh"
 
 
 echo "${INFO}brew services start"
