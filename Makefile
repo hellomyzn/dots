@@ -2,9 +2,13 @@ update:
 	@echo "update: .zshrc"
 	@sh ${HOME}/.zshrc
 activate:
-	${PWD}/bin/activate.sh
+	${PWD}/src/activate.sh
 setup:
 	${PWD}/bin/setup.sh
+vim:
+	${PWD}/src/zsh.sh
+	${PWD}/src/nvim.sh
+	${PWD}/src/tmux.sh
 emacs:
 	${PWD}/src/zsh.sh
 	${PWD}/src/emacs.sh
@@ -20,5 +24,4 @@ mac:
 	${PWD}/src/tmux.sh
 	${PWD}/src/yabai.sh
 	${PWD}/src/mpd.sh
-	
 	@make activate
