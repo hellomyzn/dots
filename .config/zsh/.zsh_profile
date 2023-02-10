@@ -68,33 +68,74 @@ pomo_rest() {
 	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [REST] : ${MINS_REST} mins" >> $HOME/$FILE_NAME        
 }
 
-todays_sessions() {
-	TODAYS_POMO=$(cat ${HOME}/.pomodoro_history | grep "$(date '+%Y-%m-%d')")
-	TODAYS_WORK=$(echo $TODAYS_POMO | grep "WORK")
-	TODAYS_REST=$(echo $TODAYS_POMO | grep "REST")
-	# wc -l is counting lines.
-	# tr -d is replace and delete characters(arg1)
-	TODAYS_WORK_SESSIONS=$(echo $TODAYS_WORK | wc -l | tr -d ' ')
-	TODAYS_REST_SESSIONS=$(echo $TODAYS_REST | wc -l | tr -d ' ')
-	SUM_WORK_MINS=$(($MINS_WORK*$TODAYS_WORK_SESSIONS))
+show_sessions() {
+	DAY_OF_WEEK=$(gdate -d $1 +"%a")
+	POMODORO=$(cat ${HOME}/.pomodoro_history | grep "${1}")
+	WORK=$(echo $POMODORO | grep "WORK")
+	REST=$(echo $POMODORO | grep "REST")
+	# wc -m is the number of characters
+	# wc -l counts 0 row as 1 row so that check the row by the number of char at first
+	NUM_CHAR=$(echo $WORK | wc -m | tr -d ' ')
+	WORK_SESSIONS=0
+	REST_SESSIONS=0
+	SUM_WORK_MINS=0
 	SUM_WORK_HOURS=0
-	if [ SUM_WORK_MINS > 60 ]; then
-		SUM_WORK_HOURS=$(($SUM_WORK_MINS/60))
-		SUM_WORK_MINS=$(($SUM_WORK_MINS%60))
+	if [ $NUM_CHAR != 1 ]; then
+		# wc -l is counting lines.
+		# tr -d is replace and delete characters(arg1)
+		WORK_SESSIONS=$(echo $WORK | wc -l | tr -d ' ')
+		REST_SESSIONS=$(echo $REST | wc -l | tr -d ' ')
+		SUM_WORK_MINS=$(($MINS_WORK*$WORK_SESSIONS))
+	fi
+
+	if [ $SUM_WORK_MINS -ge 60 ]; then
+		SUM_WORK_HOURS=$(($SUM_WORK_MINS / 60))
+		WORK_MINS=$(($SUM_WORK_MINS % 60))
 	fi
 	echo -e "====================================="
-	echo "Today's pomodoro sessions"
+	echo "${1} ${DAY_OF_WEEK}"
 	echo -e "=====================================\n"
-	echo "${TODAYS_WORK_SESSIONS} sessions (${SUM_WORK_HOURS} hours ${SUM_WORK_MINS} mins) \n"
+	echo "${WORK_SESSIONS} sessions (${SUM_WORK_HOURS} hours ${WORK_MINS} mins) \n"
 	echo -e "-------------------------------------\n"
-	echo $TODAYS_POMO	
+	echo -e "${POMODORO} \n\n\n"
 }
 
-# # date of the last monday
-#  echo $(date -v-mon +"%F")
-# # date of the last tueseday
-#  echo $(date -v-mon +"%F")
+todays_sessions() {
+	TODAY=$(date '+%Y-%m-%d')
+	show_sessions $TODAY
+}
 
+weeks_sessions() {
+	MON=$(date -v-mon +"%F")
+	TUE=$(date -v-tue +"%F")
+	WED=$(date -v-wed +"%F")
+	THU=$(date -v-thu +"%F")
+	FRI=$(date -v-fri +"%F")
+	SAT=$(date -v+sat +"%F")
+	SUN=$(date -v+sun +"%F")
+	WEEK=($MON $TUE $WED $THU $FRI $SAT $SUN)
+
+	SUM_MINS=0
+	SUM_HOURS=0
+	SUM_SESSIONS=0
+	for day in ${WEEK[@]};
+	do
+		show_sessions $day
+		SUM_MINS=$(($SUM_WORK_MINS + $SUM_MINS))
+		SUM_SESSIONS=$(($WORK_SESSIONS + $SUM_SESSIONS))
+	done
+
+	if [ $SUM_MINS -ge 60 ]; then
+		SUM_HOURS=$(($SUM_MINS/60))
+		SUM_MINS=$(($SUM_MINS%60))
+	fi
+
+	echo -e "====================================="
+	echo "${MON} - ${SUN}"
+	echo -e "=====================================\n"
+	echo "${SUM_SESSIONS} sessions (${SUM_HOURS} hours ${SUM_MINS} mins) \n"
+	echo -e "-------------------------------------\n"
+}
 
 ################################################
 # NEOFETCH
