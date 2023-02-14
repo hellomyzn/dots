@@ -105,17 +105,17 @@
   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
     (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
 ;; status color
-(setq org-todo-keyword-faces
-  '(
-    ("TODO" . (:foreground "black" :background "yellow")) 
-    ("WEEK" . (:foreground "black" :background "yellow"))
-    ("TODAY" . (:foreground "black" :background "red" :weight bold)) 
-    ("WIP" . (:foreground "black" :background "red"  :weight bold))
-    ("WAIT" . (:foreground "black" :background "green"))
-    ("CANCELED" . (:foreground "black" :background "green"))
-    ("DONE" . (:foreground "black" :background "blue"))
-  )
-)
+;;(setq org-todo-keyword-faces
+;;  '(
+;;    ("TODO" . (:foreground "black" :background "yellow")) 
+;;    ("WEEK" . (:foreground "black" :background "yellow"))
+;;    ("TODAY" . (:foreground "black" :background "red" :weight bold)) 
+;;    ("WIP" . (:foreground "black" :background "red"  :weight bold))
+;;    ("WAIT" . (:foreground "black" :background "green"))
+;;    ("CANCELED" . (:foreground "black" :background "green"))
+;;    ("DONE" . (:foreground "black" :background "blue"))
+;;  )
+;;)
 
 
 
