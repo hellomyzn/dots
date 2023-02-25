@@ -26,3 +26,7 @@ alias work=pomo_work
 alias rest=pomo_rest
 alias pomo=todays_sessions
 alias pomo_week=weeks_sessions
+
+# vim
+alias vim=nvim
+alias vi=nvim
