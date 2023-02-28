@@ -10,9 +10,9 @@ vim:
 	./src/nvim.sh
 	./src/tmux.sh
 emacs:
-	${PWD}/src/zsh.sh
-	${PWD}/src/emacs.sh
-	${PWD}/src/tmux.sh
+	./src/zsh.sh
+	./src/emacs.sh
+	./src/tmux.sh
 mac:
 	${PWD}/src/zerotier.sh
 	${PWD}/src/zsh.sh
@@ -27,5 +27,3 @@ mac:
 	${PWD}/src/mpd.sh
 	${PWD}/src/zerotier.sh
 	@make activate
-test:
-	@touch hoge.txt
