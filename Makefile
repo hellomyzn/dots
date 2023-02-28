@@ -26,4 +26,5 @@ mac:
 	${PWD}/src/yabai.sh
 	${PWD}/src/mpd.sh
 	${PWD}/src/zerotier.sh
+	${PWD}/src/kitty.sh
 	@make activate
