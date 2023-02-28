@@ -28,4 +28,4 @@ mac:
 	${PWD}/src/zerotier.sh
 	@make activate
 test:
-	@echo touch hoge.txt
+	@touch hoge.txt
