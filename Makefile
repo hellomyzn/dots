@@ -6,9 +6,9 @@ activate:
 setup:
 	${PWD}/bin/setup.sh
 vim:
-	${PWD}/src/zsh.sh
-	${PWD}/src/nvim.sh
-	${PWD}/src/tmux.sh
+	./src/zsh.sh
+	./src/nvim.sh
+	./src/tmux.sh
 emacs:
 	${PWD}/src/zsh.sh
 	${PWD}/src/emacs.sh
