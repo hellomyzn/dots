@@ -72,7 +72,7 @@ done
 casks=(
     zoom
     skitch
-    iterm2
+    kitty
     docker
     google-chrome
     brave-browser
