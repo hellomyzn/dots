@@ -10,3 +10,8 @@ reload
 ```
 $ skhd -r
 ```
+
+Commands
+```
+$ brew services restart skhd
+```

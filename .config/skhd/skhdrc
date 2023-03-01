@@ -204,8 +204,22 @@ alt + ctrl - 4 : \
     yabai -m window --resize bottom:0:300 ; \
     yabai -m window --resize top:0:300 ; \
 
-# position 5 (4 windows) for balance
+# position 5 (5 windows) for youtube, spotify, pomodoro, command line, note
 alt + ctrl - 5 : \
+    yabai -m space --layout bsp ; \
+    yabai -m space --rotate 90 ; \
+    yabai -m window --focus next ; \
+    yabai -m window --focus next ; \
+    yabai -m window --insert west ; \
+    yabai -m window --focus prev ; \
+    yabai -m window --warp east ; \
+    yabai -m space --balance ; \
+    yabai -m window --resize top:0:-180 ; \
+    yabai -m window --resize bottom:0:180 ; \
+    
+
+# position 6 (4 windows) for balance
+alt + ctrl - 6 : \
     yabai -m space --layout bsp ; \
     yabai -m window --focus largest ; \
     yabai -m window --insert north ; \
@@ -214,6 +228,7 @@ alt + ctrl - 5 : \
     yabai -m window --focus prev ; \
     yabai -m window --focus prev ; \
     yabai -m window --focus prev ; \
+
 
 # Resize windows
 alt + ctrl - h : \
