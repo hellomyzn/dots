@@ -1,5 +1,6 @@
 {
   "Badge Text" : "",
+  "ASCII Ligatures" : false,
   "Working Directory" : "\/Users\/miyazonoeiji",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -20,11 +21,11 @@
   "Use Italic Font" : true,
   "HotKey Characters" : "",
   "Foreground Color" : {
-    "Red Component" : 0.97254902124404907,
+    "Red Component" : 0.97254901960784312,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.98039215803146362,
+    "Blue Component" : 0.98039215686274506,
     "Alpha Component" : 1,
-    "Green Component" : 0.99215686321258545
+    "Green Component" : 0.99215686274509807
   },
   "HotKey Window Floats" : true,
   "Use Custom Window Title" : false,
@@ -328,8 +329,8 @@
     "Green Component" : 0.25882352941176473
   },
   "Name" : "hellomyzn",
-  "Blinking Cursor" : false,
   "Guid" : "3EC522DA-4316-4993-9895-236B755DB767",
+  "Blinking Cursor" : false,
   "Ansi 8 Color" : {
     "Red Component" : 0.12941176470588237,
     "Color Space" : "sRGB",
@@ -365,15 +366,15 @@
     "Green Component" : 0.14901960784313725
   },
   "Blur" : false,
-  "Normal Font" : "Monaco 12",
+  "Normal Font" : "DroidSansMonoNerdFontComplete-Regular 14",
   "Vertical Spacing" : 1,
   "Use Underline Color" : false,
   "Ansi 7 Color" : {
-    "Red Component" : 0.97254902124404907,
+    "Red Component" : 0.97254901960784312,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.98039215803146362,
+    "Blue Component" : 0.98039215686274506,
     "Alpha Component" : 1,
-    "Green Component" : 0.99215686321258545
+    "Green Component" : 0.99215686274509807
   },
   "Space" : 0,
   "HotKey Window AutoHides" : true,
@@ -392,11 +393,11 @@
   "HotKey Window Animates" : true,
   "HotKey Modifier Flags" : 0,
   "Ansi 15 Color" : {
-    "Red Component" : 0.97254902124404907,
+    "Red Component" : 0.97254901960784312,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.98039215803146362,
+    "Blue Component" : 0.98039215686274506,
     "Alpha Component" : 1,
-    "Green Component" : 0.99215686321258545
+    "Green Component" : 0.99215686274509807
   },
   "Tab Color" : {
     "Red Component" : 0.12941177189350128,
