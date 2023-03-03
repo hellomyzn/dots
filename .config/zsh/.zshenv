@@ -20,12 +20,13 @@ export PATH="$PATH:$HOME/myzn/3rd_party"
 ################################################
 # PROMPT
 ################################################
-export PS1="%F{3}%1~ %f "
+export PS1="%F{#63686d}%d %f"$'\n'"%F{3}%1~ %f "
 # If you want color prompt
 # export PS1="%F{1}%1~ $%f "
 
 # color: https://nemoplus.hateblo.jp/entry/20090119/1232373540
 export LSCOLORS=dxfxcxdxbxegedabagacad
+export TERM=xterm-256color
 
 
 ################################################
