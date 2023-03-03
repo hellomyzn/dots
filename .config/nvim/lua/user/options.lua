@@ -31,7 +31,10 @@ vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and
 -- vim.opt.showmode = false
 -- vim.opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 -- -- -- vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
-if vim.loop.os_uname().sysname == 'Linux' then
+
+-- Arch Linux is Linux
+-- Mac is Darwin
+if vim.loop.os_uname().sysname == 'Linux' or 'Darwin' then
   vim.g.clipboard = {
     name = 'macOS-clipboard',
     copy = {
@@ -45,4 +48,3 @@ if vim.loop.os_uname().sysname == 'Linux' then
     cache_enabled = 0,
   }
 end
-print(vim.loop.os_uname().sysname)
