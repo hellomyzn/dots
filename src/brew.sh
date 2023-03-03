@@ -30,6 +30,7 @@ formulas=(
     sketchybar
     coreutils
     nvim
+    tmux
     # for sketchybar
     jq
     switchaudio-osx
