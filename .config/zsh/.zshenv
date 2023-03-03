@@ -13,7 +13,7 @@ export SAVEHIST=1000000
 ################################################
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:$HOME/myzn"
+export PATH="$PATH:$HOME/myzn/scripts"
 export PATH="$PATH:$HOME/myzn/3rd_party"
 
 

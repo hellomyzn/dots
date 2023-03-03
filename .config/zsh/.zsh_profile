@@ -5,11 +5,11 @@ export DOCKER_CONTENT_TRUST=1
 
 # show ls after cd
 # https://qiita.com/2357gi/items/0ab1297357dedb90bbb1
-chpwd() {
-	if [[ ${pwd} != $HOME ]]; then
-		ls
-	fi
-}
+# chpwd() {
+# 	if [[ ${pwd} != $HOME ]]; then
+# 		ls
+# 	fi
+# }
 
 # Add 2 lines between this and ptevious line
 precmd() { 
@@ -29,6 +29,9 @@ precmd() {
 
 # jump
 eval "$(jump shell zsh)"
+
+# open ssh
+eval $(ssh-agent)
 
 
 # pomodoro

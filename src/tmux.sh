@@ -2,6 +2,7 @@
 
 source "${PWD}/helper/copy.sh"
 
+
 # make config dir if there is no config dir
 HOME_CONFIG_PATH="${HOME}/.config"
 if [ ! -d $HOME_CONFIG_PATH ]; then
@@ -20,3 +21,10 @@ copy_file $FROM $TO
 FROM="${PWD}/${CONFIG_PATH}"
 TO="${HOME_CONFIG_PATH}/${DIR}"
 copy_dir $FROM $TO
+
+# get dotfile path
+DOTFILES_SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MYZN_PATH="${HOME}/myzn"
+if [ -d $MYZN_PATH ]; then
+    ln -sf $DOTFILES_SRC/../.config/tmux/scripts/t $MYZN_PATH/scripts/t
+fi
