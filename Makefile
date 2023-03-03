@@ -6,15 +6,16 @@ activate:
 setup:
 	${PWD}/bin/setup.sh
 vim:
+	./src/myzn.sh
 	./src/zsh.sh
 	./src/nvim.sh
 	./src/tmux.sh
-	./src/myzn.sh
 emacs:
 	./src/zsh.sh
 	./src/emacs.sh
 	./src/tmux.sh
 mac:
+	${PWD}/src/myzn.sh
 	${PWD}/src/zerotier.sh
 	${PWD}/src/zsh.sh
 	${PWD}/src/brew.sh
@@ -28,5 +29,4 @@ mac:
 	${PWD}/src/mpd.sh
 	${PWD}/src/zerotier.sh
 	${PWD}/src/kitty.sh
-	${PWD}/src/myzn.sh
 	@make activate
