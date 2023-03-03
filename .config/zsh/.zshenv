@@ -20,7 +20,7 @@ export PATH="$PATH:$HOME/myzn/3rd_party"
 ################################################
 # PROMPT
 ################################################
-export PS1="%F{#63686d}%d %f"$'\n'"%F{3}%1~ %f "
+export PS1="%F{#63686d}%d %f"$'\n'"%F{3}$ %f"
 # If you want color prompt
 # export PS1="%F{1}%1~ $%f "
 
