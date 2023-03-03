@@ -26,5 +26,7 @@ copy_dir $FROM $TO
 DOTFILES_SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MYZN_PATH="${HOME}/myzn"
 if [ -d $MYZN_PATH ]; then
-    ln -sf $DOTFILES_SRC/../.config/tmux/scripts/t $MYZN_PATH/scripts/t
+    FROM=$DOTFILES_SRC/../.config/tmux/scripts/t
+    TO=$MYZN_PATH/scripts/t
+    copy_file $FROM $TO
 fi
