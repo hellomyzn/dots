@@ -32,6 +32,166 @@ use('wbthomason/packer.nvim')
 -- Commenting support.
 use('tpope/vim-commentary')
 
+<<<<<<< Updated upstream
+=======
+-- Add, Change, and delete surrounding text.
+-- https://github.com/tpope/vim-surround
+use('tpope/vim-surround')
+
+-- Useful commands like :Rename, :SudoWrite
+-- https://github.com/tpope/vim-eunuch
+use('tpope/vim-eunuch')
+
+-- Pairs of handy bracket mappings, like [b and ]d
+-- Adds [b and other handy mappings
+-- https://github.com/tpope/vim-unimpaired
+use('tpope/vim-unimpaired')
+
+-- Indent autodetection with editorconfig support
+-- https://github.com/tpope/vim-sleuth
+use('tpope/vim-sleuth') 
+
+-- Allow plugins to enable repeating of commands.
+-- https://github.com/tpope/vim-repeat
+use('tpope/vim-repeat')
+
+-- Add more languages.
+use('sheerun/vim-polyglot')
+
+-- Navigate seemlesly between Vim windows and Tmux panes
+-- https://github.com/christoomey/vim-tmux-navigator
+use('christoomey/vim-tmux-navigator')
+
+-- Jump to the last location when opening a file
+-- https://github.com/farmergreg/vim-lastplace
+use('farmergreg/vim-lastplace')
+
+-- Enable * searching with visually selected text.
+-- https://github.com/nelstrom/vim-visual-star-search
+use('nelstrom/vim-visual-star-search')
+
+-- Automatically create parent dirs when saving
+-- https://github.com/jessarcher/vim-heritage
+use('jessarcher/vim-heritage') 
+
+-- Automatically set the working directory to the project root
+-- https://github.com/airblade/vim-rooter
+use({
+  'airblade/vim-rooter',
+  setup = function()
+    vim.g.rooter_manual_only = 1
+  end,
+  config = function()
+    vim.cmd('Rooter')
+  end,
+})
+
+-- Automatically add closing brackets, quates, etc.
+-- https://github.com/windwp/nvim-autopairs
+use({
+  'windwp/nvim-autopairs',
+  config = function()
+    require('nvim-autopairs').setup()
+  end,
+})
+
+-- Add smooth scrolling to avoid jerring jumps
+-- https://github.com/karb94/neoscroll.nvim
+use({
+  'karb94/neoscroll.nvim',
+  config = function()
+    require('user.plugins.neoscroll')
+  end,
+})
+
+-- All closing buffers without closing the split window
+-- https://github.com/famiu/bufdelete.nvim
+use({
+  'famiu/bufdelete.nvim',
+  config = function()
+    vim.keymap.set('n', '<Leader>q', ':Bdelete<CR>')
+  end,
+})
+
+-- Split arrays and methods onto mulpiple lines or join them back
+-- https://github.com/AndrewRadev/splitjoin.vim
+use({
+  'AndrewRadev/splitjoin.vim',
+  config = function()
+    require('user.plugins.splitjoin')
+  end,
+})
+
+-- Automatically fix indentation when pasting code.
+-- https://github.com/sickill/vim-pasta
+use({
+  'sickill/vim-pasta',
+  config = function()
+    require('user.plugins.pasta')
+  end,
+})
+
+
+-- One dark theme
+-- https://github.com/folke/tokyonight.nvim
+use({
+  'jessarcher/onedark.nvim',
+  config = function()
+    vim.cmd('colorscheme onedark')
+ 
+    vim.api.nvim_set_hl(0, "Normal", {
+      fg = white, 
+      bg = black 
+    })
+
+  -- Hide the characters in FloatBorder
+  vim.api.nvim_set_hl(0, 'FloatBorder', {
+      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+    })
+
+  -- Make the StatusLineNonText background the same as StatusLine
+  vim.api.nvim_set_hl(0, 'StatusLineNonText', {
+      fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
+      bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
+    })
+
+  -- Hide the characters in CursorLineBg
+  vim.api.nvim_set_hl(0, 'CursorLineBg', {
+      fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+      bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+    })
+
+  vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' }) 
+  vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
+  end,
+})
+
+use({
+  'nvim-telescope/telescope.nvim',
+  requires = {
+    { 'nvim-lua/plenary.nvim' },
+    { 'kyazdani42/nvim-web-devicons' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { 'nvim-telescope/telescope-live-grep-args.nvim' },
+  },
+  config = function()
+    require('user.plugins.telescope')
+  end,
+})
+
+
+
+-- Frontend
+-- HTML
+-- Text objects for HTML attributes.
+-- https://github.com/whatyouhide/vim-textobj-xmlattr
+-- https://github.com/kana/vim-textobj-user
+use({
+  'whatyouhide/vim-textobj-xmlattr',
+  requires = 'kana/vim-textobj-user',
+})
+>>>>>>> Stashed changes
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
