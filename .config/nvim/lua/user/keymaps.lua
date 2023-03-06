@@ -1,6 +1,6 @@
 -- Space is my leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = '  '
+vim.g.maplocalleader = '  '
 
 -- vim.keymap.set('n', '<leader>k', ':nohlsearch<CR>')
 -- vim.keymap.set('n', '<leader>Q', ':bufdo bdelete<CR>')
@@ -46,7 +46,7 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 -- Move text up and down
 vim.keymap.set('i', '<C-j>', '<Esc>:move .+1<CR>==gi')
 vim.keymap.set('i', '<C-k>', '<Esc>:move .-2<CR>==gi')
-vim.keymap.set('n', '<C-j>', ":move .+1<CR>==")
-vim.keymap.set('n', '<C-k>', ":move .-2<CR>==")
-vim.keymap.set('x', '<C-j>', ":move '>+1<CR>gv-gv")
-vim.keymap.set('x', '<C-k>', ":move '<-2<CR>gv-gv")
+-- vim.keymap.set('n', '<C-j>', ":move .+1<CR>==")
+-- vim.keymap.set('n', '<C-k>', ":move .-2<CR>==")
+-- vim.keymap.set('x', '<C-j>', ":move '>+1<CR>gv-gv")
+-- vim.keymap.set('x', '<C-k>', ":move '<-2<CR>gv-gv")
