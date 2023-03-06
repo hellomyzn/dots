@@ -50,9 +50,9 @@ use('tpope/vim-unimpaired')
 -- https://github.com/tpope/vim-sleuth
 use('tpope/vim-sleuth') 
 
--- Allow plugins to enable repeating of commands.
--- https://github.com/tpope/vim-repeat
-use('tpope/vim-repeat')
+-- Allow plugins to enable repeating of commands. 
+-- https://github.com/tpope/vim-repeat 
+ use('tpope/vim-repeat')
 
 -- Add more languages.
 use('sheerun/vim-polyglot')
@@ -135,8 +135,10 @@ use({
 -- https://github.com/folke/tokyonight.nvim
 use({
   'jessarcher/onedark.nvim',
+  -- 'folke/tokyonight.nvim',
   config = function()
     vim.cmd('colorscheme onedark')
+    -- vim.cmd('colorscheme tokyonight-night')
  
     vim.api.nvim_set_hl(0, "Normal", {
       fg = white, 
