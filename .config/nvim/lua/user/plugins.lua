@@ -30,10 +30,9 @@ local use = require('packer').use
 use('wbthomason/packer.nvim')
 
 -- Commenting support.
+-- https://github.com/tpope/vim-commentary	
 use('tpope/vim-commentary')
 
-<<<<<<< Updated upstream
-=======
 -- Add, Change, and delete surrounding text.
 -- https://github.com/tpope/vim-surround
 use('tpope/vim-surround')
@@ -191,7 +190,6 @@ use({
   'whatyouhide/vim-textobj-xmlattr',
   requires = 'kana/vim-textobj-user',
 })
->>>>>>> Stashed changes
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
