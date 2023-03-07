@@ -255,6 +255,15 @@ use({
   end,
 })
 
+-- Git commands
+-- https://github.com/tpope/vim-fugitive
+use({
+  'tpope/vim-fugitive',
+  requires = 'tpope/vim-rhubarb',
+  cmd = 'G',
+})
+
+
 
 -- Frontend
 -- HTML
