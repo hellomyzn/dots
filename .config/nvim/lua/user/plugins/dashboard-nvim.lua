@@ -22,10 +22,11 @@ dashboard.setup({
           "",
     },
     center = {
-      { icon = '  ', desc = 'New file', action = 'enew' },
-      { icon = '  ', shortcut = 'SPC f', desc = 'Find file', action = 'Telescope find_files' },
-      { icon = '  ', shortcut = 'SPC h', desc = 'Recent files', action = 'Telescope oldfiles' },
-      { icon = '  ', shortcut = 'SPC g', desc = 'Find Word', action = 'Telescope live_grep' },
+      { icon = '􀣘  ', desc = 'New file', action = 'enew' },
+      { icon = '􀊫  ', shortcut = 'SPC f', desc = 'Find file', action = 'Telescope find_files' },
+      { icon = '􁝰  ', shortcut = 'SPC n', desc = 'Find file by tree', action = 'NvimTreeFindFileToggle<CR>' },
+      { icon = '􀐬  ', shortcut = 'SPC h', desc = 'Recent files', action = 'Telescope oldfiles' },
+      { icon = '􀵫  ', shortcut = 'SPC g', desc = 'Find Word', action = 'Telescope live_grep' },
     },
     footer = {},
   }
