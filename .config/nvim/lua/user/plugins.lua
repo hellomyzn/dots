@@ -168,6 +168,8 @@ use({
   end,
 })
 
+-- file manager
+-- https://github.com/nvim-telescope/telescope.nvim
 use({
   'nvim-telescope/telescope.nvim',
   requires = {
@@ -181,7 +183,55 @@ use({
   end,
 })
 
+-- File tree slider
+-- https://github.com/nvim-tree/nvim-tree.lua
+use({
+  'kyazdani42/nvim-tree.lua',
+  requires = 'kyazdani42/nvim-web-devicons',
+  config = function()
+    require('user.plugins.nvim-tree')
+  end,
+})
 
+-- A status line.
+-- https://github.com/nvim-lualine/lualine.nvim
+use({
+  'nvim-lualine/lualine.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
+  config = function()
+    require('user.plugins.lualine')
+    -- require('lualine').setup()
+  end,
+})
+
+-- Display buffers as tabs
+-- https://github.com/akinsho/bufferline.nvim
+use({
+  'akinsho/bufferline.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
+  after = 'onedark.nvim',
+  config = function()
+    require('user.plugins.bufferline')
+  end,
+})
+
+-- Display indentation lines.
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+use({
+  'lukas-reineke/indent-blankline.nvim',
+  config = function()
+    require('user.plugins.indent-blankline')
+  end,
+})
+
+-- Add a dashboard.
+-- https://github.com/glepnir/dashboard-nvim
+use({
+  'glepnir/dashboard-nvim',
+  config = function()
+    require('user.plugins.dashboard-nvim')
+  end,
+})
 
 -- Frontend
 -- HTML
