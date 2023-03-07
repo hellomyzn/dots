@@ -31,6 +31,7 @@ vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and
 -- vim.opt.showmode = false
 -- vim.opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 -- -- -- vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
+vim.opt.cursorline = true
 
 -- Mac is Darwin
 if vim.loop.os_uname().sysname == 'Darwin' then
