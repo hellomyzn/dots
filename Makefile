@@ -10,6 +10,7 @@ vim:
 	./src/zsh.sh
 	./src/nvim.sh
 	./src/tmux.sh
+	./src/nnn.sh
 emacs:
 	./src/zsh.sh
 	./src/emacs.sh
