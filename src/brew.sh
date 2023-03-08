@@ -78,7 +78,6 @@ casks=(
     google-chrome
     brave-browser
     firefox
-    spacelauncher
     istat-menus
     spectacle
     sequel-ace
