@@ -274,9 +274,7 @@ use({
 
 use({
     'nvim-treesitter/nvim-treesitter',
-    run = function()
-      require('nvim-treesitter.install').update({ with_sync = true })
-    end,
+    run = 'TSUpdate',
     config = function()
       require('user.plugins.treesitter')
     end,
