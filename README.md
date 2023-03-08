@@ -8,7 +8,7 @@ WM: yabai
 FM: nnn
 BAR: Skechy bar
 TERMINAL: iTerm
-Apps Launcher: SpaceLauncher
+Apps Launcher: ~SpaceLauncher~
 SM: Tmux
 Editor: Nvim
 
