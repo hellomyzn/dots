@@ -272,9 +272,17 @@ use({
   end,
 })
 
+
+-- Improve syntax highlight
+-- https://github.com/nvim-treesitter/nvim-treesitter
 use({
     'nvim-treesitter/nvim-treesitter',
     run = 'TSUpdate',
+    requires = {
+      'nvim-treesitter/playground',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
     config = function()
       require('user.plugins.treesitter')
     end,
