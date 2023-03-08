@@ -263,6 +263,15 @@ use({
   cmd = 'G',
 })
 
+-- Floating terminal.
+-- https://github.com/voldikss/vim-floaterm
+use({
+  'voldikss/vim-floaterm',
+  config = function()
+    require('user.plugins.floaterm')
+  end,
+})
+
 
 
 -- Frontend
