@@ -63,6 +63,9 @@ formulas=(
     ncmpcpp
     mpd
     mpc
+    # nvim
+    wget
+    node
 )
 
 echo "${INFO}brew install formula"
