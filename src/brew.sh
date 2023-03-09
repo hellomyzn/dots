@@ -31,6 +31,8 @@ formulas=(
     coreutils
     nvim
     tmux
+    # for tmux
+    lazygit
     # for sketchybar
     jq
     switchaudio-osx
