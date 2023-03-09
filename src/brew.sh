@@ -34,6 +34,7 @@ formulas=(
     # for sketchybar
     jq
     switchaudio-osx
+    gh
     nnn
     ical-buddy
     # for nnn
