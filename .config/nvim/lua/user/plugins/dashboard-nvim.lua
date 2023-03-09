@@ -22,6 +22,7 @@ dashboard.setup({
           "",
     },
     center = {
+      { icon = '􀋦  ', key = 's', desc = 'Quick start', action = 'enew | vs | NvimTreeFindFileToggle<CR>' },
       { icon = '􀣘  ', key = 'F', desc = 'New file', action = 'enew' },
       { icon = '􀊫  ', key = 'f', desc = 'Find file', action = 'Telescope find_files' },
       { icon = '􁝰  ', key = 't', desc = 'Find file by tree', action = 'NvimTreeFindFileToggle<CR>' },
