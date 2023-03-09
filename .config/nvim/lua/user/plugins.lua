@@ -286,9 +286,20 @@ use({
     config = function()
       require('user.plugins.treesitter')
     end,
-
   })
 
+-- Language Server Protocol.
+-- https://github.com/neovim/nvim-lspconfig
+use({
+  'neovim/nvim-lspconfig',
+  requires = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  },
+  config = function()
+    require('user.plugins.lspconfig')
+  end,
+})
 
 
 -- Frontend
