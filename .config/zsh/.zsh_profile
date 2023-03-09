@@ -145,5 +145,9 @@ weeks_sessions() {
 ################################################
 neofetch
 
-
+################################################
+# zsh-autosuggestions
+# https://qiita.com/P-man_Brown/items/1bdbe7e3641ea767d9c7
+################################################
+source ~/.zsh/zsh-autosuggestions
 
