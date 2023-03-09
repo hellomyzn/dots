@@ -146,6 +146,11 @@ weeks_sessions() {
 neofetch
 
 ################################################
-# NEOFETCH
+# zsh-autosuggestions
 ################################################
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+################################################
+# zsh-autocomplete
+################################################
+source $HOME/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
