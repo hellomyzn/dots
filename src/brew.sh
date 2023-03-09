@@ -70,7 +70,8 @@ formulas=(
     wget
     node
     # nvim: telescope
-    rq
+    ripgrep
+
 )
 
 echo "${INFO}brew install formula"
