@@ -26,8 +26,8 @@ export PS1="%F{#63686d}%d %f"$'\n'"%F{3}$ %f"
 
 # color: https://nemoplus.hateblo.jp/entry/20090119/1232373540
 export LSCOLORS=dxfxcxdxbxegedabagacad
-export TERM=screen-256color
-# export TERM=xterm-256color
+# export TERM=screen-256color
+export TERM=xterm-256color
 
 
 ################################################
@@ -50,4 +50,11 @@ RED="01" GRE="02" YEL="03" BLU="04" MAG="05" CYA="06" WHI="07" BLA="08"
 BLK=$WHI CHR=$WHI DIR=$YEL EXE=$GRE REG=$BLU HARDLINK=$RED SYMLINK=$MAG MISSING=$WHI ORPHAN=$WHI FIFO=$WHI SOCK=$WHI OTHER=$WHI
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 set --export NNN_FIFO="/tmp/nnn.fifo"
+
+
+
+################################################
+# zsh-autocomplete
+################################################
+export LISTMAX=1000
 
