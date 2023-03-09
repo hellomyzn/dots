@@ -50,17 +50,19 @@ if vim.loop.os_uname().sysname == 'Darwin' then
 end
 
 -- If using tmux, copy text from vim inside docker container using tmux clipboard
-if vim.env.TMUX then
-    vim.g.clipboard = {
-        name = 'tmux',
-        copy = {
-            ["+"] = {'tmux', 'load-buffer', '-w', '-'},
-            ["*"] = {'tmux', 'load-buffer', '-w', '-'},
-        },
-        paste = {
-            ["+"] = {'tmux', 'save-buffer', '-'},
-            ["*"] = {'tmux', 'save-buffer', '-'},
-        },
-        cache_enabled = false,
-    }
-end
+-- if vim.env.TMUX then
+--     vim.g.clipboard = {
+--         name = 'tmux',
+--         copy = {
+--             ["+"] = {'tmux', 'load-buffer', '-w', '-'},
+--             ["*"] = {'tmux', 'load-buffer', '-w', '-'},
+--         },
+--         paste = {
+--             ["+"] = {'tmux', 'save-buffer', '-'},
+--             ["*"] = {'tmux', 'save-buffer', '-'},
+--         },
+--         cache_enabled = false,
+--     }
+-- end
+
+
