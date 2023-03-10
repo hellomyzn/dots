@@ -19,7 +19,19 @@ if [ -f $HOME/.zsh_profile ]; then
      source $HOME/.zsh_profile
 fi
 
+################################################
+# PATH
+################################################
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="$PATH:$HOME/myzn/scripts"
+export PATH="$PATH:$HOME/myzn/3rd_party"
+
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-
+################################################
+# NEOFETCH
+################################################
+neofetch

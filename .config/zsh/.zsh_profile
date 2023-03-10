@@ -46,7 +46,7 @@ is_pomo_history() {
 	if [ ! -f $HOME/$FILE_NAME ]; then
 			touch $HOME/$FILE_NAME
 			echo "created a history file (${HOME}/${FILE_NAME})"
-	fi       
+	fi
 }
 
 pomo_work() {
@@ -57,18 +57,18 @@ pomo_work() {
 			-title 'Work Timer is up! Take a Break 😊'\
 			-appIcon '~/Downloads/IMG_5210.JPG'\
 			-sound Funk && \
-	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [WORK] : ${MINS_WORK} mins" >> $HOME/$FILE_NAME        
+	echo "$(DATE -v-${MINS_WORK}M '+%Y-%m-%d %H:%M:%S')  $(DATE '+%Y-%m-%d %H:%M:%S')  [WORK]  ${MINS_WORK} mins" >> $HOME/$FILE_NAME
 }
 
 pomo_rest() {
-	is_pomo_history      		     
+	is_pomo_history
 	
 	timer ${MINS_REST}m && \
 	terminal-notifier -message 'Pomodoro'\
 			-title 'Break is over! Get back to work 😬'\
 			-appIcon '~/Pictures/pumpkin.png'\
 			-sound Funk && \
-	echo "$(DATE '+%Y-%m-%d %H:%M:%S')  [REST] : ${MINS_REST} mins" >> $HOME/$FILE_NAME        
+	echo "$(DATE -v-${MINS_REST}M '+%Y-%m-%d %H:%M:%S')  $(DATE '+%Y-%m-%d %H:%M:%S')  [REST]  ${MINS_REST} mins" >> $HOME/$FILE_NAME
 }
 
 show_sessions() {
@@ -140,15 +140,34 @@ weeks_sessions() {
 	echo -e "-------------------------------------\n"
 }
 
+
+
 ################################################
-# NEOFETCH
+# NNN
 ################################################
-neofetch
+export NNN_TRASH=1
+export NNN_COLORS="3246"
+# plug: https://github.com/jarun/nnn/tree/master/plugins
+PLUG_C="c:fzcd;"
+PLUG_D="d:dragd;"
+PLUG_I="i:imgview;"
+PLUG_J="j:autojump;"
+PLUG_O="o:fzopen;"
+PLUG_P="p:preview-tui;"
+PLUG_T="t:preview-tabbed;"
+export NNN_PLUG="${PLUG_C}${PLUG_D}${PLUG_I}${PLUG_J}${PLUG_O}${PLUG_P}${PLUG_T}"
+
+# fcolurs: https://github.com/jarun/nnn/wiki/Usage#configuration
+RED="01" GRE="02" YEL="03" BLU="04" MAG="05" CYA="06" WHI="07" BLA="08"
+BLK=$WHI CHR=$WHI DIR=$YEL EXE=$GRE REG=$BLU HARDLINK=$RED SYMLINK=$MAG MISSING=$WHI ORPHAN=$WHI FIFO=$WHI SOCK=$WHI OTHER=$WHI
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+set --export NNN_FIFO="/tmp/nnn.fifo"
+
 
 ################################################
 # zsh-autosuggestions
 ################################################
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ################################################
 # zsh-autocomplete

@@ -9,15 +9,6 @@ export SAVEHIST=1000000
 
 
 ################################################
-# PATH
-################################################
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:$HOME/myzn/scripts"
-export PATH="$PATH:$HOME/myzn/3rd_party"
-
-
-################################################
 # PROMPT
 ################################################
 export PS1="%F{#63686d}%d %f"$'\n'"%F{3}$ %f"
