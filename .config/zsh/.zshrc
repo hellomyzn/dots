@@ -1,6 +1,18 @@
 # /bin/bash
-# show .files in finder
-defaults write com.apple.finder AppleShowAllFiles TRUE
+
+if [ $(uname) = "Darwin" ]; then
+    # show .files in finder
+    defaults write com.apple.finder AppleShowAllFiles TRUE
+
+    # path for homebrew
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/sbin:$PATH"
+fi
+
+if [ -d $HOME/myzn ]; then
+    export PATH="$PATH:$HOME/myzn/scripts"
+    export PATH="$PATH:$HOME/myzn/3rd_party"
+fi
 
 # remove text when login zsh: Last login: Mon Feb 23 00:10:48 on ttys000
 touch $HOME/.hushlogin
@@ -18,14 +30,6 @@ fi
 if [ -f $HOME/.zsh_profile ]; then
      source $HOME/.zsh_profile
 fi
-
-################################################
-# PATH
-################################################
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="$PATH:$HOME/myzn/scripts"
-export PATH="$PATH:$HOME/myzn/3rd_party"
 
 
 # Generated for envman. Do not edit.
