@@ -6,40 +6,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-
-;; '(help-key-binding ((t (:foreground "black" :background "yellow"))))
-;; '(isearch ((t (:background "red" :foreground "white"))))
-;; '(lazy-highlight ((t (:background "yellow" :foreground "black"))))
-;; '(menu ((t (:background "black" :foreground "yellow" :underline "yellow"))))
-;; '(mode-line ((t (:background "yellow" :foreground "black"))))
-;; '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "yellow"))))
-;; '(org-checkbox ((t (:inherit bold :foreground "white"))))
-;; '(org-date ((t (:foreground "yellow" :underline t))))
-;; '(org-level-1 ((t (:extend nil :background "black" :foreground "yellow" :weight normal :height 1.3))))
-;; '(org-level-2 ((t (:extend nil :foreground "magenta" :weight normal :height 1.2))))
-;; '(org-level-3 ((t (:extend nil :foreground "white" :weight normal :height 1.0))))
-;; '(org-level-4 ((t (:foreground "blue" :weight normal :height 1.0))))
-;; '(org-level-5 ((t (:foreground "green" :weight normal :height 1.0))))
-;; '(org-link ((t (:inherit link :foreground "yellow"))))
-;; '(org-priority ((t (:inherit font-lock-keyword-face :background "cyan" :foreground "black"))))
-;; '(org-special-keyword ((t (:inherit font-lock-keyword-face :foreground "blue"))))
-;; '(show-paren-match ((t (:background "yellow" :foreground "black"))))
-;; '(vertical-border ((t (:inherit nil :background "black" :foreground "yellow"))))
-'(org-hide ((t (:foreground "black")))))
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; packages
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  '(button ((t (:background "black" :foreground "white" :box (:line-width (2 . 2) :color "grey" :style released-button) :underline t :weight bold))))
+  '(menu ((t (:background "black" :foreground "yellow" :underline "yellow"))))
+  '(mode-line ((t (:background "black" :foreground "yellow" :box (1 . 1) :height 0.9))))
+  '(mode-line-buffer-id ((t (:background "black" :foreground "yellow" :weight bold :height 0.9))))
+  '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "brightblack" :box (1 . 1) :weight light :height 0.9))))
+  '(org-hide ((t (:foreground "black"))))
+  '(vertical-border ((t (:inherit nil :background "black" :foreground "yellow")))))
+(load-theme 'manoj-dark)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; setting
@@ -74,6 +52,10 @@
 (setq scroll-step            1
       scroll-conservatively  10000)
 
+;; show line numbers
+(if (version<= "26.0.50" emacs-version)
+  (global-display-line-numbers-mode))
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -92,6 +74,10 @@
 (global-set-key [?\C-c ?u] 'backward-kill-line) ;; `C-c u'
 ;; agenda view
 (global-set-key "\C-ca" 'org-agenda)
+;; open file
+(global-set-key "\C-cf" 'find-file)
+;; org-capture
+(global-set-key "\C-cc" 'org-capture)
 
 
 
@@ -99,46 +85,36 @@
 ;; org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; status
-;;(setq org-todo-keywords
-;;  '((sequence "TODO" "WEEK" "TODAY" "WIP" "WAIT" "CANCELED" "DONE")))
 (setq org-todo-keywords
-  '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-    (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-;; status color
-;;(setq org-todo-keyword-faces
-;;  '(
-;;    ("TODO" . (:foreground "black" :background "yellow"))
-;;    ("WEEK" . (:foreground "black" :background "yellow"))
-;;    ("TODAY" . (:foreground "black" :background "red" :weight bold))
-;;    ("WIP" . (:foreground "black" :background "red"  :weight bold))
-;;    ("WAIT" . (:foreground "black" :background "green"))
-;;    ("CANCELED" . (:foreground "black" :background "green"))
-;;    ("DONE" . (:foreground "black" :background "blue"))
-;;  )
-;;)
+      '((sequence "TODO(t)" "TODAY(T)" "NEXT(n)" "WIP(w)" "|" "DONE(d!)" "CANC(c@/!)" )))
+(require 'org-agenda)
+(add-to-list 'org-modules 'org-habit)
+(setq org-habit-graph-column 60)
+(setq org-habit-preceding-days 14)
+(setq org-habit-following-days 14)
+(setq org-habit-show-habits-only-for-today t)
+
+(setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 2)))
+
+(customize-set-variable 'org-global-properties
+                        '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 6:00 12:00 18:00 24:00")))
 
 
-  (setq org-tag-alist
-    '((:startgroup)
-       ; Put mutually exclusive tags here
-       (:endgroup)
-       ("@errand" . ?E)
-       ("@home" . ?H)
-       ("@work" . ?W)
-       ("agenda" . ?a)
-       ("planning" . ?p)
-       ("publish" . ?P)
-       ("batch" . ?b)
-       ("note" . ?n)
-       ("idea" . ?i)))
+;; Save Org buffers after refiling!
+(advice-add 'org-refile :after 'org-save-all-org-buffers)
 
+(setq org-tag-alist
+      '((:startgroup)
+        ; Put mutually exclusive tags here
+        (:endgroup)
+        ("work" . ?w)
+        ("study" . ?s)
+        ("positive" . ?s)
+        ("private" . ?p)
+        ("quick" . ?q)
+        ("english" . ?e)
+        ("idea" . ?i)))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; setting
 ;; indent heading
@@ -156,53 +132,235 @@
 (setq org-agenda-start-with-log-mode t)
 (setq org-log-done 'time)
 (setq org-log-into-drawer t)
-(setq org-agenda-files (list "~/org/private.org"))
+
+(setq org-agenda-files
+      '("~/org/agendas/tasks.org"
+        "~/org/agendas/habits.org"
+        "~/org/agendas/quick.org"
+        "~/org/agendas/private.org"
+        "~/org/agendas/journals.org"))
+
+;; Configure custom agenda views
+(setq org-agenda-custom-commands
+      '(("d" "Dashboard"
+         ((agenda "" ((org-deadline-warning-days 7)))
+          (todo "NEXT"
+                ((org-agenda-overriding-header "Next Tasks")))
+          (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
+
+        ("t" "Today's tasks"
+         ((todo "TODAY"
+                ((org-agenda-overriding-header "Today's tasks")
+                 (org-agenda-files org-agenda-files)))
+          (todo "NEXT"
+                ((org-agenda-overriding-header "Next Tasks")
+                 (org-agenda-files org-agenda-files)))
+          (todo "WIP"
+                ((org-agenda-overriding-header "Work In Progress")
+                 (org-agenda-files org-agenda-files)))))
+
+        ("n" "Next Tasks"
+         ((todo "NEXT"
+                ((org-agenda-overriding-header "Next Tasks")
+                 (org-agenda-files org-agenda-files)))))
 
 
-  ;; Configure custom agenda views
-  (setq org-agenda-custom-commands
-   '(("d" "Dashboard"
-     ((agenda "" ((org-deadline-warning-days 7)))
-      (todo "NEXT"
-        ((org-agenda-overriding-header "Next Tasks")))
-      (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
+        ("W" "Work Tasks" tags-todo ":work:")
 
-    ("n" "Next Tasks"
-     ((todo "NEXT"
-        ((org-agenda-overriding-header "Next Tasks")))))
+        ;; Low-effort next actions
+        ("e" tags-todo "+TODO=\"TODO\"+Effort<21&+Effort>0"
+         ((org-agenda-overriding-header "Low Effort Tasks")
+          (org-agenda-max-todos 20)
+          (org-agenda-files org-agenda-files)))
 
-    ("W" "Work Tasks" tags-todo "+work-email")
+        ("h" "Habits in consistency graph"
+         agenda ""
+         ((org-agenda-span 'day)
+          (org-agenda-use-time-grid nil)
+          (org-agenda-prefix-format '((agenda . "")))
+          (org-habit-show-all-today t)
+          (org-habit-graph-column 32)
+          (org-habit-preceding-days 14)
+          (org-habit-following-days 21)
+          (org-agenda-sorting-strategy '(scheduled-up))
+          ;; display habits only
+          (org-agenda-skip-function
+            (lambda ()
+              (and (save-excursion
+                     (not (org-is-habit-p)))
+                   (progn (outline-next-heading) (point)))))))
 
-    ;; Low-effort next actions
-    ("e" tags-todo "+TODO=\"NEXT\"+Effort<15&+Effort>0"
-     ((org-agenda-overriding-header "Low Effort Tasks")
-      (org-agenda-max-todos 20)
-      (org-agenda-files org-agenda-files)))
+        ("w" "Workflow Status"
+         ((todo "TODO"
+                ((org-agenda-overriding-header "TODO")
+                 (org-agenda-files org-agenda-files)))
+          (todo "NEXT"
+                ((org-agenda-overriding-header "Next Tasks")
+                 (org-agenda-files org-agenda-files)))
+          (todo "WIP"
+                ((org-agenda-overriding-header "Work In Progress")
+                 (org-agenda-files org-agenda-files)))
+          (todo "DONE"
+                ((org-agenda-overriding-header "Done")
+                 (org-agenda-files org-agenda-files)))
+          (todo "CANC"
+                ((org-agenda-overriding-header "Cancelled Tasks")
+                 (org-agenda-files org-agenda-files)))))))
 
-    ("w" "Workflow Status"
-     ((todo "WAIT"
-            ((org-agenda-overriding-header "Waiting on External")
-             (org-agenda-files org-agenda-files)))
-      (todo "REVIEW"
-            ((org-agenda-overriding-header "In Review")
-             (org-agenda-files org-agenda-files)))
-      (todo "PLAN"
-            ((org-agenda-overriding-header "In Planning")
-             (org-agenda-todo-list-sublevels nil)
-             (org-agenda-files org-agenda-files)))
-      (todo "BACKLOG"
-            ((org-agenda-overriding-header "Project Backlog")
-             (org-agenda-todo-list-sublevels nil)
-             (org-agenda-files org-agenda-files)))
-      (todo "READY"
-            ((org-agenda-overriding-header "Ready for Work")
-             (org-agenda-files org-agenda-files)))
-      (todo "ACTIVE"
-            ((org-agenda-overriding-header "Active Projects")
-             (org-agenda-files org-agenda-files)))
-      (todo "COMPLETED"
-            ((org-agenda-overriding-header "Completed Projects")
-             (org-agenda-files org-agenda-files)))
-      (todo "CANC"
-            ((org-agenda-overriding-header "Cancelled Projects")
-             (org-agenda-files org-agenda-files)))))))
+(defun efs/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(setq org-capture-templates
+      `(("t" "Task Entries")
+        ("tt" "Task" entry
+         (file+olp "~/org/agendas/tasks.org" "Tasks")
+         "* TODO %? \nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tT" "Task with schedule" entry
+         (file+olp "~/org/agendas/tasks.org" "Tasks")
+         "* TODO %? \nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tq" "Quick task" entry
+         (file+olp "~/org/agendas/quick.org" "Quick")
+         "* TODO %? :quick:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tQ" "Quick task with schedule" entry
+         (file+olp "~/org/agendas/quick.org" "Quick")
+         "* TODO %? :quick:\nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tp" "Private" entry
+         (file+olp "~/org/agendas/private.org" "Private")
+         "* TODO %? :private:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tP" "Private with schedule" entry
+         (file+olp "~/org/agendas/private.org" "Private")
+         "* TODO %? :private:\nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+
+
+        ("s" "Study Entries")
+        ("ss" "Study" entry
+         (file+olp "~/org/agendas/tasks.org" "Studies")
+         "* TODO %? :study:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("sS" "Study with schedule" entry
+         (file+olp "~/org/agendas/tasks.org" "Studies")
+         "* TODO %? :study:\nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+
+        ("w" "Work Entries")
+        ("ww" "Work" entry
+         (file+olp "~/org/agendas/tasks.org" "Works")
+         "* TODO %? :work:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("ws" "Work with schedule" entry
+         (file+olp "~/org/agendas/tasks.org" "Works")
+         "* TODO %? :work:\nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+
+        ("p" "Positive Plan Entries")
+        ("pp" "Positive plan" entry
+         (file+olp "~/org/agendas/private.org" "Private")
+         "* TODO %? :positive:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("ps" "Positive plan with schedule" entry
+         (file+olp "~/org/agendas/private.org" "Private")
+         "* TODO %? :positive:\nSCHEDULED: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+
+        ("j" "Journal Entries")
+        ("jj" "Journal" entry
+         (file+olp+datetree "~/org/agendas/journals.org")
+         "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
+         :clock-in :clock-resume
+         :empty-lines 1)
+        ("jm" "Meeting" entry
+         (file+olp+datetree "~/org/templates/journal.org")
+         "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
+         :clock-in :clock-resume
+         :empty-lines 1)
+
+        ("h" "Habit Entries")
+        ("hd" "Daily")
+        ("hdm" "Morning" entry
+         (file+olp "~/org/agendas/habits.org" "Daily" "Morning")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hda" "Afternoon" entry
+         (file+olp "~/org/agendas/habits.org" "Daily" "Afternoon")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hde" "Evening" entry
+         (file+olp "~/org/agendas/habits.org" "Daily" "Evening")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hdn" "Night" entry
+         (file+olp "~/org/agendas/habits.org" "Daily" "Night")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+
+        ("hw" "Weekly")
+        ("hwm" "Morning" entry
+         (file+olp "~/org/agendas/habits.org" "Weekly" "Morning")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hwa" "Afternoon" entry
+         (file+olp "~/org/agendas/habits.org" "Weekly" "Afternoon")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hwe" "Evening" entry
+         (file+olp "~/org/agendas/habits.org" "Weekly" "Evening")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hwn" "Night" entry
+         (file+olp "~/org/agendas/habits.org" "Weekly" "Night")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+
+        ("hm" "Monthly")
+        ("hmm" "Morning" entry
+         (file+olp "~/org/agendas/habits.org" "Monthly" "Morning")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hma" "Afternoon" entry
+         (file+olp "~/org/agendas/habits.org" "Monthly" "Afternoon")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hme" "Evening" entry
+         (file+olp "~/org/agendas/habits.org" "Monthly" "Evening")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hmn" "Night" entry
+         (file+olp "~/org/agendas/habits.org" "Monthly" "Night")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+
+        ("hy" "Yearly")
+        ("hym" "Morning" entry
+         (file+olp "~/org/agendas/habits.org" "Yearly" "Morning")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hya" "Afternoon" entry
+         (file+olp "~/org/agendas/habits.org" "Yearly" "Afternoon")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hye" "Evening" entry
+         (file+olp "~/org/agendas/habits.org" "Yearly" "Evening")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+        ("hyn" "Night" entry
+         (file+olp "~/org/agendas/habits.org" "Yearly" "Night")
+         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         :empty-lines 1)
+
+
+        ("m" "Metrics Capture")
+        ("mw" "Weight" table-line
+         (file+headline "~/org/agendas/health.org" "Weight")
+         "| %U | %^{Weight} | %^{Notes} |"
+         :kill-buffer t)))
+
+
+
