@@ -63,10 +63,10 @@
 
 
 ## Check box
-  - insert check box: <cu> <cc> <cc>
-  - toggle check box: <cc> <cc>
-  - insert check box statistics: [/] or [%]
-  - update check box statistics: <cc> #
+  - insert check box: `<cu> <cc> <cc>`
+  - toggle check box: `<cc> <cc>`
+  - insert check box statistics: `[/]` or `[%]`
+  - update check box statistics: `<cc> #`
   
   
 ## Tips
