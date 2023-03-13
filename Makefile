@@ -12,6 +12,7 @@ vim:
 	./src/tmux.sh
 	./src/nnn.sh
 emacs:
+	./src/myzn.sh
 	./src/zsh.sh
 	./src/emacs.sh
 	./src/tmux.sh
