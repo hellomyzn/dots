@@ -102,7 +102,6 @@
 ;; hide clock log on agenda
 (setq org-agenda-log-mode-items '(closed))
 
-
 ;; Save Org buffers after refiling!
 (advice-add 'org-refile :after 'org-save-all-org-buffers)
 
@@ -151,6 +150,15 @@
 
 (setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
 (setq org-archive-files '("~/org/archives/archive.org"))
+
+;; Registers for file shortcuts
+(set-register ?t (cons 'file "~/org/agendas/tasks.org"))
+(set-register ?h (cons 'file "~/org/agendas/habits.org"))
+(set-register ?q (cons 'file "~/org/agendas/quick.org"))
+(set-register ?p (cons 'file "~/org/agendas/private.org"))
+(set-register ?a (cons 'file "~/org/archives/archive.org"))
+
+
 
 (setq org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3 :properties ("Effort") :fileskip0 t))
 
@@ -366,6 +374,5 @@
          (file+headline "~/org/agendas/health.org" "Weight")
          "| %U | %^{Weight} | %^{Notes} |"
          :kill-buffer t)))
-
 
 
