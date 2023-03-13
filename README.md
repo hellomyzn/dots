@@ -33,7 +33,7 @@
 ## Journal
   - Capture: `<cc> c`
   - Open Journal capture
-  - Open Journal file: `<cc> f`
+  - Open Journal file: `<cc> f` or `<cx> r j`
   - Check clock: `<cc> <cc>` on `+BEGIN` property
   - Refile done tasks: `<cc> <cw>`
   - Open archive agenda `<cc> a A`
