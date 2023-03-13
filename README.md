@@ -21,6 +21,8 @@
   - Start timer(clock in) : `<cc> <cx> <ci>`
   - Go back to current clocked task: `<cc> <cx> <cj>`
   - Stop timer(clock in) : `<cc> <cx> <co>`
+  - If you want to edit clock log
+    - Just edit logs inside `:LOGBOOK:` and then `<cc> <cc>`
   - Make it done: `<cc> <ct>`
 
 ## Review
