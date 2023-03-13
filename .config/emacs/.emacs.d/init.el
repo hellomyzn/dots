@@ -94,8 +94,6 @@
 (setq org-habit-following-days 3)
 (setq org-habit-show-habits-only-for-today t)
 
-(setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 2)))
-
 (customize-set-variable 'org-global-properties
                         '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 6:00 12:00 18:00 24:00")))
 ;; columns which shows effort on agenda. : <cc> <cx> <cc>
@@ -118,6 +116,10 @@
         ("private" . ?p)
         ("quick" . ?q)
         ("english" . ?e)
+        ("daily" . ?D)
+        ("weekly" . ?W)
+        ("monthly" . ?M)
+        ("yearly" . ?Y)
         ("idea" . ?i)))
 
 
@@ -141,13 +143,13 @@
       '("~/org/agendas/tasks.org"
         "~/org/agendas/habits.org"
         "~/org/agendas/quick.org"
-        "~/org/agendas/private.org"
-        "~/org/agendas/journals.org"))
+        "~/org/agendas/private.org"))
 (setq org-todo-files
       '("~/org/agendas/tasks.org"
         "~/org/agendas/quick.org"
         "~/org/agendas/private.org"))
 
+(setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
 (setq org-archive-files '("~/org/archives/archive.org"))
 
 (setq org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3 :properties ("Effort") :fileskip0 t))
@@ -275,12 +277,12 @@
 
         ("j" "Journal Entries")
         ("jj" "Journal" entry
-         (file+olp+datetree "~/org/agendas/journals.org")
+         (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Journal :journal:\n#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope agenda :properties (\"Effort\") :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Meeting" entry
-         (file+olp+datetree "~/org/templates/journal.org")
+         (file+olp+datetree org-archive-files)
          "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
@@ -289,73 +291,73 @@
         ("hd" "Daily")
         ("hdm" "Morning" entry
          (file+olp "~/org/agendas/habits.org" "Daily" "Morning")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hda" "Afternoon" entry
          (file+olp "~/org/agendas/habits.org" "Daily" "Afternoon")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hde" "Evening" entry
          (file+olp "~/org/agendas/habits.org" "Daily" "Evening")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hdn" "Night" entry
          (file+olp "~/org/agendas/habits.org" "Daily" "Night")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
         ("hw" "Weekly")
         ("hwm" "Morning" entry
          (file+olp "~/org/agendas/habits.org" "Weekly" "Morning")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hwa" "Afternoon" entry
          (file+olp "~/org/agendas/habits.org" "Weekly" "Afternoon")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hwe" "Evening" entry
          (file+olp "~/org/agendas/habits.org" "Weekly" "Evening")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hwn" "Night" entry
          (file+olp "~/org/agendas/habits.org" "Weekly" "Night")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
         ("hm" "Monthly")
         ("hmm" "Morning" entry
          (file+olp "~/org/agendas/habits.org" "Monthly" "Morning")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hma" "Afternoon" entry
          (file+olp "~/org/agendas/habits.org" "Monthly" "Afternoon")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hme" "Evening" entry
          (file+olp "~/org/agendas/habits.org" "Monthly" "Evening")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hmn" "Night" entry
          (file+olp "~/org/agendas/habits.org" "Monthly" "Night")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
         ("hy" "Yearly")
         ("hym" "Morning" entry
          (file+olp "~/org/agendas/habits.org" "Yearly" "Morning")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hya" "Afternoon" entry
          (file+olp "~/org/agendas/habits.org" "Yearly" "Afternoon")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hye" "Evening" entry
          (file+olp "~/org/agendas/habits.org" "Yearly" "Evening")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
         ("hyn" "Night" entry
          (file+olp "~/org/agendas/habits.org" "Yearly" "Night")
-         "* TODO %?\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\n"
+         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
 
@@ -364,9 +366,6 @@
          (file+headline "~/org/agendas/health.org" "Weight")
          "| %U | %^{Weight} | %^{Notes} |"
          :kill-buffer t)))
-
-
-
 
 
 
