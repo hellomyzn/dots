@@ -26,17 +26,16 @@
 ## Review
   - Open agenda: `<cc> a`
   - Check expectation and time speeded : `<cc> <cx> <cc>` or `r (agenda mode)`
-  - Refile done tasks: `<cc> <cw>`
-  - Open archive agenda `<cc> a A`
 
 ## Journal
   - Capture: `<cc> c`
   - Open Journal capture
   - Open Journal file: `<cc> f`
   - Check clock: `<cc> <cc>` on `+BEGIN` property
+  - Refile done tasks: `<cc> <cw>`
+  - Open archive agenda `<cc> a A`
   - Git commit and push
     
-  
   
 ## Agenda
 - n, p: up, down
