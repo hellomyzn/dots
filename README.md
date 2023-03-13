@@ -24,6 +24,7 @@
   - If you want to edit clock log
     - Just edit logs inside `:LOGBOOK:` and then `<cc> <cc>`
   - Make it done: `<cc> <ct>`
+  - Clock report: `<cc> <cx> x` and selecting “clocktable”
 
 ## Review
   - Open agenda: `<cc> a`
