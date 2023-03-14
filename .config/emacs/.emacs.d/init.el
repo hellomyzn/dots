@@ -172,7 +172,8 @@
 
         ("d" "Dashboard"
          ((agenda ""
-                  ((org-agenda-span 1)))
+                  ((org-agenda-span 1)
+		   (org-deadline-warning-days -1)))
           (todo "TODAY"
                 ((org-agenda-overriding-header "Today's tasks")
                  (org-agenda-files org-agenda-files)))
