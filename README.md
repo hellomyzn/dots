@@ -71,6 +71,9 @@
   - update check box statistics: `<cc> #`
   
   
+## Habits
+- If you couldn't arhive a habit task, you just re-schedule it tomorrow. so it will not be shown on agenda view.
+  
 ## Tips
 - Make an achievable task. If it is a huge task, divide the task
 - Make tasks clear to be done.
