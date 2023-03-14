@@ -182,6 +182,9 @@
           (todo "WIP"
                 ((org-agenda-overriding-header "Work In Progress")
                  (org-agenda-files org-agenda-files)))
+          (todo "DONE"
+                ((org-agenda-overriding-header "DONE")
+                 (org-agenda-files org-agenda-files)))
           (tags-todo "-SCHEDULED>=\"<today>\"-DEADLINE>=\"<today>\""
                      ((org-agenda-overriding-header "Qucik Unscheduled TODO Tasks")
                       (org-agenda-files '("~/org/agendas/quick.org"))))
