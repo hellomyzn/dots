@@ -149,7 +149,7 @@
         "~/org/agendas/private.org"))
 
 (setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
-(setq org-archive-files '("~/org/archives/archive.org"))
+(setq org-archive-files "~/org/archives/archive.org")
 
 ;; Registers for file shortcuts
 (set-register ?t (cons 'file "~/org/agendas/tasks.org"))
