@@ -183,12 +183,12 @@
                 ((org-agenda-overriding-header "Work In Progress")
                  (org-agenda-files org-agenda-files)))
           (tags-todo "-SCHEDULED>=\"<today>\"-DEADLINE>=\"<today>\""
-                     ((org-agenda-overriding-header "Qucik Unscheduled Tasks")
+                     ((org-agenda-overriding-header "Qucik Unscheduled TODO Tasks")
                       (org-agenda-files '("~/org/agendas/quick.org"))))
           (todo "TODO"
-                ((org-agenda-overriding-header "Unscheduled Tasks")
+                ((org-agenda-overriding-header "Unscheduled TODO Tasks")
                  (org-agenda-files '("~/org/agendas/tasks.org"
-                                     "~/org/agendas/privates.org"))
+                                     "~/org/agendas/private.org"))
                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled 'deadline))))
           ))
 
