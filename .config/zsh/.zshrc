@@ -7,6 +7,9 @@ if [ $(uname) = "Darwin" ]; then
     # path for homebrew
     export PATH="/opt/homebrew/bin:$PATH"
     export PATH="/opt/homebrew/sbin:$PATH"
+
+    # gh
+    eval "$(gh completion -s zsh)"
 fi
 
 if [ -d $HOME/myzn ]; then
