@@ -5,14 +5,14 @@ sketchybar --add item        cpu.top right                 \
                              label=CPU                     \
                              icon.drawing=off              \
                              width=0                       \
-                             padding_right=15              \
+                             padding_right=30              \
                              y_offset=6                    \
                                                            \
            --add item        cpu.percent right             \
            --set cpu.percent label.font="$FONT:Heavy:12"   \
                              label=CPU                     \
                              y_offset=-4                   \
-                             padding_right=15              \
+                             padding_right=30              \
                              width=55                      \
                              icon.drawing=off              \
                              update_freq=2                 \
@@ -24,6 +24,7 @@ sketchybar --add item        cpu.top right                 \
                              graph.fill_color=$RED         \
                              label.drawing=off             \
                              icon.drawing=off              \
+                             padding_right=15              \
                              background.height=30          \
                              background.drawing=on         \
                              background.color=$TRANSPARENT \
@@ -32,6 +33,7 @@ sketchybar --add item        cpu.top right                 \
            --set cpu.user    graph.color=$BLUE             \
                              label.drawing=off             \
                              icon.drawing=off              \
+                             padding_right=15              \
                              background.height=30          \
                              background.drawing=on         \
                              background.color=$TRANSPARENT

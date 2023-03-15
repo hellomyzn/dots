@@ -17,7 +17,7 @@ sketchybar --add       item            ical right                         \
            --add       item            ical.template popup.ical           \
            --set       ical.template   drawing=off                        \
                                        background.corner_radius=12        \
-                                       padding_left=7                     \
+                                       padding_left=0                     \
                                        padding_right=7                    \
                                        icon.background.height=2           \
                                        icon.background.y_offset=-12

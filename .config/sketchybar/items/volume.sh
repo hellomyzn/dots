@@ -16,12 +16,16 @@ sketchybar --add slider volume right                          \
 
 sketchybar --add alias "Control Center,Sound" right                      \
            --rename "Control Center,Sound" volume_alias                  \
-           --set volume_alias icon.drawing=off                           \
+           --set volume_alias icon.drawing=on                           \
+                              icon=􀊩                                    \
+                              icon.color=$YELLOW                         \
                               label.drawing=off                          \
                               alias.color=$YELLOW                         \
-                              padding_right=0                            \
-                              padding_left=-5                            \
-                              width=50                                   \
+                              padding_left=7                     \
+                              padding_right=7                    \
+                              icon.background.height=2           \
+                              icon.background.y_offset=-12                \
+                              width=20                                   \
                               align=right                                \
                               click_script="$PLUGIN_DIR/volume_click.sh"
 
