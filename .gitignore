@@ -2,6 +2,9 @@
 ./.config/nvim/plugin
 
 # emacs
+.config/emacs/.emacs.d/bookmarks
+
+
 network-security.data
 *auto-save-list
 elpa
