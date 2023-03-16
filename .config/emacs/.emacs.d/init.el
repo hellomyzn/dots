@@ -86,7 +86,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; status
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "TODAY(T)" "NEXT(n)" "WIP(w)" "|" "DONE(d!)" "CANC(c@/!)" )))
+      '((sequence "TODO(t)" "TODAY(T)" "NEXT(n)" "WIP(w)" "|" "DONE(d@/!)" "CANC(c@/!)" )))
 (require 'org-agenda)
 (add-to-list 'org-modules 'org-habit)
 (setq org-habit-graph-column 60)
