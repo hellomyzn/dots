@@ -1,10 +1,14 @@
-local has_words_before = function()
-  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
-end
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+
+local has_words_before = function()
+  if not table.unpack then
+    table.unpack = unpack
+  end
+  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,longest,preview'
