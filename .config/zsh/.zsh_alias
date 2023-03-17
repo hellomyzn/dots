@@ -14,6 +14,7 @@ alias t3='tmux source-file ~/.config/tmux/sessions/logs'
 # ls: A=all, G=color, l=more information
 alias ls="ls -AFGl"
 alias n3="nnn -eda -P p"
+alias cat="bat"
 
 # add time on history
 alias history='history -t "%F %T"'
