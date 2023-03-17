@@ -27,6 +27,8 @@ require('lspconfig').jsonls.setup({
   },
 })
 
+require('mason-null-ls').setup({ automatic_installation = true })
+
 -- Keymaps
 vim.keymap.set('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
@@ -38,6 +40,9 @@ vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 -- TODO: this is not working
 vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
+-- Commands
+-- :TODO: this is not working maybe
+vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {})
 
 
 -- Diagnostic configuration
