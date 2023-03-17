@@ -30,6 +30,7 @@ formulas=(
     sketchybar
     coreutils
     nvim
+    bat
     tmux
     # for tmux
     lazygit
