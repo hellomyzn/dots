@@ -12,15 +12,15 @@ export DOCKER_CONTENT_TRUST=1
 # }
 
 # Add 2 lines between this and ptevious line
-precmd() { 
-     print "\n\n" 
+precmd() {
+	print "\n\n"
 }
 
 # SketchyBar: brew status
 # https://github.com/FelixKratz/SketchyBar
 # https://github.com/FelixKratz/dotfiles/blob/master/.config/yabai/yabairc
 # function brew() {
-#   command brew "$@" 
+#   command brew "$@"
 
 #   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
 #     sketchybar --trigger brew_update
@@ -62,7 +62,6 @@ pomo_work() {
 
 pomo_rest() {
 	is_pomo_history
-	
 	timer ${MINS_REST}m && \
 	terminal-notifier -message 'Pomodoro'\
 			-title 'Break is over! Get back to work 😬'\

@@ -50,3 +50,8 @@ vim.keymap.set('i', '<C-k>', '<Esc>:move .-2<CR>==gi')
 -- vim.keymap.set('n', '<C-k>', ":move .-2<CR>==")
 -- vim.keymap.set('x', '<C-j>', ":move '>+1<CR>gv-gv")
 -- vim.keymap.set('x', '<C-k>', ":move '<-2<CR>gv-gv")
+
+-- Set <Ctrl-e> to move the cursor to the end of the line in insert mode
+vim.api.nvim_set_keymap('i', '<C-e>', '<Esc>$a', { noremap = true })
+-- Set <Ctrl-a> to move the cursor to the beginning of the line in insert mode
+vim.api.nvim_set_keymap('i', '<C-a>', '<Esc>0i', { noremap = true })
