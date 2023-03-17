@@ -2,19 +2,30 @@
 require('mason').setup()
 require('mason-lspconfig').setup({ automatic_installation = true })
 
+-- nvim-cmp supports additional completion capabilities
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- PHP
-require('lspconfig').intelephense.setup({})
-
+require('lspconfig').intelephense.setup({ capabilities = capabilities })
 
 -- Vue, Javascript, TypeScript
 require('lspconfig').volar.setup({
+  capabilities = capabilities,
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 })
 
 -- Tailwind CSS
-require('lspconfig').tailwindcss.setup({})
+require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 
+-- JSON
+require('lspconfig').jsonls.setup({
+  capabilities = capabilities,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+    },
+  },
+})
 
 -- Keymaps
 vim.keymap.set('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
@@ -26,6 +37,8 @@ vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>')
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 -- TODO: this is not working
 vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+
+
 
 -- Diagnostic configuration
 vim.diagnostic.config({
