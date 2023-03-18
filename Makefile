@@ -14,6 +14,7 @@ vim:
 emacs:
 	./src/myzn.sh
 	./src/zsh.sh
+	./src/pacman.sh
 	./src/emacs.sh
 	./src/tmux.sh
 mac:
