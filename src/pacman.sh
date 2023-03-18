@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -Syu --noconfirm && pacman -S --noconfirm \
+sudo pacman -Syu --noconfirm && pacman -S --noconfirm \
     neofetch \
     make \
     git \
