@@ -322,6 +322,7 @@ use({
   },
   config = function()
     require('user.plugins.cmp')
+    require('user.plugins.luasnip')
   end,
 })
 

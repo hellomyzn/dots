@@ -1,0 +1,31 @@
+snippet pubf "Public method"
+    public function ${1}(${2}): $3
+    {
+        ${0}
+    }
+
+snippet prof "Protected method"
+    protected function ${1}(${2}): $3
+    {
+        ${0}
+    }
+
+snippet prif "Private method"
+    private function ${1}(${2}): $3
+    {
+        ${0}
+    }
+
+snippet testp "Test method (prefix)"
+    public function test_${1}()
+    {
+    	${0}
+    }
+
+snippet testa "Test method (annotation)"
+    /** @test */
+    public function ${1}()
+    {
+    	${0}
+    }
+
