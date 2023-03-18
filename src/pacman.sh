@@ -13,11 +13,10 @@ sudo pacman -S --noconfirm \
     zsh \
     tmux \
     bat \
-    openssh \
-    # for jump
-    base-devel \
+    openssh
 
 # install jump
+sudo pacman -S --noconfirm base-devel
 git clone https://aur.archlinux.org/jump.git $HOME/jump
 cd $HOME/jump
 makepkg -s --noconfirm
