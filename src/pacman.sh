@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Syu --noconfirm && \
-    pacman -S --noconfirm \
+sudo pacman -S --noconfirm \
     neofetch \
     make \
     git \
@@ -15,7 +15,7 @@ sudo pacman -Syu --noconfirm && \
     bat \
     openssh \
     # for jump
-    base-devel
+    base-devel \
 
 # install jump
 git clone https://aur.archlinux.org/jump.git $HOME/jump
