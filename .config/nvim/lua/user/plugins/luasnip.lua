@@ -14,6 +14,8 @@ ls.add_snippets('php', {
   ls.parser.parse_snippet('prof', 'protected function $1($2): $3\n{\n    $0\n}'),
   ls.parser.parse_snippet('testt', 'public function test_$1()\n{\n    $0\n}'),
   ls.parser.parse_snippet('testa', '/** @test */\npublic function $1()\n{\n    $0\n}'),
+  ls.parser.parse_snippet('docf', '/**\n * ${summary}\n * ${description}\n *\n * @param ${type} ${name}\n * @return ${type}\n *\n * e.g.\n * @param \\App\\Models\\User $user\n * @return bool\n */'),
+  ls.parser.parse_snippet('docv', '/**\n * ${description}\n *\n * @var ${type}\n *\n * e.g.\n * @var \\App\\Models\\User $user\n * @var array <int, string>*/'),
 })
 
 ls.add_snippets('typescript', {
