@@ -14,3 +14,12 @@ CONFIG_PATH=".config/${DIR}"
 FROM="${PWD}/${CONFIG_PATH}"
 TO="${HOME_CONFIG_PATH}/${DIR}"
 copy_dir $FROM $TO
+
+# pactor
+DIR="phpactor"
+CONFIG_PATH=".config/${DIR}"
+FROM="${PWD}/${CONFIG_PATH}"
+TO="${HOME_CONFIG_PATH}/${DIR}"
+copy_dir $FROM $TO
+
+

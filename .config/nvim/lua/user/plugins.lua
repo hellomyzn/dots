@@ -326,6 +326,19 @@ use({
   end,
 })
 
+
+-- PHP Refactoring Tools
+-- MEMO: It's not working because it needs to install php on your lacal machine
+use({
+  'phpactor/phpactor',
+  ft = 'php',
+  run = 'composer install --no-dev -o',
+  config = function()
+    require('user.plugins.phpactor')
+  end,
+})
+
+
 -- Frontend
 -- HTML
 -- Text objects for HTML attributes.
