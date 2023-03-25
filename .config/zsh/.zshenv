@@ -20,3 +20,10 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 # export TERM=screen-256color
 export TERM=xterm-256color
 
+setopt no_beep
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt auto_cd
+setopt hist_ignore_dups
+setopt share_history
+setopt inc_append_history
