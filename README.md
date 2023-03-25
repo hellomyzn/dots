@@ -2,6 +2,14 @@ MY RICE(WIP)
 <img width="1680" alt="Screenshot 2023-01-28 at 15 18 29" src="https://user-images.githubusercontent.com/20104403/215241640-36121c02-ef23-4ee0-b8d8-66d69272a3f9.png">
 
 
+**vim**
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/184733/20aaa2ef-963b-6451-7b1f-402b535b5c37.png)
+
+**emacs**
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/184733/646b9225-3fc5-d88b-c381-e5b6b4e3256e.png)
+
+
+
 OS: MacOS
 PM: homebrew
 WM: yabai
