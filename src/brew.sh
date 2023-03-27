@@ -74,7 +74,9 @@ formulas=(
     # nvim: lsp for ruby. libyaml is for rbenv
     libyaml
     rbenv
-
+    # nvim: lsp for go.
+    go
+    gopls
 )
 
 echo "${INFO}brew install formula"

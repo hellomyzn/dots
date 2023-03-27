@@ -25,6 +25,8 @@ Editor: Nvim
 $ make setup
 ```
 
+You have to install ruby through rbenv
+[Ruby 環境構築【Mac】](https://qiita.com/kanoVNFO/items/777f4115244b3c4d2e8d)
 
 How zsh files will be loaded.
 ```

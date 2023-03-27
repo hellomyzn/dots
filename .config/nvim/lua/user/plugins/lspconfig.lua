@@ -1,6 +1,6 @@
 -- Setup Mason to automatically install LSP servers
-require('mason').setup()
-require('mason-lspconfig').setup({ automatic_installation = true })
+-- require('mason').setup()
+-- require('mason-lspconfig').setup({ automatic_installation = true })
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -33,8 +33,9 @@ require'lspconfig'.pyright.setup{}
 -- ruby
 require'lspconfig'.solargraph.setup{}
 
+-- go
+require'lspconfig'.gopls.setup{}
 
--- go 
 
 -- Bash
 require('lspconfig').bashls.setup({
