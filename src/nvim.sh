@@ -22,4 +22,9 @@ FROM="${PWD}/${CONFIG_PATH}"
 TO="${HOME_CONFIG_PATH}/${DIR}"
 copy_dir $FROM $TO
 
+# nvim-lspconfig
+# html
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
+npm i -g vscode-langservers-extracted
+
 
