@@ -26,5 +26,16 @@ copy_dir $FROM $TO
 # html
 # https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
 npm i -g vscode-langservers-extracted
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#emmet_ls
+npm install -g emmet-ls
+# bash
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
+npm i -g bash-language-server
+# docker
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
+npm install -g dockerfile-language-server-nodejs
+# ruby
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#solargraph
+gem install --user-install solargraph
 
 

@@ -30,7 +30,6 @@ formulas=(
     sketchybar
     coreutils
     nvim
-    bat
     tmux
     # for tmux
     lazygit
@@ -72,6 +71,9 @@ formulas=(
     node
     # nvim: telescope
     ripgrep
+    # nvim: lsp for ruby. libyaml is for rbenv
+    libyaml
+    rbenv
 
 )
 

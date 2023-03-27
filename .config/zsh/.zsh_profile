@@ -33,6 +33,9 @@ eval "$(jump shell zsh)"
 # open ssh
 eval $(ssh-agent)
 
+# ruby
+eval "$(rbenv init - zsh)"
+
 
 # pomodoro
 # a pop up notification and sound alert (using the built-in sounds for macOS)

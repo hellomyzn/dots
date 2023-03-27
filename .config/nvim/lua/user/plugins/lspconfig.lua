@@ -4,9 +4,47 @@ require('mason-lspconfig').setup({ automatic_installation = true })
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+
+-- HTML
+require('lspconfig').emmet_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require('lspconfig').html.setup({
+  capabilities = capabilities,
+})
+
+-- CSS
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+
+-- docker
+require'lspconfig'.dockerls.setup{
+  capabilities = capabilities,
+}
+
+-- python
+require'lspconfig'.pyright.setup{}
+
+-- ruby
+require'lspconfig'.solargraph.setup{}
+
+
+-- go 
+
+-- Bash
+require('lspconfig').bashls.setup({
+  capabilities = capabilities,
+})
 
 -- PHP
-require('lspconfig').intelephense.setup({ capabilities = capabilities })
+require('lspconfig').intelephense.setup({
+  capabilities = capabilities,
+})
 
 -- Vue, Javascript, TypeScript
 require('lspconfig').volar.setup({
@@ -15,7 +53,9 @@ require('lspconfig').volar.setup({
 })
 
 -- Tailwind CSS
-require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
+require('lspconfig').tailwindcss.setup({ 
+  capabilities = capabilities,
+})
 
 -- JSON
 require('lspconfig').jsonls.setup({
