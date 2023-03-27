@@ -93,6 +93,7 @@
 (setq org-habit-preceding-days 14)
 (setq org-habit-following-days 3)
 (setq org-habit-show-habits-only-for-today t)
+(setq org-duration-format 'h:mm)
 
 (customize-set-variable 'org-global-properties
                         '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 6:00 9:00 12:00 18:00 24:00")))
@@ -293,17 +294,17 @@
          :empty-lines 1)
 
         ("j" "Journal Entries")
-        ("jd" "Journal" entry
+        ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Journal :daily:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope agenda :properties (\"Effort\") :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
-        ("jw" "Journal" entry
+        ("jw" "Weekkly" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Journal :weekly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\") :properties (\"Effort\") :block thisweek :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
-        ("jm" "Journal" entry
+        ("jm" "Monthly" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\") :properties (\"Effort\") :block thismonth :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
