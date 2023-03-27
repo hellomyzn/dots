@@ -18,6 +18,7 @@ alias cat="bat"
 
 # add time on history
 alias history='history -t "%F %T"'
+alias his="history | fzf"
 
 # trash-cli
 alias rm=trash-put
