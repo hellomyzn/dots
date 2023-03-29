@@ -52,9 +52,7 @@ cmp.setup({
       -- select = false,
     end, { 'i', 's' }),
     ['<Tab>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(1) then
-        luasnip.jump(1)
-      elseif cmp.visible() then
+      if cmp.visible() then
         cmp.select_next_item()
       elseif has_words_before() then
         cmp.complete()
@@ -62,7 +60,19 @@ cmp.setup({
         fallback()
       end
 
-      -- if cmp.visible() then
+
+      -- This is jumpable. it was annoy to write html
+      -- if luasnip.jumpable(1) then
+      --   luasnip.jump(1)
+      -- elseif cmp.visible() then
+      --   cmp.select_next_item()
+      -- elseif has_words_before() then
+      --   cmp.complete()
+      -- else
+      --   fallback()
+      -- end
+
+      -- I don know this bellow
       --   cmp.select_next_item()
       -- elseif luasnip.expand_or_jumpable() then
       --   luasnip.expand_or_jump()
@@ -73,14 +83,22 @@ cmp.setup({
       -- end
     end, { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      elseif cmp.visible() then
+      if cmp.visible() then
         cmp.select_prev_item()
       else
         fallback()
       end
 
+      -- This is jumpable. it was annoy to write html
+      -- if luasnip.jumpable(-1) then
+      --   luasnip.jump(-1)
+      -- elseif cmp.visible() then
+      --   cmp.select_prev_item()
+      -- else
+      --   fallback()
+      -- end
+      
+      -- I don know this bellow
       -- if cmp.visible() then
       --   cmp.select_prev_item()
       -- elseif luasnip.jumpable(-1) then
