@@ -187,6 +187,9 @@
           (todo "DONE"
                 ((org-agenda-overriding-header "DONE")
                  (org-agenda-files org-agenda-files)))
+          (todo "CANC"
+                ((org-agenda-overriding-header "CANCELLED")
+                 (org-agenda-files org-agenda-files)))
           (tags-todo "-SCHEDULED>=\"<today>\"-DEADLINE>=\"<today>\""
                      ((org-agenda-overriding-header "Qucik Unscheduled TODO Tasks")
                       (org-agenda-files '("~/org/agendas/quick.org"))))
