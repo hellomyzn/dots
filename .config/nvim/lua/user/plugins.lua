@@ -339,6 +339,19 @@ use({
 })
 
 
+-- markdown-preview.nvim
+-- https://github.com/iamcco/markdown-preview.nvim
+use({
+  'iamcco/markdown-preview.nvim', 
+  run = function() 
+    vim.fn["mkdp#util#install"]()
+  end,
+  config = function()
+    require('user.plugins.markdown-preview')
+  end,
+})
+
+
 -- Frontend
 -- HTML
 -- Text objects for HTML attributes.
