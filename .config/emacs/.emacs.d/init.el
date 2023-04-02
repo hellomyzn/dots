@@ -304,12 +304,12 @@
          :empty-lines 1)
         ("jw" "Weekkly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :weekly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\") :properties (\"Effort\") :block thisweek :fileskip0 t\n#+END\n\n%?\n\n"
+         "\n* %<%I:%M %p> - Journal :weekly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\" \"~/org/agendas/tasks.org\") :properties (\"Effort\") :block thisweek :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Monthly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\") :properties (\"Effort\") :block thismonth :fileskip0 t\n#+END\n\n%?\n\n"
+         "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope (\"~/org/archives/archive.org\" \"~/org/agendas/habits.org\" \"~/org/agendas/tasks.org\") :properties (\"Effort\") :block thismonth :fileskip0 t\n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         
