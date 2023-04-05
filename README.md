@@ -86,3 +86,16 @@ $ sudo zerotier-cli status
 # join
 $ sudo zerotier-cli join [network_id]
 ```
+
+### git
+run this command to copy gitconfig to your local machine
+```
+$ ./src/git.sh
+```
+and then set up your git account
+```
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+```
+
+

@@ -7,4 +7,4 @@ DIR="git"
 CONFIG_PATH=".config/${DIR}"
 FROM="${PWD}/${CONFIG_PATH}/gitconfig"
 TO="${HOME}/.gitconfig"
-copy_file $FROM $TO
+cp $FROM $TO

@@ -16,3 +16,5 @@ mpdstate
 # vim
 .config/nvim/plugin
 *~
+
+./.config/git/gitconfig
