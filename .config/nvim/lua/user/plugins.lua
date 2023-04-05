@@ -354,9 +354,21 @@ use({
   end,
 })
 
+-- testing helper
+-- https://github.com/vim-test/vim-test
+use({
+  'vim-test/vim-test',
+  config = function()
+    require('user.plugins.vim-test')
+  end,
+})
+
+
+
 
 -- markdown-preview.nvim
 -- https://github.com/iamcco/markdown-preview.nvim
+-- MEMO: It's not working because it needs to install php on your lacal machine
 use({
   'iamcco/markdown-preview.nvim',
   run = function()
