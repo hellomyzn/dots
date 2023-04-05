@@ -328,13 +328,29 @@ use({
 
 
 -- PHP Refactoring Tools
+-- INFO: I don't need this one
+-- INFO: need to install php and composer
+-- https://github.com/phpactor/phpactor
+-- Installation: https://phpactor.readthedocs.io/en/master/usage/standalone.html
 -- MEMO: It's not working because it needs to install php on your lacal machine
+-- use({
+--   'phpactor/phpactor',
+--   ft = 'php',
+--   run = 'composer install --no-dev -o',
+--   config = function()
+--     require('user.plugins.phpactor')
+--   end,
+-- })
+
+
+-- Project configuration
+-- This is useful with Phpactor above
+-- https://github.com/tpope/vim-projectionist
 use({
-  'phpactor/phpactor',
-  ft = 'php',
-  run = 'composer install --no-dev -o',
+  'tpope/vim-projectionist',
+  requires = 'tpope/vim-dispatch',
   config = function()
-    require('user.plugins.phpactor')
+    require('user.plugins.projectionist')
   end,
 })
 
@@ -342,8 +358,8 @@ use({
 -- markdown-preview.nvim
 -- https://github.com/iamcco/markdown-preview.nvim
 use({
-  'iamcco/markdown-preview.nvim', 
-  run = function() 
+  'iamcco/markdown-preview.nvim',
+  run = function()
     vim.fn["mkdp#util#install"]()
   end,
   config = function()
@@ -352,7 +368,6 @@ use({
 })
 
 
--- Frontend
 -- HTML
 -- Text objects for HTML attributes.
 -- https://github.com/whatyouhide/vim-textobj-xmlattr

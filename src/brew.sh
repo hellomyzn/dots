@@ -77,6 +77,11 @@ formulas=(
     # nvim: lsp for go.
     go
     gopls
+    # # INFO: I don't use this
+    # # nvim: for phpactor
+    # # Installation: https://phpactor.readthedocs.io/en/master/usage/standalone.html
+    # php
+    # composer
 )
 
 echo "${INFO}brew install formula"
