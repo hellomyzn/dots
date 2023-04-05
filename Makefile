@@ -8,6 +8,7 @@ setup:
 vim:
 	./src/myzn.sh
 	./src/zsh.sh
+	./src/git.sh
 	./src/nvim.sh
 	./src/tmux.sh
 	./src/nnn.sh
@@ -15,6 +16,7 @@ emacs:
 	./src/myzn.sh
 	./src/zsh.sh
 	./src/pacman.sh
+	./src/git.sh
 	./src/emacs.sh
 	./src/tmux.sh
 mac:
@@ -22,6 +24,7 @@ mac:
 	./src/zerotier.sh
 	./src/zsh.sh
 	./src/brew.sh
+	./src/git.sh
 	./src/neofetch.sh
 	./src/nnn.sh
 	./src/nvim.sh

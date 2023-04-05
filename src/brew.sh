@@ -82,6 +82,8 @@ formulas=(
     # # Installation: https://phpactor.readthedocs.io/en/master/usage/standalone.html
     # php
     # composer
+    # Git diff
+    git-delta
 )
 
 echo "${INFO}brew install formula"
