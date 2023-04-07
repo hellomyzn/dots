@@ -103,6 +103,7 @@ casks=(
     spectacle
     sequel-ace
     kindle
+    spotify
     vscodium
     # for sketchybar
     font-hack-nerd-font
