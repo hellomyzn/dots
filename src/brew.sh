@@ -97,7 +97,6 @@ casks=(
     kitty
     docker
     google-chrome
-    brave-browser
     firefox
     istat-menus
     spectacle
