@@ -99,3 +99,27 @@ git config --global user.email you@example.com
 ```
 
 
+
+### Spotify
+Install 
+- [spicetify](https://spicetify.app/)
+
+Theme: `Ziro`
+```
+[myzn]
+text=d6af7c
+subtext=63686d
+main=212634
+sidebar=212634
+player=212634
+card=1C1D2B
+shadow=1C1D2B
+selected-row=d6af7c
+button=ba422b
+button-active=d6af7c
+button-disabled=63686d
+tab-active=d6af7c
+notification=d6af7c
+notification-error=63686d
+misc=1E2529
+```
