@@ -113,13 +113,17 @@
         ("work" . ?w)
         ("study" . ?s)
         ("positive" . ?P)
-        ("private" . ?p)
+        ("private" . ?r)
         ("quick" . ?q)
         ("english" . ?e)
         ("daily" . ?D)
         ("weekly" . ?W)
         ("monthly" . ?M)
         ("yearly" . ?Y)
+        ("journal" . ?j)
+        ("problem" . ?p)
+        ("changed" . ?c)
+        ("fixed" . ?f)
         ("idea" . ?i)))
 
 
@@ -163,6 +167,7 @@
 (set-register ?h (cons 'file "~/org/agendas/habits.org"))
 (set-register ?q (cons 'file "~/org/agendas/quick.org"))
 (set-register ?p (cons 'file "~/org/agendas/private.org"))
+(set-register ?j (cons 'file "~/org/agendas/journal.org"))
 (set-register ?a (cons 'file "~/org/archives/archive.org"))
 
 
@@ -305,18 +310,30 @@
         ("j" "Journal Entries")
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :daily:journal:\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n\n%?\n\n"
+         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Morning\n** Afternoon\n** Evening\n** Positive\n** Appreciation\n** Pomodoro\n\n\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jw" "Weekkly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :weekly:journal:\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n%?\n\n"
+         "\n* %<%I:%M %p> - Journal :weekly:journal:\n%?\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n** Keep\n** Fix\n** Change\n** Problem\n** Try"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Monthly" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n%?\n\n"
          :clock-in :clock-resume
+         :empty-lines 1)
+	("jc" "Changed" entry
+         (file+olp "~/org/agendas/journal.org" "Change")
+         "* %? :changed:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+	("jf" "Fixed" entry
+         (file+olp "~/org/agendas/journal.org" "Fix")
+         "* %? :fixed:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+	("jp" "Problem" entry
+         (file+olp "~/org/agendas/journal.org" "Problem")
+         "* %? :problem:\nCREATED_AT: %U\n"
          :empty-lines 1)
         
         ("h" "Habit Entries")
