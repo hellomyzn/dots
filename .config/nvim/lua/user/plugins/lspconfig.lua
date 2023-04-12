@@ -22,6 +22,9 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
+-- Java
+require'lspconfig'.jdtls.setup{}
+
 -- docker
 require'lspconfig'.dockerls.setup{
   capabilities = capabilities,

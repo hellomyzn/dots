@@ -364,6 +364,12 @@ use({
 })
 
 
+-- Java LSP
+-- https://github.com/mfussenegger/nvim-jdtls
+use({
+  'mfussenegger/nvim-jdtls',
+})
+
 
 
 -- markdown-preview.nvim

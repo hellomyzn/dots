@@ -123,3 +123,26 @@ notification=d6af7c
 notification-error=63686d
 misc=1E2529
 ```
+
+
+### Install java
+This is just a note for me to install Java on mac
+#### ref
+- [Install Java on mac](https://www.youtube.com/watch?v=RfIiBMJqvp8&ab_channel=Joey%27sTech)
+- [Set up lsp for java](https://www.youtube.com/watch?v=WelEHE3RwtY&ab_channel=IvanByteVideo)
+
+1. Install Java from Oracle: [url](https://www.oracle.com/java/technologies/downloads/)
+`Arm 64 DMG Installer` is for M1 mac
+
+2. After download that, open and install following the instraction
+make sure java is installed. 
+```
+$ java --version
+```
+3. Make sure the file paths are correct on `/path/to/nvim/ftplugin/java.lua`
+4. Make sure `jdtls` is installed by Mason
+```
+:Mason
+```
+if you didn't install it, press `i` on `jdtls` on Mason window
+
