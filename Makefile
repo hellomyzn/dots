@@ -25,6 +25,7 @@ mac:
 	./src/zsh.sh
 	./src/brew.sh
 	./src/git.sh
+	./src/shpotify.sh
 	./src/neofetch.sh
 	./src/nnn.sh
 	./src/nvim.sh

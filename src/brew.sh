@@ -28,6 +28,7 @@ formulas=(
     koekeishiya/formulae/yabai
     syncthing
     sketchybar
+    shpotify
     coreutils
     nvim
     tmux
