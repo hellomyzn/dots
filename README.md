@@ -124,6 +124,13 @@ notification-error=63686d
 misc=1E2529
 ```
 
+### Shpotify
+- [github](https://github.com/hnarayanan/shpotify)
+After run a script(/dots/src/shpotify.sh), set up your Spotify API on `$HOME/.shpotify.cfg`
+```
+CLIENT_ID=""
+CLIENT_SECRET=""
+```
 
 ### Install java
 This is just a note for me to install Java on mac

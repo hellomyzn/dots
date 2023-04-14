@@ -264,3 +264,11 @@ alt + shift + ctrl - l : yabai -m window --warp east
 
 # Toggle sketchybar
 alt - space : sketchybar --bar hidden=toggle
+
+
+# Spotify
+cmd + ctrl - return : spotify play
+cmd + ctrl - space : spotify stop
+cmd + ctrl - n : spotify next
+cmd + ctrl - p : spotify prev
+
