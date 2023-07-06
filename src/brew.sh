@@ -85,6 +85,8 @@ formulas=(
     # composer
     # Git diff
     git-delta
+    # python fomatter
+    autopep8
 )
 
 echo "${INFO}brew install formula"

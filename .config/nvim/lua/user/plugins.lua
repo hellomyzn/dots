@@ -395,6 +395,15 @@ use({
   requires = 'kana/vim-textobj-user',
 })
 
+-- Autopep8 for python: applies autopep8 to your current file. autopep8 automatically formats Python code to conform to the PEP 8 style guide.
+-- https://github.com/tell-k/vim-autopep8
+use({
+  'tell-k/vim-autopep8',
+  config = function()
+    require('user.plugins.autopep8')
+  end,
+})
+
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
 if packer_bootstrap then
