@@ -14,6 +14,11 @@ vim.opt.smartcase = true
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true -- enable the below listchars
 vim.opt.listchars = { tab = '▸ ', trail = '·' }
+vim.opt.listchars = { 
+  tab = '▸ ', 
+  eol = '¬',
+  trail = '·'
+}
 vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 vim.opt.mouse = 'a' -- enable mouse for all modes
 vim.opt.splitbelow = true
@@ -46,6 +51,7 @@ vim.opt.cursorline = true
 -- -----------------------------------------------------------------------------
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+
 -- Mac is Darwin
 if vim.loop.os_uname().sysname == 'Darwin' then
   vim.g.clipboard = {
