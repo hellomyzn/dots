@@ -34,6 +34,18 @@ vim.opt.signcolumn = 'yes:2'
 -- -- -- vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 vim.opt.cursorline = true
 
+-- -----------------------------------------------------------------------------
+-- Spell Checker for English
+--
+-- ]s: Jump to the next spelling error.
+-- [s: Jump to the previous spelling error.
+-- z=: Suggest corrections for the word under the cursor.
+-- zg: Add the word under the cursor to the spell file as a good word.
+-- zw: Mark the word under the cursor as a spelling mistake.
+-- set nospell: Disable spell check.
+-- -----------------------------------------------------------------------------
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 -- Mac is Darwin
 if vim.loop.os_uname().sysname == 'Darwin' then
   vim.g.clipboard = {
