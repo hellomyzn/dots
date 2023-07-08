@@ -13,7 +13,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true -- enable the below listchars
-vim.opt.listchars = { tab = '▸ ', trail = '·' }
 vim.opt.listchars = { 
   tab = '▸ ', 
   eol = '¬',
