@@ -363,11 +363,10 @@ use({
   end,
 })
 
-
--- Java LSP
--- https://github.com/mfussenegger/nvim-jdtls
-use({
-  'mfussenegger/nvim-jdtls',
+	"vim-test/vim-test",
+	config = function()
+		require("user.plugins.vim-test")
+	end,
 })
 
 
