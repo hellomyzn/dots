@@ -13,7 +13,7 @@ DIR="git"
 CONFIG_PATH=".config/${DIR}"
 FROM="${PWD}/${CONFIG_PATH}/gitconfig"
 TO="${HOME}/.gitconfig"
-cp $FROM $TO
+copy_file $FROM $TO
 
 # copy ignore
 # ref: https://qiita.com/takuya0301/items/29187aa088d04cf92659

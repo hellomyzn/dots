@@ -153,3 +153,7 @@ $ java --version
 ```
 if you didn't install it, press `i` on `jdtls` on Mason window
 
+
+if your spotify's color is default, run this command below
+$ spicetify apply
+
