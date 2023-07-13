@@ -13,26 +13,26 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.list = true -- enable the below listchars
-vim.opt.listchars = { 
-  tab = '▸ ', 
-  eol = '¬',
-  trail = '·'
+vim.opt.listchars = {
+	tab = "▸ ",
+	-- eol = '¬',
+	trail = "·",
 }
-vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
-vim.opt.mouse = 'a' -- enable mouse for all modes
+vim.opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
+vim.opt.mouse = "a" -- enable mouse for all modes
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
-vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
+vim.opt.clipboard = "unnamedplus" -- Use Linux system clipboard
 vim.opt.confirm = true -- ask for confirmation instead of erroring
 vim.opt.undofile = true -- persistent undo
 vim.opt.backup = true -- automatically save a backup file
-vim.opt.backupdir:remove('.') -- keep backups out of the current directory
+vim.opt.backupdir:remove(".") -- keep backups out of the current directory
 -- vim.opt.shortmess:append({ I = true }) -- disable the splash screen
-vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
-vim.opt.completeopt = 'menuone,longest,preview'
-vim.opt.signcolumn = 'yes:2'
+vim.opt.wildmode = "longest:full,full" -- complete the longest common match, and allow tabbing the results to fully complete them
+vim.opt.completeopt = "menuone,longest,preview"
+vim.opt.signcolumn = "yes:2"
 -- vim.opt.showmode = false
 -- vim.opt.updatetime = 4001 -- Set updatime to 1ms longer than the default to prevent polyglot from changing it
 -- -- -- vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
@@ -48,23 +48,23 @@ vim.opt.cursorline = true
 -- zw: Mark the word under the cursor as a spelling mistake.
 -- set nospell: Disable spell check.
 -- -----------------------------------------------------------------------------
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
 -- Mac is Darwin
-if vim.loop.os_uname().sysname == 'Darwin' then
-  vim.g.clipboard = {
-    name = 'macOS-clipboard',
-    copy = {
-      ['+'] = 'pbcopy',
-      ['*'] = 'pbcopy',
-    },
-    paste = {
-      ['+'] = 'pbpaste',
-      ['*'] = 'pbpaste',
-    },
-    cache_enabled = 0,
-  }
+if vim.loop.os_uname().sysname == "Darwin" then
+	vim.g.clipboard = {
+		name = "macOS-clipboard",
+		copy = {
+			["+"] = "pbcopy",
+			["*"] = "pbcopy",
+		},
+		paste = {
+			["+"] = "pbpaste",
+			["*"] = "pbpaste",
+		},
+		cache_enabled = 0,
+	}
 end
 
 -- If using tmux, copy text from vim inside docker container using tmux clipboard
@@ -82,5 +82,3 @@ end
 --         cache_enabled = false,
 --     }
 -- end
-
-
