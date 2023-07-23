@@ -172,7 +172,7 @@ use({
 	requires = {
 		{ "nvim-lua/plenary.nvim" },
 		{ "kyazdani42/nvim-web-devicons" },
-		{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+		{ "nvim-telescope/telescope-fzf-native.nvim",    run = "make" },
 		{ "nvim-telescope/telescope-live-grep-args.nvim" },
 	},
 	config = function()
@@ -367,6 +367,18 @@ use({
 	end,
 	config = function()
 		require("user.plugins.markdown-preview")
+	end,
+})
+
+
+-- vim-doge
+-- https://github.com/kkoomen/vim-doge
+-- This is documentation generator
+use({
+	"kkoomen/vim-doge",
+	run = ":call doge#install()",
+	config = function()
+		require("user.plugins.vim-doge")
 	end,
 })
 
