@@ -19,7 +19,7 @@ require("mason-lspconfig").setup_handlers({
 local lspconfig = require("lspconfig")
 
 -- python
-lspconfig.pyright.setup({})
+-- lspconfig.pyright.setup({})
 
 -- lua
 lspconfig.lua_ls.setup({
@@ -112,18 +112,18 @@ require("mason-null-ls").setup({ automatic_installation = true })
 -- Keymaps
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 -- -----------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 -- I don't know what is the difference between definition and declaration
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration)
 
 vim.keymap.set("n", "<leader>lf", function()
   vim.lsp.buf.format({ async = true })
 end)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "gr", ":Telescope lsp_references")
+vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "<leader>gr", ":Telescope lsp_references")
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 -- -- TODO: this is not working
 -- vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')

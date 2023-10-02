@@ -55,6 +55,8 @@
 ;; show line numbers
 (if (version<= "26.0.50" emacs-version)
   (global-display-line-numbers-mode))
+(setq display-line-numbers-width-start t)
+
 
 
 
@@ -112,6 +114,7 @@
         (:endgroup)
         ("work" . ?w)
         ("study" . ?s)
+        ("tech" . ?t)
         ("positive" . ?P)
         ("private" . ?r)
         ("quick" . ?q)
