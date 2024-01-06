@@ -98,7 +98,7 @@
 (setq org-duration-format 'h:mm)
 
 (customize-set-variable 'org-global-properties
-                        '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 6:00 9:00 12:00 18:00 24:00")))
+                        '(("Effort_ALL" . "0:10 0:20 0:30 1:00 3:00 5:00 8:00 16:00 24:00 40:00")))
 ;; columns which shows effort on agenda. : <cc> <cx> <cc>
 (setq org-columns-default-format
       "%68ITEM(Task) %6Effort(Effort){:} %6CLOCKSUM(Clock){:}")
