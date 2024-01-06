@@ -6,17 +6,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(button ((t (:background "black" :foreground "white" :box (:line-width (2 . 2) :color "grey" :style released-button) :underline t :weight bold))))
-  '(menu ((t (:background "black" :foreground "yellow" :underline "yellow"))))
-  '(mode-line ((t (:background "black" :foreground "yellow" :box (1 . 1) :height 0.9))))
-  '(mode-line-buffer-id ((t (:background "black" :foreground "yellow" :weight bold :height 0.9))))
-  '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "brightblack" :box (1 . 1) :weight light :height 0.9))))
-  '(org-hide ((t (:foreground "black"))))
-  '(vertical-border ((t (:inherit nil :background "black" :foreground "yellow")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(button ((t (:background "black" :foreground "white" :box (:line-width (2 . 2) :color "grey" :style released-button) :underline t :weight bold))))
+ '(menu ((t (:background "black" :foreground "yellow" :underline "yellow"))))
+ '(mode-line ((t (:background "black" :foreground "yellow" :box (1 . 1) :height 0.9))))
+ '(mode-line-buffer-id ((t (:background "black" :foreground "yellow" :weight bold :height 0.9))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "brightblack" :box (1 . 1) :weight light :height 0.9))))
+ '(org-hide ((t (:foreground "black"))))
+ '(org-level-1 ((t (:extend nil :foreground "blue"))))
+ '(org-level-2 ((t (:extend nil :foreground "cyan"))))
+ '(org-level-3 ((t (:extend nil :foreground "green"))))
+ '(org-level-4 ((t (:extend nil :foreground "blue"))))
+ '(org-level-5 ((t (:extend nil :foreground "cyan"))))
+ '(org-level-6 ((t (:extend nil :foreground "green"))))
+ '(vertical-border ((t (:inherit nil :background "black" :foreground "yellow")))))
 (load-theme 'manoj-dark)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -260,7 +266,7 @@
         ("j" "Journal Entries")
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n "
+         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n*** Journal\n\n "
          :clock-in :clock-resume
          :empty-lines 1)
         ("jw" "Weekkly" entry
@@ -304,4 +310,9 @@
          "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)))
 
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
