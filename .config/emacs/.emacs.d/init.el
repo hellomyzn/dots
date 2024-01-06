@@ -209,26 +209,10 @@
                       (org-agenda-files '("~/org/agendas/quick.org"))))
           (todo "TODO"
                 ((org-agenda-overriding-header "Unscheduled TODO Tasks")
-                 (org-agenda-files '("~/org/agendas/tasks.org"
-                                     "~/org/agendas/private.org"))
+                 (org-agenda-files '("~/org/agendas/tasks.org"))
                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled 'deadline))))
           ))
 
-        ("T" "Todo tasks"
-         ((todo "TODO"
-                ((org-agenda-overriding-header "All TODO Tasks")
-                 (org-agenda-files org-todo-files)))))
-
-        ("x" "Unscheduled Tasks"
-         ((tags-todo "-SCHEDULED>=\"<today>\"-DEADLINE>=\"<today>\""
-                     ((org-agenda-overriding-header "Unscheduled TODO Tasks")
-                      (org-agenda-files org-todo-files)))))
-
-        ;; Low-effort next actions
-        ("e" tags-todo "+TODO=\"TODO\"+Effort<21&+Effort>0"
-         ((org-agenda-overriding-header "Low Effort Tasks")
-          (org-agenda-max-todos 20)
-          (org-agenda-files org-agenda-files)))
 
         ("h" "Habits in consistency graph"
          agenda ""
@@ -269,14 +253,6 @@
         ("tQ" "Quick task with schedule" entry
          (file+olp "~/org/agendas/quick.org" "Quick")
          "* TODO %? :quick:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tp" "Private" entry
-         (file+olp "~/org/agendas/private.org" "Private")
-         "* TODO %? :private:\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tP" "Private with schedule" entry
-         (file+olp "~/org/agendas/private.org" "Private")
-         "* TODO %? :private:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
 
 
