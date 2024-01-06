@@ -144,22 +144,22 @@
 (setq org-log-into-drawer t)
 
 (setq org-agenda-files
-      '("~/org/agendas/tasks.org"
-        "~/org/agendas/habits.org"))
+      '("/opt/org/agendas/tasks.org"
+        "/opt/org/agendas/habits.org"))
 (setq org-todo-files
-      '("~/org/agendas/tasks.org"))
+      '("/opt/org/agendas/tasks.org"))
 (defun my-clocktable-files ()
-  (list "~/org/agendas/tasks.org"
-	"~/org/agendas/habits.org"
-	"~/org/agendas/journal.org"))
+  (list "/opt/org/agendas/tasks.org"
+	"/opt/org/agendas/habits.org"
+	"/opt/org/agendas/journal.org"))
 
-(setq org-refile-targets '(("~/org/agendas/journal.org" :maxlevel . 3)))
-(setq org-archive-files "~/org/agendas/journal.org")
+(setq org-refile-targets '(("/opt/org/agendas/journal.org" :maxlevel . 3)))
+(setq org-archive-files "/opt/org/agendas/journal.org")
 
 ;; Registers for file shortcuts
-(set-register ?t (cons 'file "~/org/agendas/tasks.org"))
-(set-register ?h (cons 'file "~/org/agendas/habits.org"))
-(set-register ?j (cons 'file "~/org/agendas/journal.org"))
+(set-register ?t (cons 'file "/opt/org/agendas/tasks.org"))
+(set-register ?h (cons 'file "/opt/org/agendas/habits.org"))
+(set-register ?j (cons 'file "/opt/org/agendas/journal.org"))
 
 (setq org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3 :properties ("Effort") :fileskip0 t))
 
@@ -221,39 +221,39 @@
 (setq org-capture-templates
       `(("t" "Task Entries")
         ("tt" "Task" entry
-         (file+olp "~/org/agendas/tasks.org" "Tasks")
+         (file+olp "/opt/org/agendas/tasks.org" "Tasks")
          "* TODO %? \nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("tT" "Task with schedule" entry
-         (file+olp "~/org/agendas/tasks.org" "Tasks")
+         (file+olp "/opt/org/agendas/tasks.org" "Tasks")
          "* TODO %? \nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("tq" "Quick task" entry
-         (file+olp "~/org/agendas/tasks.org" "Quicks")
+         (file+olp "/opt/org/agendas/tasks.org" "Quicks")
          "* TODO %? :quick:\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("tQ" "Quick task with schedule" entry
-         (file+olp "~/org/agendas/tasks.org" "Quicks")
+         (file+olp "/opt/org/agendas/tasks.org" "Quicks")
          "* TODO %? :quick:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
 
         ("s" "Study Entries")
         ("ss" "Study" entry
-         (file+olp "~/org/agendas/tasks.org" "Studies")
+         (file+olp "/opt/org/agendas/tasks.org" "Studies")
          "* TODO %? :study:\nCREATED_AT: %U\n  %^{Effort}p\n** Properties\n** Homework\n** Notes"
          :empty-lines 1)
         ("sS" "Study with schedule" entry
-         (file+olp "~/org/agendas/tasks.org" "Studies")
+         (file+olp "/opt/org/agendas/tasks.org" "Studies")
          "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Properties\n** Homework\n** Notes"
          :empty-lines 1)
 
         ("w" "Work Entries")
         ("ww" "Work" entry
-         (file+olp "~/org/agendas/tasks.org" "Works")
+         (file+olp "/opt/org/agendas/tasks.org" "Works")
          "* TODO %? :work:\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("wW" "Work with schedule" entry
-         (file+olp "~/org/agendas/tasks.org" "Works")
+         (file+olp "/opt/org/agendas/tasks.org" "Works")
          "* TODO %? :work:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
 
@@ -276,31 +276,31 @@
 
         ("r" "Reflection Entries")
 	("rk" "Keep" entry
-         (file+olp "~/org/agendas/journal.org" "Keep")
+         (file+olp "/opt/org/agendas/journal.org" "Keep")
          "* %? :keep:\nCREATED_AT: %U\n"
          :empty-lines 1)
 	("rp" "Problem" entry
-         (file+olp "~/org/agendas/journal.org" "Problem")
+         (file+olp "/opt/org/agendas/journal.org" "Problem")
          "* %? :problem:\nCREATED_AT: %U\n"
          :empty-lines 1)
 	("rt" "Try" entry
-         (file+olp "~/org/agendas/journal.org" "Try")
+         (file+olp "/opt/org/agendas/journal.org" "Try")
          "* %? :try:\nCREATED_AT: %U\n"
          :empty-lines 1)
         
         ("h" "Habit Entries")
         ("hd" "Daily" entry
-         (file+olp "~/org/agendas/habits.org" "Daily")
+         (file+olp "/opt/org/agendas/habits.org" "Daily")
          "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
         ("hw" "Weekly" entry
-         (file+olp "~/org/agendas/habits.org" "Weekly")
+         (file+olp "/opt/org/agendas/habits.org" "Weekly")
          "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
         ("hm" "Monthly" entry
-         (file+olp "~/org/agendas/habits.org" "Monthly")
+         (file+olp "/opt/org/agendas/habits.org" "Monthly")
          "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)))
 
