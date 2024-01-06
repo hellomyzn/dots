@@ -7,9 +7,11 @@ services:
       dockerfile: ./infra/docker/emacs/Dockerfile
     container_name: 'emacs'
     hostname: 'emacs'
-    working_dir: '/opt/work/'
+    working_dir: '/opt/org/'
+    platform: linux/amd64
     tty: true
     volumes:
-      - ./src/:/opt/work
+      - ./src/.emacs.d:/home/myzn/.emacs.d
+      - ./src/org:/opt/org
     environment:
       - TZ=Asia/Tokyo
