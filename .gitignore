@@ -1,2 +1,4 @@
 *.DS_Store
 *.bash_history
+.stfolder/
+.Trash-1000
