@@ -265,7 +265,7 @@
          :empty-lines 1)
         ("jw" "Weekkly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :weekly:journal:\n%?\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n** Keep\n** Fix\n** Change\n** Problem\n** Try\n** Positive\n** Events\n** Music\n** Movie/Drama/Anime/Video\n** News\n** Book\n"
+         "\n* %<%I:%M %p> - Journal :weekly:journal:\n%?\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n** Keep\n** Problem\n** Try\n** Positive\n** Events\n** Music\n** Movie/Drama/Anime/Video\n** News\n** Book\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Monthly" entry
