@@ -263,7 +263,7 @@
          (file+olp "~/org/agendas/tasks.org" "Works")
          "* TODO %? :work:\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
-        ("ws" "Work with schedule" entry
+        ("wW" "Work with schedule" entry
          (file+olp "~/org/agendas/tasks.org" "Works")
          "* TODO %? :work:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
@@ -271,7 +271,7 @@
         ("j" "Journal Entries")
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n** Morning\n** Afternoon\n** Evening\n** Positive\n** Appreciation\n** Pomodoro\n** Thoughts\n\n\n\n"
+         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n** Morning\n** Afternoon\n** Evening\n** Positive\n** Appreciation\n** Pomodoro\n** Thoughts\n\n\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jw" "Weekkly" entry
@@ -298,83 +298,19 @@
          :empty-lines 1)
         
         ("h" "Habit Entries")
-        ("hd" "Daily")
-        ("hdm" "Morning" entry
-         (file+olp "~/org/agendas/habits.org" "Daily" "Morning")
-         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hda" "Afternoon" entry
-         (file+olp "~/org/agendas/habits.org" "Daily" "Afternoon")
-         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hde" "Evening" entry
-         (file+olp "~/org/agendas/habits.org" "Daily" "Evening")
-         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hdn" "Night" entry
-         (file+olp "~/org/agendas/habits.org" "Daily" "Night")
+        ("hd" "Daily" entry
+         (file+olp "~/org/agendas/habits.org" "Daily")
          "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
-        ("hw" "Weekly")
-        ("hwm" "Morning" entry
-         (file+olp "~/org/agendas/habits.org" "Weekly" "Morning")
-         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hwa" "Afternoon" entry
-         (file+olp "~/org/agendas/habits.org" "Weekly" "Afternoon")
-         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hwe" "Evening" entry
-         (file+olp "~/org/agendas/habits.org" "Weekly" "Evening")
-         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hwn" "Night" entry
-         (file+olp "~/org/agendas/habits.org" "Weekly" "Night")
+        ("hw" "Weekly" entry
+         (file+olp "~/org/agendas/habits.org" "Weekly")
          "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
          :empty-lines 1)
 
-        ("hm" "Monthly")
-        ("hmm" "Morning" entry
-         (file+olp "~/org/agendas/habits.org" "Monthly" "Morning")
+        ("hm" "Monthly" entry
+         (file+olp "~/org/agendas/habits.org" "Monthly")
          "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hma" "Afternoon" entry
-         (file+olp "~/org/agendas/habits.org" "Monthly" "Afternoon")
-         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hme" "Evening" entry
-         (file+olp "~/org/agendas/habits.org" "Monthly" "Evening")
-         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hmn" "Night" entry
-         (file+olp "~/org/agendas/habits.org" "Monthly" "Night")
-         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-
-        ("hy" "Yearly")
-        ("hym" "Morning" entry
-         (file+olp "~/org/agendas/habits.org" "Yearly" "Morning")
-         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hya" "Afternoon" entry
-         (file+olp "~/org/agendas/habits.org" "Yearly" "Afternoon")
-         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hye" "Evening" entry
-         (file+olp "~/org/agendas/habits.org" "Yearly" "Evening")
-         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-        ("hyn" "Night" entry
-         (file+olp "~/org/agendas/habits.org" "Yearly" "Night")
-         "* TODO %? :yearly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-
-
-        ("m" "Metrics Capture")
-        ("mw" "Weight" table-line
-         (file+headline "~/org/agendas/health.org" "Weight")
-         "| %U | %^{Weight} | %^{Notes} |"
-         :kill-buffer t)))
+         :empty-lines 1)))
 
 
