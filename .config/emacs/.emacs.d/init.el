@@ -260,7 +260,7 @@
         ("j" "Journal Entries")
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n** Morning\n** Afternoon\n** Evening\n** Positive\n** Appreciation\n** Pomodoro\n** Thoughts\n\n\n\n"
+         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n "
          :clock-in :clock-resume
          :empty-lines 1)
         ("jw" "Weekkly" entry
