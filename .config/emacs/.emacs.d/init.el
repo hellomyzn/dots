@@ -145,15 +145,12 @@
 
 (setq org-agenda-files
       '("~/org/agendas/tasks.org"
-        "~/org/agendas/habits.org"
-        "~/org/agendas/quick.org"))
+        "~/org/agendas/habits.org"))
 (setq org-todo-files
-      '("~/org/agendas/tasks.org"
-        "~/org/agendas/quick.org"))
+      '("~/org/agendas/tasks.org"))
 (defun my-clocktable-files ()
   (list "~/org/agendas/tasks.org"
 	"~/org/agendas/habits.org"
-	"~/org/agendas/quick.org"
 	"~/org/archives/archive.org"))
 
 (setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
@@ -162,11 +159,8 @@
 ;; Registers for file shortcuts
 (set-register ?t (cons 'file "~/org/agendas/tasks.org"))
 (set-register ?h (cons 'file "~/org/agendas/habits.org"))
-(set-register ?q (cons 'file "~/org/agendas/quick.org"))
 (set-register ?j (cons 'file "~/org/agendas/journal.org"))
 (set-register ?a (cons 'file "~/org/archives/archive.org"))
-
-
 
 (setq org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3 :properties ("Effort") :fileskip0 t))
 
@@ -176,12 +170,12 @@
 (setq org-agenda-custom-commands
       '(("A" "Archived Agenda"
          ((agenda ""
-                  ((org-agenda-files org-archive-files)))))
+		((org-agenda-files org-archive-files)))))
 
         ("d" "Dashboard"
          ((agenda ""
-                  ((org-agenda-span 1)
-		   (org-deadline-warning-days 0)))
+		((org-agenda-span 1)
+		(org-deadline-warning-days 0)))
           (todo "TODAY"
                 ((org-agenda-overriding-header "Today's tasks")
                  (org-agenda-files org-agenda-files)))
@@ -197,9 +191,6 @@
           (todo "CANC"
                 ((org-agenda-overriding-header "CANCELLED")
                  (org-agenda-files org-agenda-files)))
-          (tags-todo "-SCHEDULED>=\"<today>\"-DEADLINE>=\"<today>\""
-                     ((org-agenda-overriding-header "Qucik Unscheduled TODO Tasks")
-                      (org-agenda-files '("~/org/agendas/quick.org"))))
           (todo "TODO"
                 ((org-agenda-overriding-header "Unscheduled TODO Tasks")
                  (org-agenda-files '("~/org/agendas/tasks.org"))
@@ -239,14 +230,13 @@
          "* TODO %? \nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("tq" "Quick task" entry
-         (file+olp "~/org/agendas/quick.org" "Quick")
+         (file+olp "~/org/agendas/tasks.org" "Quicks")
          "* TODO %? :quick:\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
         ("tQ" "Quick task with schedule" entry
-         (file+olp "~/org/agendas/quick.org" "Quick")
+         (file+olp "~/org/agendas/tasks.org" "Quicks")
          "* TODO %? :quick:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
-
 
         ("s" "Study Entries")
         ("ss" "Study" entry
@@ -284,6 +274,7 @@
          "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n%?\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
+
 	("jc" "Changed" entry
          (file+olp "~/org/agendas/journal.org" "Change")
          "* %? :changed:\nCREATED_AT: %U\n"
