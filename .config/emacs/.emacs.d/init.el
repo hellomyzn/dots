@@ -114,19 +114,16 @@
         (:endgroup)
         ("work" . ?w)
         ("study" . ?s)
-        ("tech" . ?t)
-        ("positive" . ?P)
-        ("private" . ?r)
         ("quick" . ?q)
         ("english" . ?e)
         ("daily" . ?D)
         ("weekly" . ?W)
         ("monthly" . ?M)
-        ("yearly" . ?Y)
         ("journal" . ?j)
         ("problem" . ?p)
         ("changed" . ?c)
         ("fixed" . ?f)
+        ("habit" . ?h)
         ("idea" . ?i)))
 
 
@@ -149,17 +146,14 @@
 (setq org-agenda-files
       '("~/org/agendas/tasks.org"
         "~/org/agendas/habits.org"
-        "~/org/agendas/quick.org"
-        "~/org/agendas/private.org"))
+        "~/org/agendas/quick.org"))
 (setq org-todo-files
       '("~/org/agendas/tasks.org"
-        "~/org/agendas/quick.org"
-        "~/org/agendas/private.org"))
+        "~/org/agendas/quick.org"))
 (defun my-clocktable-files ()
   (list "~/org/agendas/tasks.org"
 	"~/org/agendas/habits.org"
 	"~/org/agendas/quick.org"
-	"~/org/agendas/private.org"
 	"~/org/archives/archive.org"))
 
 (setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
@@ -169,7 +163,6 @@
 (set-register ?t (cons 'file "~/org/agendas/tasks.org"))
 (set-register ?h (cons 'file "~/org/agendas/habits.org"))
 (set-register ?q (cons 'file "~/org/agendas/quick.org"))
-(set-register ?p (cons 'file "~/org/agendas/private.org"))
 (set-register ?j (cons 'file "~/org/agendas/journal.org"))
 (set-register ?a (cons 'file "~/org/archives/archive.org"))
 
@@ -212,7 +205,6 @@
                  (org-agenda-files '("~/org/agendas/tasks.org"))
                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled 'deadline))))
           ))
-
 
         ("h" "Habits in consistency graph"
          agenda ""
@@ -274,16 +266,6 @@
         ("ws" "Work with schedule" entry
          (file+olp "~/org/agendas/tasks.org" "Works")
          "* TODO %? :work:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-
-        ("p" "Positive Plan Entries")
-        ("pp" "Positive plan" entry
-         (file+olp "~/org/agendas/private.org" "Private")
-         "* TODO %? :positive:\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("ps" "Positive plan with schedule" entry
-         (file+olp "~/org/agendas/private.org" "Private")
-         "* TODO %? :positive:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
 
         ("j" "Journal Entries")
