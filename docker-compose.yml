@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  emacs:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./infra/docker/emacs/Dockerfile
+    container_name: 'emacs'
+    hostname: 'emacs'
+    working_dir: '/opt/work/'
+    tty: true
+    volumes:
+      - ./src/:/opt/work
+    environment:
+      - TZ=Asia/Tokyo
