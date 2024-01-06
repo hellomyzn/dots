@@ -120,9 +120,9 @@
         ("weekly" . ?W)
         ("monthly" . ?M)
         ("journal" . ?j)
+        ("keep" . ?c)
         ("problem" . ?p)
-        ("changed" . ?c)
-        ("fixed" . ?f)
+        ("try" . ?f)
         ("habit" . ?h)
         ("idea" . ?i)))
 
@@ -151,16 +151,15 @@
 (defun my-clocktable-files ()
   (list "~/org/agendas/tasks.org"
 	"~/org/agendas/habits.org"
-	"~/org/archives/archive.org"))
+	"~/org/agendas/journal.org"))
 
-(setq org-refile-targets '(("~/org/archives/archive.org" :maxlevel . 3)))
-(setq org-archive-files "~/org/archives/archive.org")
+(setq org-refile-targets '(("~/org/agendas/journal.org" :maxlevel . 3)))
+(setq org-archive-files "~/org/agendas/journal.org")
 
 ;; Registers for file shortcuts
 (set-register ?t (cons 'file "~/org/agendas/tasks.org"))
 (set-register ?h (cons 'file "~/org/agendas/habits.org"))
 (set-register ?j (cons 'file "~/org/agendas/journal.org"))
-(set-register ?a (cons 'file "~/org/archives/archive.org"))
 
 (setq org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3 :properties ("Effort") :fileskip0 t))
 
@@ -193,7 +192,7 @@
                  (org-agenda-files org-agenda-files)))
           (todo "TODO"
                 ((org-agenda-overriding-header "Unscheduled TODO Tasks")
-                 (org-agenda-files '("~/org/agendas/tasks.org"))
+                 (org-agenda-files org-agenda-files)
                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled 'deadline))))
           ))
 
@@ -275,17 +274,18 @@
          :clock-in :clock-resume
          :empty-lines 1)
 
-	("jc" "Changed" entry
-         (file+olp "~/org/agendas/journal.org" "Change")
-         "* %? :changed:\nCREATED_AT: %U\n"
+        ("r" "Reflection Entries")
+	("rk" "Keep" entry
+         (file+olp "~/org/agendas/journal.org" "Keep")
+         "* %? :keep:\nCREATED_AT: %U\n"
          :empty-lines 1)
-	("jf" "Fixed" entry
-         (file+olp "~/org/agendas/journal.org" "Fix")
-         "* %? :fixed:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-	("jp" "Problem" entry
+	("rp" "Problem" entry
          (file+olp "~/org/agendas/journal.org" "Problem")
          "* %? :problem:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+	("rt" "Try" entry
+         (file+olp "~/org/agendas/journal.org" "Try")
+         "* %? :try:\nCREATED_AT: %U\n"
          :empty-lines 1)
         
         ("h" "Habit Entries")
