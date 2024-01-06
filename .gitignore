@@ -2,3 +2,6 @@
 *.bash_history
 .stfolder/
 .Trash-1000
+src/.emacs.d/auto-save-list
+src/.emacs.d/org-persist
+src/.emacs.d/bookmarks
