@@ -21,4 +21,4 @@ emacs:
 	docker-compose exec emacs bash
 start:
 	@make up
-
+	@make emacs
