@@ -266,17 +266,42 @@
         ("j" "Journal Entries")
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :daily:journal:\n%?\n#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n** Journal\n\n "
+         "\n* %<%I:%M %p> - Daily Journal :daily:journal:\n%?\n
+#+BEGIN: clocktable :maxlevel 3 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n
+** Study\n#+BEGIN: clocktable :maxlevel 4 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n
+** Journal\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jw" "Weekkly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :weekly:journal:\n%?\nTODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n** Keep\n** Problem\n** Try\n** Positive\n** Events\n** Music\n** Movie/Drama/Anime/Video\n** News\n** Book\n"
+         "\n* %<%I:%M %p> - Weekly Journal :weekly:journal:\n%?\n
+TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
+#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n
+** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n
+** Keep\n
+** Problem\n
+** Try\n
+** Failure\n
+** Positive\n
+** Events\n
+** Music\n
+** Movie/Drama/Anime/Video\n
+** News\n
+** Book\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Monthly" entry
          (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Journal :monthly:journal:\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n%?\n\n"
+         "\n* %<%I:%M %p> - Monthly Journal :monthly:journal:\n%?\n
+TODO: edit timestamps. :tstart -> 1st date, :tend -> last date\n
+#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-30>\")\" \n#+END\n\n
+** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-30>\")\" \n#+END\n
+** Highlight\n
+** Thought\n
+** Learn\n
+** Start\n
+** Stop\n
+** Best buy\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
 
