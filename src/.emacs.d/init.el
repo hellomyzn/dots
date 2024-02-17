@@ -267,7 +267,7 @@
         ("jd" "Daily" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Daily Journal :daily:journal:\n%?\n
-#+BEGIN: clocktable :maxlevel 5 lock %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n
+#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n
 ** Study\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n
 ** Journal\n\n"
          :clock-in :clock-resume
