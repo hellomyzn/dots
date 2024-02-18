@@ -287,7 +287,8 @@ TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
 ** Music\n
 ** Movie/Drama/Anime/Video\n
 ** News\n
-** Book\n\n"
+** Book\n
+** Thought\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
         ("jm" "Monthly" entry
