@@ -48,3 +48,5 @@ neofetch
 # SPICETIFY
 ################################################
 export PATH=$PATH:/Users/miyazonoeiji/.spicetify
+
+source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
