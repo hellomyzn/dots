@@ -294,8 +294,8 @@ TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
         ("jm" "Monthly" entry
          (file+olp+datetree org-archive-files)
          "\n* %<%I:%M %p> - Monthly Journal :monthly:journal:\n%?\n
-TODO: edit timestamps. :tstart -> 1st date, :tend -> last date\n
-#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-30>\")\" \n#+END\n\n
+TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\n
+#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-01>\")\" \n#+END\n\n
 ** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-30>\")\" \n#+END\n
 ** Highlight\n
 ** Thought\n
