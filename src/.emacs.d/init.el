@@ -281,7 +281,6 @@ TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
 ** Keep\n
 ** Problem\n
 ** Try\n
-** Failure\n
 ** Positive\n
 ** Events\n
 ** Music\n
@@ -318,6 +317,34 @@ TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\
 	("rt" "Try" entry
          (file+olp "/opt/org/agendas/journal.org" "Try")
          "* %? :try:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rP" "Positive" entry
+         (file+olp "/opt/org/agendas/journal.org" "Positive")
+         "* %? :positive:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("re" "Event" entry
+         (file+olp "/opt/org/agendas/journal.org" "Event")
+         "* %? :event:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rm" "Music" entry
+         (file+olp "/opt/org/agendas/journal.org" "Music")
+         "* %? :music:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rv" "Video" entry
+         (file+olp "/opt/org/agendas/journal.org" "Video")
+         "* %? :video:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rn" "News" entry
+         (file+olp "/opt/org/agendas/journal.org" "News")
+         "* %? :news:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rb" "Book" entry
+         (file+olp "/opt/org/agendas/journal.org" "Book")
+         "* %? :book:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("rT" "Thought" entry
+         (file+olp "/opt/org/agendas/journal.org" "Thought")
+         "* %? :thought:\nCREATED_AT: %U\n"
          :empty-lines 1)
         
         ("h" "Habit Entries")
