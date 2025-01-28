@@ -246,11 +246,11 @@
         ("s" "Study Entries")
         ("ss" "Study" entry
          (file+olp "/opt/org/agendas/tasks.org" "Studies")
-         "* TODO %? :study:\nCREATED_AT: %U\n  %^{Effort}p\n** Properties\n** Homework\n** Notes"
+         "* TODO %? :study:\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
          :empty-lines 1)
         ("sS" "Study with schedule" entry
          (file+olp "/opt/org/agendas/tasks.org" "Studies")
-         "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Properties\n** Homework\n** Notes"
+         "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
          :empty-lines 1)
 
         ("w" "Work Entries")
