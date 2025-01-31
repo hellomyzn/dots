@@ -287,6 +287,7 @@ TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
 ** Movie/Drama/Anime/Video\n
 ** News\n
 ** Book\n
+** Idea\n
 ** Thought\n\n"
          :clock-in :clock-resume
          :empty-lines 1)
@@ -341,6 +342,10 @@ TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\
         ("rb" "Book" entry
          (file+olp "/opt/org/agendas/journal.org" "Book")
          "* %? :book:\nCREATED_AT: %U\n"
+         :empty-lines 1)
+        ("ri" "Idea" entry
+         (file+olp "/opt/org/agendas/journal.org" "Idea")
+         "* %? :idea:\nCREATED_AT: %U\n"
          :empty-lines 1)
         ("rT" "Thought" entry
          (file+olp "/opt/org/agendas/journal.org" "Thought")
