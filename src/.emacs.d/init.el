@@ -242,6 +242,14 @@
          (file+olp "/opt/org/agendas/tasks.org" "Quicks")
          "* TODO %? :quick:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
          :empty-lines 1)
+        ("tw" "Waste task" entry
+         (file+olp "/opt/org/agendas/tasks.org" "Wastes")
+         "* TODO %? :waste:\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
+        ("tW" "Waste task with schedule" entry
+         (file+olp "/opt/org/agendas/tasks.org" "Wastes")
+         "* TODO %? :waste:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+         :empty-lines 1)
 
         ("s" "Study Entries")
         ("ss" "Study" entry
