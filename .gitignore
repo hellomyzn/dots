@@ -1,6 +1,13 @@
+*.DS_Store
+*.bash_history
+*.pyc
+*.DS_Store
+*poetry.lock
+*.bash_history
 
 .stfolder/
 .Trash-1000
+
 src/emacs/.emacs.d/auto-save-list
 src/emacs/.emacs.d/eln-cache
 src/emacs/.emacs.d/org-persist
