@@ -11,8 +11,33 @@ services:
     platform: linux/amd64
     tty: true
     volumes:
-      - ./src/.emacs.d:/home/myzn/.emacs.d
-      - ./src/org:/opt/org
-      - ./src/.bashrc:/home/myzn/.bashrc
+      - ./src/emacs/.emacs.d:/home/myzn/.emacs.d
+      - ./src/emacs/org:/opt/org
+      - ./src/emacs/.bashrc:/home/myzn/.bashrc
     environment:
       - TZ=Asia/Tokyo
+
+  python:
+    build:
+      context: .
+      dockerfile: ./infra/docker/python/Dockerfile
+    container_name: 'python'
+    hostname: 'python'
+    working_dir: '/opt/work/'
+    restart: always
+    tty: true
+    volumes:
+      - type: bind
+        source: ./src/python
+        target: /opt/work
+      - type: bind
+        source: ./src/emacs/org
+        target: /opt/org
+    environment:
+      - TZ=Asia/Tokyo
+      - LOG_LEVEL=INFO
+    networks:
+      - internal_network
+
+networks:
+  internal_network:

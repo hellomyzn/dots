@@ -19,6 +19,8 @@ logs:
 	docker-compose logs
 emacs:
 	docker-compose exec emacs bash
+python:
+	docker-compose exec python bash
 start:
 	@make up
 	@make emacs

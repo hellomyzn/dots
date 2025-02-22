@@ -1,0 +1,89 @@
+{
+    //common
+    "breadcrumbs.enabled": true, // ファイルのパンくずリストを表示する
+    "editor.minimap.enabled": false, // ミニマップを非表示にする
+    "editor.renderLineHighlight": "all", // 選択行の行番号をハイライトする
+    // "editor.defaultFormatter": "ms-python.autopep8", // 保存時に自動整形する
+    "editor.formatOnSave": true,
+    "editor.tabFocusMode": false,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    //python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.autoComplete.extraPaths": [
+        "/opt/poetry/venv/lib/python3.11/site-packages",
+        // python -c "import site; print (site.getsitepackages())"
+        "/usr/local/lib/python3.11/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/poetry/venv/lib/python3.11/site-packages",
+        "/usr/local/lib/python3.11/site-packages"
+    ],
+    "python.defaultInterpreterPath": "python",
+    "python.envFile": "${workspaceFolder}/.vscode/.env",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "autopep8.args": [
+        "--max-line-length",
+        "120"
+    ],
+    "pylint.args": [
+        "--max-line-length=120",
+        // W0703: Catching too general exception %s
+        // W0603: Using the global statement
+        // W0719: Raising too general exception
+        "--disable=W0703, W0603, W0719"
+    ],
+    "python.testing.pytestArgs": [
+        "./src/tests/"
+    ],
+    // markdown
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    // extensions
+    "cSpell.ignoreWords": [
+        "hoge"
+    ],
+    "cSpell.words": [
+        "autodocstring",
+        "autopep",
+        "CICD",
+        "debugpy",
+        "eamodio",
+        "errorlens",
+        "fuga",
+        "gspread",
+        "hbenl",
+        "jebbs",
+        "laters",
+        "mechatroner",
+        "mgesbert",
+        "myzn",
+        "njpwerner",
+        "oderwat",
+        "onetab",
+        "onetabs",
+        "piyo",
+        "pkey",
+        "plantuml",
+        "pylance",
+        "pylint",
+        "Qiita",
+        "rsakey",
+        "spotipy",
+        "usernamehw",
+        "vscodevim",
+        "Waka",
+        "wakatime",
+        "yzhang"
+    ],
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:8080",
+    "terminal.integrated.env.linux": {
+        "LOG_LEVEL": "DEBUG"
+    }
+}
