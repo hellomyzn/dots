@@ -260,6 +260,14 @@
          (file+olp "/opt/org/agendas/tasks.org" "Studies")
          "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
          :empty-lines 1)
+        ("sb" "Book" entry
+         (file+olp "/opt/org/agendas/tasks.org" "Books")
+         "* TODO %? :book:study:\nCREATED_AT: %U\n  %^{Effort}p\n** URL\n** Notes"
+         :empty-lines 1)
+        ("sB" "Book with schedule" entry
+         (file+olp "/opt/org/agendas/tasks.org" "Books")
+         "* TODO %? :book:study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** URL\n** Notes"
+         :empty-lines 1)
 
         ("w" "Work Entries")
         ("ww" "Work" entry
@@ -359,7 +367,7 @@ TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\
          (file+olp "/opt/org/agendas/journal.org" "Thought")
          "* %? :thought:\nCREATED_AT: %U\n"
          :empty-lines 1)
-        
+
         ("h" "Habit Entries")
         ("hd" "Daily" entry
          (file+olp "/opt/org/agendas/habits.org" "Daily")
