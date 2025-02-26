@@ -49,6 +49,7 @@
 (setq create-lockfiles nil)
 (setq make-backup-files nil)
 (setq delete-auto-save-files t)
+(setq auto-save-default nil)  ;; 自動保存を無効化
 
 ;; make underline on current line
 (setq hl-line-face 'underline)
