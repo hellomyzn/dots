@@ -38,8 +38,8 @@
   - Refile done tasks: `<cc> <cw>`
   - Open archive agenda `<cc> a A`
   - Git commit and push
-    
-  
+
+
 ## Agenda
 - n, p: up, down
 - Enter: jump to the task
@@ -51,7 +51,7 @@
 - o: delete other window
 - A: Reselect which agenda you will show
 - R: clock report
-- d: show day tasks on 
+- d: show day tasks on
 - v: set agenda as daily, weekly, Monthly, Yearly
     - d: daily
     - w: weekly
@@ -69,19 +69,38 @@
   - toggle check box: `<cc> <cc>`
   - insert check box statistics: `[/]` or `[%]`
   - update check box statistics: `<cc> #`
-  
-  
+
+
 ## Habits
 - If you couldn't arhive a habit task, you just re-schedule it tomorrow. so it will not be shown on agenda view.
-  
+
 ## Tips
 - Make an achievable task. If it is a huge task, divide the task
 - Make tasks clear to be done.
     - Bad: Shorten :Shorten process speed by 30%
-    - Good: 
+    - Good:
         - [ ] List up how to shorten process speed
         - [ ] Choose one of the options
         - [ ] Implement
         - [ ] Calculate the speed of the process
         - [ ] Choose the next option
 - If you can not make a task clearly, do whatever you come up with
+
+
+## Sync with phone
+- for pc: https://syncthing.net/
+- for mobile: https://mobiussync.com/
+- for orgmode in Iphone: https://www.beorgapp.com/
+
+### Workflow
+mobile -> pc
+1. save your updates on beorg on your mobile
+2. scan your updates on mobiussync on your mobile
+3. scan your updates on syncthing on your pc
+4. close and open your orgmode on your pc
+
+pc -> mobile
+1. save your updates on org mode in your pc
+2. scan your updates on syncthing on your pc
+3. scan your updates on mobiussync on your mobile
+4. open your beorg in your mobile
