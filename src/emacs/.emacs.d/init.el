@@ -392,3 +392,10 @@ TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; export to markdown
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; add PROPERTIES and LOGBOOK to .md
+(setq org-export-with-properties t)
+(setq org-export-with-drawers '("LOGBOOK"))
