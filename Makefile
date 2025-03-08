@@ -10,7 +10,7 @@ restart:
 	@make down
 	@make up
 destroy:
-	docker-compose down --rmi all --volumes --remove-orphans 
+	docker-compose down --rmi all --volumes --remove-orphans
 destroy-volumes:
 	docker-compose down --volumes
 ps:
@@ -21,6 +21,8 @@ emacs:
 	docker-compose exec emacs bash
 python:
 	docker-compose exec python bash
+md:
+	docker-compose exec emacs emacs --batch -l /opt/org/tools/export-org-to-md.el
 start:
 	@make up
 	@make emacs
