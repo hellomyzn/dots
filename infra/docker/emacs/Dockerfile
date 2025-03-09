@@ -3,15 +3,15 @@ FROM archlinux:latest
 USER root
 RUN mkdir /opt/org
 
-RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm \
-    make \
-    git \
-    sudo \
-    emacs \
-    vim \
-    neofetch \
-    trash-cli
+RUN pacman -Syu --noconfirm && \
+    pacman -S --needed --noconfirm \
+        make \
+        git \
+        sudo \
+        emacs \
+        vim \
+        neofetch \
+        trash-cli
 
 # Add user
 ARG USER=myzn

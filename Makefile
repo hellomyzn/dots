@@ -24,5 +24,5 @@ python:
 md:
 	docker-compose exec emacs emacs --batch -l /opt/org/tools/export-org-to-md.el
 start:
-	@make up
+	docker-compose up -d --build emacs
 	@make emacs
