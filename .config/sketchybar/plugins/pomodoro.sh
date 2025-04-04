@@ -1,11 +1,12 @@
 #!/bin/bash
 
-WORK_MIN=1
-BREAK_MIN=1
+WORK_MIN=50
+BREAK_MIN=10
 
-POMO_DIR="$HOME/.config/sketchybar"
+POMO_DIR="$HOME/.config/sketchybar/pomodoro"
 MODE_FILE="$POMO_DIR/pomo_mode"
 PID_FILE="$POMO_DIR/pomo_timer.pid"
+HISTORY_FILE="$POMO_DIR/.pomodoro_history"
 
 mkdir -p "$POMO_DIR"
 
@@ -17,7 +18,6 @@ start_timer() {
     local button="$2"
     local label="$3"
 
-    local HISTORY_FILE="$HOME/.pomodoro_history"
     local START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
 
     (
