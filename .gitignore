@@ -18,3 +18,8 @@ mpdstate
 *~
 
 ./.config/git/gitconfig
+
+
+# pomo
+pomo_mode
+pomo_timer.pid

@@ -60,9 +60,9 @@ source "$ITEM_DIR/space_simple.sh"
 # Center
 source "$ITEM_DIR/spotify.sh"
 source "$ITEM_DIR/mpd.sh"
-# source "$ITEM_DIR/pomodoro.sh"
-# pomodo is off at first
-# sketchybar  --set pomodoro drawing=off
+source "$ITEM_DIR/pomodoro_work.sh"
+source "$ITEM_DIR/pomodoro_break.sh"
+
 
 # Right
 source "$ITEM_DIR/calendar.sh"
