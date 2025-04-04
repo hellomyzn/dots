@@ -50,3 +50,8 @@ neofetch
 export PATH=$PATH:/Users/miyazonoeiji/.spicetify
 
 source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";

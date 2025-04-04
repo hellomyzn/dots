@@ -9,7 +9,7 @@ update() {
             icon.background.color=$YELLOW \
             background.color=$YELLOW \
             label.color=$BLACK \
-            label.background.color=$YELLOW
+            label.background.color=$YELLOW \
             background.border_color=$BACKGROUND_2        \
             background.border_width=1
 
