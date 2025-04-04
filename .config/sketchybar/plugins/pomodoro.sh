@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$HOME/.config/sketchybar/colors.sh"
 
 WORK_MIN=50
 BREAK_MIN=10
@@ -26,7 +27,7 @@ start_timer() {
           MINUTES=$((TIME_LEFT / 60))
           SECONDS=$((TIME_LEFT % 60))
           TIME_STR=$(printf "%02d:%02d" $MINUTES $SECONDS)
-          sketchybar --set "$button" label="$label $TIME_STR"
+          sketchybar --set "$button" label="$label $TIME_STR" label.color=$YELLOW drawing=on 
           sleep 1
           TIME_LEFT=$((TIME_LEFT - 1))
       done
@@ -54,8 +55,8 @@ start_timer() {
       rm -f "$PID_FILE"
 
       # Reset UI after timer completion
-      sketchybar --set $BUTTON_WORK label="🍅" drawing=on
-      sketchybar --set $BUTTON_BREAK label="☕️" drawing=on
+      sketchybar --set $BUTTON_WORK label="🍅" drawing=on \
+                 --set $BUTTON_BREAK label="☕️" drawing=on
       echo "none" > "$MODE_FILE"
     ) &
     echo $! > "$PID_FILE"
@@ -68,8 +69,8 @@ stop_timer() {
         rm -f "$PID_FILE"
     fi
     echo "none" > "$MODE_FILE"
-    sketchybar --set $BUTTON_WORK label="🍅" drawing=on
-    sketchybar --set $BUTTON_BREAK label="☕️" drawing=on
+    sketchybar --set $BUTTON_WORK label="🍅" drawing=on \
+               --set $BUTTON_BREAK label="☕️" drawing=on
 }
 
 case "$NAME" in
@@ -80,7 +81,10 @@ case "$NAME" in
     else
         stop_timer
         echo "work" > "$MODE_FILE"
-        sketchybar --set $BUTTON_BREAK drawing=off
+        # 片方オだけオフにすると一度アイコンが真ん中に移動し、start_timerでアイコンの位置が変わりチラつく
+        # そのチラつきへの対策で、一度全てオフにすることでチラつきを減らしている。
+        sketchybar --set $BUTTON_WORK drawing=off \
+                   --set $BUTTON_BREAK drawing=off
         start_timer $WORK_MIN "$BUTTON_WORK" "🍅"
     fi
     ;;
@@ -91,7 +95,10 @@ case "$NAME" in
     else
         stop_timer
         echo "break" > "$MODE_FILE"
-        sketchybar --set $BUTTON_WORK drawing=off
+        # 片方オだけオフにすると一度アイコンが真ん中に移動し、start_timerでアイコンの位置が変わりチラつく
+        # そのチラつきへの対策で、一度全てオフにすることでチラつきを減らしている。
+        sketchybar --set $BUTTON_WORK drawing=off \
+                   --set $BUTTON_BREAK drawing=off
         start_timer $BREAK_MIN "$BUTTON_BREAK" "☕️"
     fi
     ;;

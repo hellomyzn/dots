@@ -1,8 +1,7 @@
-#!/bin/sh
-
-sketchybar -m --add item pomodoro center \
-              --set pomodoro  icon="pomo: " \
-                              label="hoge" \
-                              update_freq=2 \
-                              script="$PLUGIN_DIR/pomodoro.sh" \
-              --subscribe pomodoro mouse.clicked
+sketchybar --add item pomodoro_launcher right \
+           --set pomodoro_launcher  \
+                 icon="􀖈" \
+                 icon.color=$YELLOW                   \
+                 padding_left=0                     \
+                 padding_right=-5                    \
+                 click_script="$PLUGIN_DIR/pomodoro_launcher.sh"
