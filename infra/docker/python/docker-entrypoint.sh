@@ -1,3 +1,3 @@
 #! /bin/bash
 
-# python /home/myzn/src/main.py
+# python /opt/work/src/main.py

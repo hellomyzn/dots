@@ -26,3 +26,9 @@ md:
 start:
 	docker-compose up -d --build emacs
 	@make emacs
+run:
+	docker-compose up workspace -d --build
+	@echo "Waiting for container to be ready..."
+# 必要なら調整（健康チェック導入もあり）run:
+	@sleep 2
+	docker-compose exec workspace bash -c "python main.py"

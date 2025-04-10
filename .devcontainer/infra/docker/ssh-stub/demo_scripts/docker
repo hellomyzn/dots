@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $1 == "inspect" && $2 == "vpc-gitlab" && $3 == "-f" && $4 == "{{json .State.Status}}" ]]; then
+    echo -n "running"
+elif [[ $1 == "inspect" && $2 == "vpc-gitlab" && $3 == "-f" && $4 == "{{json .State.Health.Status}}" ]]; then
+    echo -n "healthy"
+else
+    echo -n "Invalid command"
+fi

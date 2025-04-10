@@ -1,8 +1,9 @@
 {
-    "name": "Python",
-    "dockerComposeFile": "../docker-compose.yml",
-    "service": "python",
-    "workspaceFolder": "/opt/work",
+    "name": "Python VScode",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "workspace",
+    "workspaceFolder": "/opt",
+    "shutdownAction": "stopCompose",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -15,6 +16,7 @@
                 "vscodevim.vim",
                 "yzhang.markdown-all-in-one",
                 "shd101wyy.markdown-preview-enhanced",
+                "jebbs.plantuml",
                 // csv
                 "mechatroner.rainbow-csv",
                 // python
