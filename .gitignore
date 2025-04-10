@@ -20,10 +20,10 @@ __pycache__/
 docs/sphinx/resources
 docs/sphinx/build
 
-/src/src/**
-!/src/src/**/
-!/src/src/**/.gitkeep
-src/common/config/config.ini
-src/common/config/config.dev.ini
+/src/python/src/**
+!/src/python/src/**/
+!/src/python/src/**/.gitkeep
+src/python/common/config/config.ini
+src/python/common/config/config.dev.ini
 
 .devcontainer/infra/docker/ssh-stub/ssh/id*
