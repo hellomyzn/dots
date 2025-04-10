@@ -75,7 +75,7 @@ pomo_rest() {
 
 show_sessions() {
 	DAY_OF_WEEK=$(gdate -d $1 +"%a")
-	POMODORO=$(cat ${HOME}/.pomodoro_history | grep "${1}")
+	POMODORO=$(cat ${HOME}/.config/sketchybar/pomodoro/.pomodoro_history | grep "${1}")
 	WORK=$(echo $POMODORO | grep "WORK")
 	REST=$(echo $POMODORO | grep "REST")
 	# wc -m is the number of characters
