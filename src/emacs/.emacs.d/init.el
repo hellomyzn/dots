@@ -161,7 +161,9 @@
 	"/opt/org/agendas/habits.org"
 	"/opt/org/agendas/journal.org"))
 
-(setq org-refile-targets '(("/opt/org/agendas/journal.org" :maxlevel . 3)))
+(setq org-refile-targets
+      '(("/opt/org/agendas/journal.org" :maxlevel . 3)
+        ("/opt/org/agendas/habits.org" :maxlevel . 1)))
 (setq org-archive-files "/opt/org/agendas/journal.org")
 
 ;; Registers for file shortcuts
