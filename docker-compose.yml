@@ -12,9 +12,14 @@ services:
     tty: true
     volumes:
       - ./src/.emacs.d:/home/myzn/.emacs.d
-      - ./src/org:/opt/org
       - ./src/tools:/opt/tools
-      - ./src/markdown:/opt/markdown
       - ./src/.bashrc:/home/myzn/.bashrc
+      - type: bind
+        source: ${FOOTPRINTS_DIR}/org
+        target: /opt/org
+      - type: bind
+        source: ${FOOTPRINTS_DIR}/markdown
+        target: /opt/markdown
+
     environment:
       - TZ=Asia/Tokyo
