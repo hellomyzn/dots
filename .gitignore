@@ -4,15 +4,10 @@
 .stfolder/
 .Trash-1000
 
-src/emacs/.emacs.d/auto-save-list
-src/emacs/.emacs.d/eln-cache
-src/emacs/.emacs.d/org-persist
-src/emacs/.emacs.d/bookmarks
+src/.emacs.d/auto-save-list
+src/.emacs.d/eln-cache
+src/.emacs.d/org-persist
+src/.emacs.d/bookmarks
 
 # 環境ファイル
 .env
-
-docs/sphinx/resources
-docs/sphinx/build
-
-.devcontainer/infra/docker/ssh-stub/ssh/id*

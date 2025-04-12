@@ -1,4 +1,0 @@
-@startuml sample
-alice -> Bob: Hello, Bob!
-alice <-- Bob: Hello, Alice!
-@enduml

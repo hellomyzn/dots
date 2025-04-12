@@ -11,43 +11,8 @@ services:
     platform: linux/amd64
     tty: true
     volumes:
-      - ./src/emacs/.emacs.d:/home/myzn/.emacs.d
-      - ./src/emacs/org:/opt/org
-      - ./src/emacs/.bashrc:/home/myzn/.bashrc
+      - ./src/.emacs.d:/home/myzn/.emacs.d
+      - ./src/org:/opt/org
+      - ./src/.bashrc:/home/myzn/.bashrc
     environment:
       - TZ=Asia/Tokyo
-
-  workspace:
-    container_name: ${PROJECT_NAME:-default}
-    hostname: ${PROJECT_NAME:-default}
-    build:
-      context: .
-      dockerfile: ./infra/docker/python/Dockerfile
-      args:
-        USER_NAME: ${USER_NAME-myzn}
-        GROUP_NAME: ${GROUP_NAME-myzn}
-        UID: ${UID-1000}
-        GID: ${GID-1000}
-        PROJECT_DIR: ${PROJECT_DIR-./src}
-        WORKDIR: ${WORKDIR-/opt/work}
-    working_dir: ${WORKDIR-/opt/work}
-    tty: true
-    restart: always
-    env_file:
-      - .env
-    environment:
-      - TZ=${TZ-Asia/Tokyo}
-      - LOG_LEVEL=INFO
-    volumes:
-      - type: bind
-        source: ${PROJECT_DIR-./src}/
-        target: ${WORKDIR-/opt/work}
-      - type: bind
-        source: ./src/emacs/org
-        target: /opt/org
-    networks:
-      - internal_network
-
-
-networks:
-  internal_network:
