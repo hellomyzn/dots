@@ -13,6 +13,8 @@ services:
     volumes:
       - ./src/.emacs.d:/home/myzn/.emacs.d
       - ./src/org:/opt/org
+      - ./src/tools:/opt/tools
+      - ./src/markdown:/opt/markdown
       - ./src/.bashrc:/home/myzn/.bashrc
     environment:
       - TZ=Asia/Tokyo

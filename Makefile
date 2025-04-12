@@ -20,7 +20,7 @@ logs:
 exec:
 	docker-compose exec emacs bash
 md:
-	docker-compose exec emacs emacs --batch -l /opt/org/tools/export-org-to-md.el
+	docker-compose exec emacs emacs --batch -l /opt/tools/export-org-to-md.el
 start:
 	docker-compose up -d --build 
 	@make exec
