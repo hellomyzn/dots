@@ -5,9 +5,10 @@ WORK_MIN=50
 BREAK_MIN=10
 
 POMO_DIR="$HOME/.config/sketchybar/pomodoro"
+POMO_HISTORY_DIR="$HOME/projects/footprints/pomodoro"
 MODE_FILE="$POMO_DIR/pomo_mode"
 PID_FILE="$POMO_DIR/pomo_timer.pid"
-HISTORY_FILE="$POMO_DIR/.pomodoro_history"
+HISTORY_FILE="$POMO_HISTORY_DIR/.pomodoro_history"
 
 mkdir -p "$POMO_DIR"
 

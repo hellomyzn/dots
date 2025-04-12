@@ -2,7 +2,7 @@
 
 source "$HOME/.config/sketchybar/colors.sh"
 
-POMO_HISTORY="$HOME/.config/sketchybar/pomodoro/.pomodoro_history"
+POMO_HISTORY="$HOME/projects/footprints/pomodoro/.pomodoro_history"
 today=$(date '+%Y-%m-%d')
 
 output=""
