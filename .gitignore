@@ -1,9 +1,5 @@
 *.DS_Store
 *.bash_history
-*.pyc
-*.DS_Store
-*poetry.lock
-*.bash_history
 
 .stfolder/
 .Trash-1000
@@ -15,22 +11,8 @@ src/emacs/.emacs.d/bookmarks
 
 # 環境ファイル
 .env
-*.DS_Store
-*poetry.lock
-*.bash_history
-
-# Python
-.pytest_cache
-__pycache__/
-*.pyc
 
 docs/sphinx/resources
 docs/sphinx/build
-
-/src/python/src/**
-!/src/python/src/**/
-!/src/python/src/**/.gitkeep
-src/python/common/config/config.ini
-src/python/common/config/config.dev.ini
 
 .devcontainer/infra/docker/ssh-stub/ssh/id*
