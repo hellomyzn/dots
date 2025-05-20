@@ -10,7 +10,7 @@ RUN pacman -Syu --noconfirm && \
         sudo \
         emacs \
         vim \
-        neofetch \
+        # neofetch \
         trash-cli
 
 # Add user
