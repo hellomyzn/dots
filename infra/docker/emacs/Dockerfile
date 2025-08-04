@@ -1,28 +1,15 @@
-FROM archlinux:latest
-
-USER root
+FROM silex/emacs:latest
 RUN mkdir /opt/org
 
-RUN pacman -Syu --noconfirm && \
-    pacman -S --needed --noconfirm \
-        make \
-        git \
-        sudo \
-        emacs \
-        vim \
-        # neofetch \
-        trash-cli
+# myzn ユーザーとグループを追加し、ホームディレクトリを作成
+RUN addgroup --system myzn \
+    && adduser --system --ingroup myzn --home /home/myzn myzn \
+    && mkdir -p /opt/org \
+    && chown -R myzn:myzn /opt/org
 
-# Add user
-ARG USER=myzn
-ARG PASSWORD=password
-RUN sudo useradd -m $USER && \
-    # Set password
-    echo "${USER}:${PASSWORD}" | chpasswd && \
-    # Add the user into wheel group to use sudo command
-    sudo usermod -aG wheel ${USER} && \
-    echo "root:${PASSWORD}" | chpasswd && \
-    # Add the user in /etc/sudoers to use sudo command
-    echo "${USER} ALL=(ALL) ALL" >> /etc/sudoers
+# 以降のコマンドを myzn ユーザーで実行
+USER myzn
+WORKDIR /home/myzn
 
-USER ${USER}
+ENV LANG ja_JP.UTF-8
+ENV LC_ALL ja_JP.UTF-8

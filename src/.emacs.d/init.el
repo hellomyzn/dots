@@ -29,11 +29,16 @@
 ;; setting
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(scroll-bar-mode -1)        ; Disable visible scrollbar
-(tool-bar-mode -1)          ; Disable the toolbar
-(tooltip-mode -1)           ; Disable tooltips
-(set-fringe-mode 10)        ; Give some breathing room
-(menu-bar-mode -1)          ; Disable the menu bar
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))  ; Disable visible scrollbar if available
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))      ; Disable the toolbar if available
+(when (fboundp 'tooltip-mode) (tooltip-mode -1))        ; Disable tooltips if available
+(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))      ; Disable the menu bar if available
+(when (fboundp 'set-fringe-mode) (set-fringe-mode 10))  ; Give some breathing room
+;; (scroll-bar-mode -1)        ; Disable visible scrollbar
+;; (tool-bar-mode -1)          ; Disable the toolbar
+;; (tooltip-mode -1)           ; Disable tooltips
+;; (menu-bar-mode -1)          ; Disable the menu bar
+;; (set-fringe-mode 10)        ; Give some breathing room
 (xterm-mouse-mode 1)        ; Enable mouse
 
 ;; disable auto-indentation of new lines
