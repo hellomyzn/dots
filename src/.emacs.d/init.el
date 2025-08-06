@@ -41,6 +41,10 @@
 ;; (set-fringe-mode 10)        ; Give some breathing room
 (xterm-mouse-mode 1)        ; Enable mouse
 
+;; タイムゾーンを日本時間に固定
+(set-time-zone-rule "GMT-9")
+
+
 ;; disable auto-indentation of new lines
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 
