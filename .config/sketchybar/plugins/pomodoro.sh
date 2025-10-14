@@ -1,8 +1,8 @@
 #!/bin/bash
 source "$HOME/.config/sketchybar/colors.sh"
 
-WORK_MIN=50
-BREAK_MIN=10
+WORK_MIN=25
+BREAK_MIN=5
 
 POMO_DIR="$HOME/.config/sketchybar/pomodoro"
 POMO_HISTORY_DIR="$HOME/projects/footprints/pomodoro"
