@@ -1,15 +1,9 @@
 # /bin/bash
 
+# mac os setup
 if [ $(uname) = "Darwin" ]; then
     # show .files in finder
     defaults write com.apple.finder AppleShowAllFiles TRUE
-
-    # path for homebrew
-    export PATH="/opt/homebrew/bin:$PATH"
-    export PATH="/opt/homebrew/sbin:$PATH"
-
-    # gh
-    eval "$(gh completion -s zsh)"
 fi
 
 if [ -d $HOME/myzn ]; then
@@ -34,26 +28,9 @@ if [ -f $HOME/.zsh_profile ]; then
      source $HOME/.zsh_profile
 fi
 
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
 ################################################
 # NEOFETCH
 ################################################
 neofetch
-
-
-################################################
-# SPICETIFY
-################################################
-export PATH=$PATH:/Users/miyazonoeiji/.spicetify
-
-source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-
-# proto
-export PROTO_HOME="$HOME/.proto";
-export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
 export DOCKER_CONTENT_TRUST=0

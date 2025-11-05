@@ -1,20 +1,19 @@
 ################################################
 # ALIAS
 ################################################
-alias spotify-dl='
-	mkdir -p ~/Downloads/spotify &&
-	export DOCKER_CONTENT_TRUST=0 &&
-	docker run -it -v ~/Downloads/spotify:/download --rm spotify-dl '
-# Tmux
+# alias spotify-dl='
+# 	mkdir -p ~/Downloads/spotify &&
+# 	export DOCKER_CONTENT_TRUST=0 &&
+# 	docker run -it -v ~/Downloads/spotify:/download --rm spotify-dl '
+# tmux
 # alias t4='tmux new-session \; source-file ~/.config/tmux/4session'
 # alias t3='tmux new-session \; source-file ~/.config/tmux/3columns'
-alias tv='tmux source-file ~/.config/tmux/sessions/vim'
-alias t3='tmux source-file ~/.config/tmux/sessions/logs'
+# alias tv='tmux source-file ~/.config/tmux/sessions/vim'
+# alias t3='tmux source-file ~/.config/tmux/sessions/logs'
 
 # ls: A=all, G=color, l=more information
 alias ls="ls -AFGl"
-alias n3="nnn -eda -P p"
-alias cat="bat"
+# alias n3="nnn -eda -P p"
 
 # add time on history
 alias history='history -t "%F %T"'
@@ -24,11 +23,11 @@ alias his="history | fzf"
 alias rm=trash-put
 
 # pomodoro
-alias work=pomo_work
-alias rest=pomo_rest
-alias pomo=todays_sessions
-alias pomo_week=weeks_sessions
+# alias work=pomo_work
+# alias rest=pomo_rest
+# alias pomo=todays_sessions
+# alias pomo_week=weeks_sessions
 
-# vim
+# vimt
 alias vim=nvim
 alias vi=nvim

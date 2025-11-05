@@ -28,10 +28,3 @@ CONFIG_PATH=".config/${DIR}"
 FROM="${PWD}/${CONFIG_PATH}/${FILE}"
 TO="${HOME}/.config/git/${FILE}"
 copy_file $FROM $TO
-
-DIR="git"
-FILE=".gitignore_global"
-CONFIG_PATH=".config/${DIR}"
-FROM="${PWD}/${CONFIG_PATH}/${FILE}"
-TO="${HOME}/${FILE}"
-copy_file $FROM $TO

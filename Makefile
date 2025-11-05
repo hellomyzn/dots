@@ -20,20 +20,25 @@ emacs:
 	./src/emacs.sh
 	./src/tmux.sh
 mac:
-	./src/myzn.sh
-	./src/zerotier.sh
-	./src/zsh.sh
 	./src/brew.sh
-	./src/git.sh
-	./src/shpotify.sh
-	./src/neofetch.sh
-	./src/nnn.sh
-	./src/nvim.sh
-	./src/sketchybar.sh
-	./src/skhd.sh
-	./src/tmux.sh
-	./src/yabai.sh
-	./src/mpd.sh
-	./src/zerotier.sh
-	./src/kitty.sh
+# 	./src/myzn.sh
+# 	./src/kitty.sh
+# 	./src/tmux.sh
+# 	./src/sketchybar.sh
+# 	./src/git.sh
+# 	./src/neofetch.sh
+# 	./src/skhd.sh
+	./src/aerospace.sh
+
+# 	optional
+# 	./src/nnn.sh
+# 	./src/nvim.sh
+# 	./src/yabai.sh
+
+mac_bk:
+	
+	./src/zsh.sh
+	
+	
+	
 	@make activate

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./bin/logging.sh
+source "${PWD}/helper/logging.sh"
 
 BREW_PATH=$(which brew)
 if [ ! -f $BREW_PATH ]; then
@@ -18,75 +18,59 @@ echo "${INFO}ok. run brew upgrade..."
 brew upgrade
 
 echo "${INFO}brew tap"
-brew tap homebrew/cask-fonts
+# brew tap homebrew/cask-fonts
 brew tap FelixKratz/formulae
 
 formulas=(
-    neofetch
-    git
-    koekeishiya/formulae/skhd
-    koekeishiya/formulae/yabai
-    syncthing
-    sketchybar
-    shpotify
-    coreutils
-    nvim
-    tmux
-    # for tmux
-    lazygit
-    # for sketchybar
-    jq
-    switchaudio-osx
-    gh
-    nnn
-    ical-buddy
-    # for nnn
-    trash-cli
-    pkg-config
-    # nnn: fzcd
-    fzf
-    # nnn: auto jump
-    jump
-    # nnn: preview-tui
-    mediainfo
-    unzip
-    tree
-    less
-    bat
-    atool
-    ffmpeg
-    ffmpegthumbnailer
-    poppler
-    glow
-    # nnn: show image
-    viu
-    # for pomodoro
-    terminal-notifier
-    caarlos0/tap/timer
-    # ncmpcpp: music player
-    ncmpcpp
-    mpd
-    mpc
-    # nvim
-    wget
-    node
-    # nvim: telescope
-    ripgrep
-    # nvim: lsp for ruby. libyaml is for rbenv
-    libyaml
-    rbenv
-    # nvim: lsp for go.
-    go
-    gopls
-    # # INFO: I don't use this
-    # # nvim: for phpactor
-    # # Installation: https://phpactor.readthedocs.io/en/master/usage/standalone.html
-    # php
-    # composer
-    # Git diff
+	neofetch
+	git
+	tmux
+	trash-cli
+	nvim
+	skhd
+	shpotify
+
+    # for git diff
     git-delta
-    # python fomatter
-    autopep8
+	# for tmux
+		lazygit
+		sketchybar
+	# for sketchybar
+		# for pomodoro
+		terminal-notifier
+		jq
+		# switchaudio-osx
+		# ical-buddy
+
+	# optional
+		# koekeishiya/formulae/yabai
+
+	    # syncthing
+		# bat
+		# nnn
+
+		# # for nnn: fzcd
+		# fzf
+
+		# # for nnn
+		# pkg-config
+
+		# # nnn: auto jump
+		# jump
+
+		# # nnn: preview-tui
+		# mediainfo
+		# unzip
+		# tree
+		# less
+		# atool
+		# ffmpeg
+		# ffmpegthumbnailer
+		# poppler
+		# glow
+
+		# # nnn: show image
+		# viu
 )
 
 echo "${INFO}brew install formula"
@@ -95,38 +79,29 @@ for formula in "${formulas[@]}"; do
 done
 
 casks=(
-    zoom
-    skitch
-    kitty
-    docker
-    google-chrome
-    firefox
+	zoom
+	kitty
+	docker
+	google-chrome
+	spotify
+	visual-studio-code
     istat-menus
-    spectacle
-    sequel-ace
-    kindle
-    spotify
-    vscodium
-    # for sketchybar
-    font-hack-nerd-font
-    sf-symbols
-    # torrent
-    transmission
+	nikitabobko/tap/aerospace
+	# for sketchybar
+		font-hack-nerd-font
+		sf-symbols
 )
-
 
 echo "${INFO}brew casks"
 for cask in "${casks[@]}"; do
     brew install --cask $cask
 done
 
-
 brew cleanup
 echo "${INFO}brew installed"
 
 echo "${INFO}brew services start"
-brew services restart skhd
+skhd --restart-service
 brew services restart sketchybar
-brew services restart yabai
-brew services restart mpd
-brew services restart syncthing
+# brew services restart yabai
+# brew services restart syncthing
