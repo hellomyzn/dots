@@ -115,7 +115,7 @@
 (setq org-duration-format 'h:mm)
 
 (customize-set-variable 'org-global-properties
-                        '(("Effort_ALL" . "0:10 0:20 0:30 1:00 3:00 5:00 8:00 16:00 24:00 40:00")))
+                        '(("Effort_ALL" . "1:00 3:00 5:00 8:00 16:00 24:00 40:00")))
 ;; columns which shows effort on agenda. : <cc> <cx> <cc>
 (setq org-columns-default-format
       "%68ITEM(Task) %6Effort(Effort){:} %6CLOCKSUM(Clock){:}")
@@ -131,17 +131,11 @@
         (:endgroup)
         ("work" . ?w)
         ("study" . ?s)
-        ("quick" . ?q)
-        ("english" . ?e)
         ("daily" . ?D)
         ("weekly" . ?W)
         ("monthly" . ?M)
         ("journal" . ?j)
-        ("keep" . ?c)
-        ("problem" . ?p)
-        ("try" . ?f)
-        ("habit" . ?h)
-        ("idea" . ?i)))
+        ("habit" . ?h)))
 
 
 ;; setting
@@ -238,164 +232,46 @@
   (visual-fill-column-mode 1))
 
 (setq org-capture-templates
-      `(("t" "Task Entries")
-        ("tt" "Task" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Tasks")
-         "* TODO %? \nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tT" "Task with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Tasks")
-         "* TODO %? \nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tq" "Quick task" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Quicks")
-         "* TODO %? :quick:\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tQ" "Quick task with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Quicks")
-         "* TODO %? :quick:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tw" "Waste task" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Wastes")
-         "* TODO %? :waste:\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("tW" "Waste task with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Wastes")
-         "* TODO %? :waste:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
+      `(
+            ("t" "Task" entry
+            (file+olp "/opt/org/agendas/tasks.org" "Tasks")
+            "* TODO %? \nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+            :empty-lines 1)
 
-        ("s" "Study Entries")
-        ("ss" "Study" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Studies")
-         "* TODO %? :study:\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
-         :empty-lines 1)
-        ("sS" "Study with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Studies")
-         "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
-         :empty-lines 1)
-        ("sb" "Book" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Books")
-         "* TODO %? :book:study:\nCREATED_AT: %U\n  %^{Effort}p\n** URL\n** Notes"
-         :empty-lines 1)
-        ("sB" "Book with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Books")
-         "* TODO %? :book:study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** URL\n** Notes"
-         :empty-lines 1)
+            ("s" "Study" entry
+            (file+olp "/opt/org/agendas/tasks.org" "Studies")
+            "* TODO %? :study:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p\n** Type\n** Url\n** Properties\n** Homework\n** Notes"
+            :empty-lines 1)
 
-        ("w" "Work Entries")
-        ("ww" "Work" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Works")
-         "* TODO %? :work:\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
-        ("wW" "Work with schedule" entry
-         (file+olp "/opt/org/agendas/tasks.org" "Works")
-         "* TODO %? :work:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
-         :empty-lines 1)
+            ("w" "Work" entry
+            (file+olp "/opt/org/agendas/tasks.org" "Works")
+            "* TODO %? :work:\nSCHEDULED: %^t DEADLINE: %^t\nCREATED_AT: %U\n  %^{Effort}p"
+            :empty-lines 1)
 
-        ("j" "Journal Entries")
-        ("jd" "Daily" entry
-         (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Daily Journal :daily:journal:\n%?\n
+            ("j" "Journal" entry
+            (file+olp+datetree org-archive-files)
+            "\n* %<%I:%M %p> - Daily Journal :daily:journal:\n%? 
 #+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :properties (\"Effort\") \n#+END\n
 ** Study\n#+BEGIN: clocktable :maxlevel 5 :block %(format-time-string \"%Y-%m-%d\") :scope my-clocktable-files :match \"study\" :properties (\"Effort\") \n#+END\n
 ** Journal\n\n"
-         :clock-in :clock-resume
-         :empty-lines 1)
-        ("jw" "Weekkly" entry
-         (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Weekly Journal :weekly:journal:\n%?\n
-TODO: edit timestamps. :tstart -> Mon, :tend -> Mon\n
-#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n\n
-** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-%d>\")\" :tend \"%(format-time-string \"<%Y-%m-%d>\")\" \n#+END\n
-** Keep\n
-** Problem\n
-** Try\n
-** Positive\n
-** Events\n
-** Music\n
-** Movie/Drama/Anime/Video\n
-** News\n
-** Book\n
-** Idea\n
-** Thought\n\n"
-         :clock-in :clock-resume
-         :empty-lines 1)
-        ("jm" "Monthly" entry
-         (file+olp+datetree org-archive-files)
-         "\n* %<%I:%M %p> - Monthly Journal :monthly:journal:\n%?\n
-TODO: edit timestamps. :tstart -> 1st date, :tend -> 1st date of the next month\n
-#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-01>\")\" \n#+END\n\n
-** Study\n#+BEGIN: clocktable :maxlevel 5 :scope my-clocktable-files :match \"study\" :properties (\"Effort\") :tstart \"%(format-time-string \"<%Y-%m-01>\")\" :tend \"%(format-time-string \"<%Y-%m-30>\")\" \n#+END\n
-** Highlight\n
-** Thought\n
-** Learn\n
-** Start\n
-** Stop\n
-** Best buy\n\n"
-         :clock-in :clock-resume
-         :empty-lines 1)
+            :clock-in :clock-resume
+            :empty-lines 1)
+        
+            ("h" "Habit Entries")
+                  ("hd" "Daily" entry
+                  (file+olp "/opt/org/agendas/habits.org" "Daily")
+                  "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
+                  :empty-lines 1)
 
-        ("r" "Reflection Entries")
-	("rk" "Keep" entry
-         (file+olp "/opt/org/agendas/journal.org" "Keep")
-         "* %? :keep:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-	("rp" "Problem" entry
-         (file+olp "/opt/org/agendas/journal.org" "Problem")
-         "* %? :problem:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-	("rt" "Try" entry
-         (file+olp "/opt/org/agendas/journal.org" "Try")
-         "* %? :try:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rP" "Positive" entry
-         (file+olp "/opt/org/agendas/journal.org" "Positive")
-         "* %? :positive:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("re" "Event" entry
-         (file+olp "/opt/org/agendas/journal.org" "Event")
-         "* %? :event:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rm" "Music" entry
-         (file+olp "/opt/org/agendas/journal.org" "Music")
-         "* %? :music:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rv" "Video" entry
-         (file+olp "/opt/org/agendas/journal.org" "Video")
-         "* %? :video:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rn" "News" entry
-         (file+olp "/opt/org/agendas/journal.org" "News")
-         "* %? :news:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rb" "Book" entry
-         (file+olp "/opt/org/agendas/journal.org" "Book")
-         "* %? :book:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("ri" "Idea" entry
-         (file+olp "/opt/org/agendas/journal.org" "Idea")
-         "* %? :idea:\nCREATED_AT: %U\n"
-         :empty-lines 1)
-        ("rT" "Thought" entry
-         (file+olp "/opt/org/agendas/journal.org" "Thought")
-         "* %? :thought:\nCREATED_AT: %U\n"
-         :empty-lines 1)
+                  ("hw" "Weekly" entry
+                  (file+olp "/opt/org/agendas/habits.org" "Weekly")
+                  "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
+                  :empty-lines 1)
 
-        ("h" "Habit Entries")
-        ("hd" "Daily" entry
-         (file+olp "/opt/org/agendas/habits.org" "Daily")
-         "* TODO %? :daily:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-
-        ("hw" "Weekly" entry
-         (file+olp "/opt/org/agendas/habits.org" "Weekly")
-         "* TODO %? :weekly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)
-
-        ("hm" "Monthly" entry
-         (file+olp "/opt/org/agendas/habits.org" "Monthly")
-         "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
-         :empty-lines 1)))
+                  ("hm" "Monthly" entry
+                  (file+olp "/opt/org/agendas/habits.org" "Monthly")
+                  "* TODO %? :monthly:\nSCHEDULED: %^{Scheduled}t\n:PROPERTIES:\n:STYLE: habit\n:END:\nCREATED_AT: %U\n %^{Effort}p"
+                  :empty-lines 1)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
