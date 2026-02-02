@@ -34,3 +34,6 @@ fi
 neofetch
 
 export DOCKER_CONTENT_TRUST=0
+
+# Added by Antigravity
+export PATH="/Users/miyazonoeiji/.antigravity/antigravity/bin:$PATH"
