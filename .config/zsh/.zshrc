@@ -4,6 +4,9 @@
 if [ $(uname) = "Darwin" ]; then
     # show .files in finder
     defaults write com.apple.finder AppleShowAllFiles TRUE
+    # path for homebrew
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
 if [ -d $HOME/myzn ]; then
@@ -37,3 +40,6 @@ export DOCKER_CONTENT_TRUST=0
 
 # Added by Antigravity
 export PATH="/Users/miyazonoeiji/.antigravity/antigravity/bin:$PATH"
+
+source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
+export PATH="$HOME/.local/bin:$PATH"
