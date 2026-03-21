@@ -41,7 +41,7 @@ yabai -m config window_topmost               off
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  60
+yabai -m config top_padding                  20
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
@@ -68,5 +68,8 @@ yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.9
+
+# borders
+borders active_color=0xffd6af7c inactive_color=0xff212634 width=4.0 &
 
 echo "yabai configuration loaded.."

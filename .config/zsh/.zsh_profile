@@ -1,15 +1,12 @@
 # /bin/bash
 
-# Docker Content Trust（DCT）を有効にする。DCTは、Dockerイメージを「なりすまし」と「改ざん」から保護するセキュリティ機能です。
-export DOCKER_CONTENT_TRUST=1
-
 # show ls after cd
 # https://qiita.com/2357gi/items/0ab1297357dedb90bbb1
-# chpwd() {
-# 	if [[ ${pwd} != $HOME ]]; then
-# 		ls
-# 	fi
-# }
+chpwd() {
+	if [[ ${pwd} != $HOME ]]; then
+		ls
+	fi
+}
 
 # Add 2 lines between this and ptevious line
 precmd() {
@@ -19,159 +16,26 @@ precmd() {
 # SketchyBar: brew status
 # https://github.com/FelixKratz/SketchyBar
 # https://github.com/FelixKratz/dotfiles/blob/master/.config/yabai/yabairc
-# function brew() {
-#   command brew "$@"
-
-#   if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-#     sketchybar --trigger brew_update
-#   fi
-# }
+function brew() {
+  command brew "$@"
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
 
 # jump
 eval "$(jump shell zsh)"
 
 # open ssh
-eval $(ssh-agent)
-
-# ruby
-eval "$(rbenv init - zsh)"
-
-
-# pomodoro
-# a pop up notification and sound alert (using the built-in sounds for macOS)
-# Requires https://github.com/caarlos0/timer to be installed
-# Mac setup for pomo
-
-FILE_NAME=.pomodoro_history
-MINS_WORK=50
-MINS_REST=10
-is_pomo_history() {
-	if [ ! -f $HOME/$FILE_NAME ]; then
-			touch $HOME/$FILE_NAME
-			echo "created a history file (${HOME}/${FILE_NAME})"
-	fi
-}
-
-pomo_work() {
-	is_pomo_history
-
-	timer ${MINS_WORK}m && \
-	terminal-notifier -message 'Pomodoro'\
-			-title 'Work Timer is up! Take a Break 😊'\
-			-appIcon '~/Downloads/IMG_5210.JPG'\
-			-sound Funk && \
-	echo "$(DATE -v-${MINS_WORK}M '+%Y-%m-%d %H:%M:%S')  $(DATE '+%Y-%m-%d %H:%M:%S')  [WORK]  ${MINS_WORK} mins" >> $HOME/$FILE_NAME
-}
-
-pomo_rest() {
-	is_pomo_history
-	timer ${MINS_REST}m && \
-	terminal-notifier -message 'Pomodoro'\
-			-title 'Break is over! Get back to work 😬'\
-			-appIcon '~/Pictures/pumpkin.png'\
-			-sound Funk && \
-	echo "$(DATE -v-${MINS_REST}M '+%Y-%m-%d %H:%M:%S')  $(DATE '+%Y-%m-%d %H:%M:%S')  [REST]  ${MINS_REST} mins" >> $HOME/$FILE_NAME
-}
-
-show_sessions() {
-	DAY_OF_WEEK=$(gdate -d $1 +"%a")
-	POMODORO=$(cat ${HOME}/.config/sketchybar/pomodoro/.pomodoro_history | grep "${1}")
-	WORK=$(echo $POMODORO | grep "WORK")
-	REST=$(echo $POMODORO | grep "REST")
-	# wc -m is the number of characters
-	# wc -l counts 0 row as 1 row so that check the row by the number of char at first
-	NUM_CHAR=$(echo $WORK | wc -m | tr -d ' ')
-	WORK_SESSIONS=0
-	REST_SESSIONS=0
-	SUM_WORK_MINS=0
-	SUM_WORK_HOURS=0
-	if [ $NUM_CHAR != 1 ]; then
-		# wc -l is counting lines.
-		# tr -d is replace and delete characters(arg1)
-		WORK_SESSIONS=$(echo $WORK | wc -l | tr -d ' ')
-		REST_SESSIONS=$(echo $REST | wc -l | tr -d ' ')
-		SUM_WORK_MINS=$(($MINS_WORK*$WORK_SESSIONS))
-	fi
-
-	if [ $SUM_WORK_MINS -ge 60 ]; then
-		SUM_WORK_HOURS=$(($SUM_WORK_MINS / 60))
-		WORK_MINS=$(($SUM_WORK_MINS % 60))
-	fi
-	echo -e "====================================="
-	echo "${1} ${DAY_OF_WEEK}"
-	echo -e "=====================================\n"
-	echo "${WORK_SESSIONS} sessions (${SUM_WORK_HOURS} hours ${WORK_MINS} mins) \n"
-	echo -e "-------------------------------------\n"
-	echo -e "${POMODORO} \n\n\n"
-}
-
-todays_sessions() {
-	TODAY=$(date '+%Y-%m-%d')
-	show_sessions $TODAY
-}
-
-weeks_sessions() {
-	MON=$(date -v-mon +"%F")
-	TUE=$(date -v-tue +"%F")
-	WED=$(date -v-wed +"%F")
-	THU=$(date -v-thu +"%F")
-	FRI=$(date -v-fri +"%F")
-	SAT=$(date -v+sat +"%F")
-	SUN=$(date -v+sun +"%F")
-	WEEK=($MON $TUE $WED $THU $FRI $SAT $SUN)
-
-	SUM_MINS=0
-	SUM_HOURS=0
-	SUM_SESSIONS=0
-	for day in ${WEEK[@]};
-	do
-		show_sessions $day
-		SUM_MINS=$(($SUM_WORK_MINS + $SUM_MINS))
-		SUM_SESSIONS=$(($WORK_SESSIONS + $SUM_SESSIONS))
-	done
-
-	if [ $SUM_MINS -ge 60 ]; then
-		SUM_HOURS=$(($SUM_MINS/60))
-		SUM_MINS=$(($SUM_MINS%60))
-	fi
-
-	echo -e "====================================="
-	echo "${MON} - ${SUN}"
-	echo -e "=====================================\n"
-	echo "${SUM_SESSIONS} sessions (${SUM_HOURS} hours ${SUM_MINS} mins) \n"
-	echo -e "-------------------------------------\n"
-}
-
-
-
-################################################
-# NNN
-################################################
-export NNN_TRASH=1
-export NNN_COLORS="3246"
-# plug: https://github.com/jarun/nnn/tree/master/plugins
-PLUG_C="c:fzcd;"
-PLUG_D="d:dragd;"
-PLUG_I="i:imgview;"
-PLUG_J="j:autojump;"
-PLUG_O="o:fzopen;"
-PLUG_P="p:preview-tui;"
-PLUG_T="t:preview-tabbed;"
-export NNN_PLUG="${PLUG_C}${PLUG_D}${PLUG_I}${PLUG_J}${PLUG_O}${PLUG_P}${PLUG_T}"
-
-# fcolurs: https://github.com/jarun/nnn/wiki/Usage#configuration
-RED="01" GRE="02" YEL="03" BLU="04" MAG="05" CYA="06" WHI="07" BLA="08"
-BLK=$WHI CHR=$WHI DIR=$YEL EXE=$GRE REG=$BLU HARDLINK=$RED SYMLINK=$MAG MISSING=$WHI ORPHAN=$WHI FIFO=$WHI SOCK=$WHI OTHER=$WHI
-export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
-set --export NNN_FIFO="/tmp/nnn.fifo"
+# eval $(ssh-agent)
 
 
 ################################################
 # zsh-autosuggestions
 ################################################
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ################################################
 # zsh-autocomplete
 ################################################
-source $HOME/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source $HOME/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
