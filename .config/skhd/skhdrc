@@ -8,11 +8,13 @@
 # space commands: <alt>
 
 # Focus space focused before the current one (so you can alternate)
-    alt - r : yabai -m space --focus recent ; sketchybar --trigger windows_on_spaces
+alt - r : yabai -m space --focus recent ; sketchybar --trigger windows_on_spaces
+
 # Focus next space by mission-control index if one exists, otherwise focus the first space
-    alt - n : yabai -m space --focus next || yabai -m space --focus first ; sketchybar --trigger windows_on_spaces
+alt - n : yabai -m space --focus next || yabai -m space --focus first ; sketchybar --trigger windows_on_spaces
+
 # Focus previous space by mission-control index if one exists, otherwise focus the last space
-    alt - p : yabai -m space --focus prev || yabai -m space --focus last ; sketchybar --trigger windows_on_spaces
+alt - p : yabai -m space --focus prev || yabai -m space --focus last ; sketchybar --trigger windows_on_spaces
 
 # Focus space with mission-control index
     alt - 1 : \
@@ -44,18 +46,23 @@
         sketchybar --trigger windows_on_spaces    
 
 # make it easy :)
+# go to display1
     alt - m : \
         yabai -m space --focus 1 ; \
         sketchybar --trigger windows_on_spaces
+# go to display2
     alt - 0x2B : \
         yabai -m space --focus 2 ; \
         sketchybar --trigger windows_on_spaces
+# go to display3
     alt - 0x2F : \
         yabai -m space --focus 3 ; \
         sketchybar --trigger windows_on_spaces
+# go to display4
     alt - 0x2C : \
         yabai -m space --focus 4 ; \
         sketchybar --trigger windows_on_spaces
+# go to display5
     alt - 0x5E : \
         yabai -m space --focus 5 ; \
         sketchybar --trigger windows_on_spaces
