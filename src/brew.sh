@@ -18,59 +18,45 @@ echo "${INFO}ok. run brew upgrade..."
 brew upgrade
 
 echo "${INFO}brew tap"
-# brew tap homebrew/cask-fonts
+# for sketchybar
 brew tap FelixKratz/formulae
 
 formulas=(
 	neofetch
-	git
-	tmux
-	trash-cli
 	nvim
-	skhd
-	shpotify
-
-    # for git diff
-    git-delta
-	# for tmux
-		lazygit
+	jump
+	fzf
+	bat
+	clipy
+	gemini-cli
+	# sketchybar
 		sketchybar
-	# for sketchybar
 		# for pomodoro
 		terminal-notifier
 		jq
-		# switchaudio-osx
-		# ical-buddy
 
-	# optional
-		# koekeishiya/formulae/yabai
+	# git
+		git
+		# for git diff
+		git-delta
 
-	    # syncthing
-		# bat
-		# nnn
+	# tmux
+		tmux
+		lazygit
 
-		# # for nnn: fzcd
-		# fzf
+	# skhd
+	# https://github.com/asmvik/skhd
+		asmvik/formulae/skhd
+		# control spotify with skhd
+		# https://github.com/hnarayanan/shpotify
+		shpotify
 
-		# # for nnn
-		# pkg-config
+	# yabai
+	# https://github.com/asmvik/yabai
+		asmvik/formulae/yabai
+		borders
 
-		# # nnn: auto jump
-		# jump
 
-		# # nnn: preview-tui
-		# mediainfo
-		# unzip
-		# tree
-		# less
-		# atool
-		# ffmpeg
-		# ffmpegthumbnailer
-		# poppler
-		# glow
-
-		# # nnn: show image
-		# viu
 )
 
 echo "${INFO}brew install formula"
@@ -79,14 +65,23 @@ for formula in "${formulas[@]}"; do
 done
 
 casks=(
-	zoom
 	kitty
+	obsidian
 	docker
 	google-chrome
-	spotify
 	visual-studio-code
+	zoom
+	spotify
     istat-menus
-	nikitabobko/tap/aerospace
+	postman
+	sequel-ace
+	claude
+	codex
+	chatgpt-atlas
+	antigravity
+	adobe-creative-cloud
+	figma
+	canva
 	# for sketchybar
 		font-hack-nerd-font
 		sf-symbols
