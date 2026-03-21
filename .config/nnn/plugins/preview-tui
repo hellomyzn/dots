@@ -274,10 +274,10 @@ handle_ext() {
         epub) generate_preview "$cols" "$lines" "$1" "epub" ;;
         pdf) generate_preview "$cols" "$lines" "$1" "pdf" ;;
         gz|bz2) fifo_pager tar -tvf "$1" ;;
-        md) if exists glow; then
-                fifo_pager glow -s dark "$1"
-            elif exists lowdown; then
+        md) if exists lowdown; then
                 fifo_pager lowdown -Tterm "$1"
+            elif exists glow; then
+                fifo_pager glow -s dark "$1"
             else
                 fifo_pager pager "$1"
             fi ;;
@@ -411,6 +411,8 @@ image_preview() {
     if [ "$TERMINAL" = "kitty" ]; then
         # Kitty terminal users can use the native image preview method
         kitty +kitten icat --silent --scale-up --place "$1"x"$2"@0x0 --transfer-mode=stream --stdin=no "$3" &
+    elif [ "$TERMINAL" = "" ]; then
+        kitty +kitten icat --silent --scale-up --place "$(( $1 - 1 ))"x"$2"@0x0 --transfer-mode=stream --stdin=no "$3" &
     elif exists ueberzug; then
         ueberzug_layer "$1" "$2" "$3" && return
     elif exists catimg; then
