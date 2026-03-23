@@ -1,6 +1,6 @@
 
 # デフォルトスクリーンショット保存先変更
-mkdir ~/screenshots
+mkdir -p ~/screenshots
 defaults write com.apple.screencapture location ~/screenshots
 killall SystemUIServer
 
