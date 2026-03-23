@@ -15,23 +15,17 @@ vim:
 emacs:
 	./src/emacs.sh
 mac:
-	./src/brew.sh
-	./src/emacs.sh
-	./src/git.sh
-	./src/kitty.sh
-	./src/mac.sh
-	./src/neofetch.sh
-	./src/sketchybar.sh
-	./src/skhd.sh
-	./src/tmux.sh
-	./src/yabai.sh
-	./src/zsh.sh
-	./src/activate.sh
-
-mac_bk:
-	
-	./src/zsh.sh
-	
-	
-	
-	@make activate
+	bash ./src/brew.sh
+	bash ./src/emacs.sh
+	bash ./src/git.sh
+	bash ./src/kitty.sh
+	bash ./src/mac.sh
+	bash ./src/neofetch.sh
+	bash ./src/sketchybar.sh
+	bash ./src/skhd.sh
+	bash ./src/tmux.sh
+	bash ./src/yabai.sh
+	bash ./src/zsh.sh
+	bash ./src/activate.sh
+repo:
+	./
