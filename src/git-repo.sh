@@ -8,4 +8,4 @@ git clone git@github.com:hellomyzn/yt-analysis.git ~/projects/yt-analysis
 git clone git@github.com:hellomyzn/polydock.git ~/projects/polydock
 git clone git@github.com:hellomyzn/nf-analysis.git ~/projects/nf-analysis
 git clone git@github.com:hellomyzn/kindle2jpeg.git ~/projects/kindle2jpeg
-git clone git@github.com:hellomyzn/read_later.git  ~/projects/read_later
+git clone git@github.com:hellomyzn/read_later.git ~/projects/read_later
