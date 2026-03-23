@@ -9,7 +9,7 @@ if [ $(uname) = "Darwin" ]; then
     export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
-if [ -d $HOME/myzn ]; then
+if [ -d $HOME/projects/myzn ]; then
     export PATH="$PATH:$HOME/projects/myzn/scripts"
     export PATH="$PATH:$HOME/projects/myzn/3rd_party"
 fi

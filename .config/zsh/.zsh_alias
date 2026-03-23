@@ -9,7 +9,7 @@ alias history='history -t "%F %T"'
 alias his="history | fzf"
 
 # move file to bin box
-alias rm=trash
+# alias rm=trash
 
 # vim
 alias vim=nvim
