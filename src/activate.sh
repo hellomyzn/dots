@@ -4,11 +4,9 @@ source "${PWD}/helper/logging.sh"
 
 
 echo "${INFO}brew services start"
-brew services restart skhd
-brew services restart sketchybar
-brew services restart yabai
-# brew services restart syncthing
+skhd --start-service
+yabai --start-service
+brew services start sketchybar
 
 echo "${INFO}source zshfiles"
-source ${HOME}/.zshenv
 source ${HOME}/.zshrc

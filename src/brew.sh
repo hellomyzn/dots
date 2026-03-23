@@ -24,6 +24,7 @@ brew tap FelixKratz/formulae
 formulas=(
 	neofetch
 	nvim
+	emacs
 	jump
 	fzf
 	bat

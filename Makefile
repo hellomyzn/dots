@@ -16,19 +16,17 @@ emacs:
 	./src/emacs.sh
 mac:
 	./src/brew.sh
-# 	./src/myzn.sh
-# 	./src/kitty.sh
-# 	./src/tmux.sh
-# 	./src/sketchybar.sh
-# 	./src/git.sh
-# 	./src/neofetch.sh
-# 	./src/skhd.sh
-	./src/aerospace.sh
-
-# 	optional
-# 	./src/nnn.sh
-# 	./src/nvim.sh
-# 	./src/yabai.sh
+	./src/emacs.sh
+	./src/git.sh
+	./src/kitty.sh
+	./src/mac.sh
+	./src/neofetch.sh
+	./src/sketchybar.sh
+	./src/skhd.sh
+	./src/tmux.sh
+	./src/yabai.sh
+	./src/zsh.sh
+	./src/activate.sh
 
 mac_bk:
 	
