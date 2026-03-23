@@ -286,3 +286,6 @@
 ;; add PROPERTIES and LOGBOOK to .md
 (setq org-export-with-properties t)
 (setq org-export-with-drawers '("LOGBOOK"))
+
+(setq org-persist-directory nil)
+(setq org-persist-initialize nil)
