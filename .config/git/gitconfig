@@ -70,3 +70,6 @@
 	colorMoved = default
 [pull]
 	ff = only
+[user]
+	email = hellomyzn@gmail.com
+	name = hellomyzn
