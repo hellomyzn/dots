@@ -82,6 +82,7 @@ casks=(
 	adobe-creative-cloud
 	figma
 	canva
+	slack
 	# for sketchybar
 		font-hack-nerd-font
 		sf-symbols
