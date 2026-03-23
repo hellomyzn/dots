@@ -63,6 +63,7 @@ add accounts
 	$ mkdir -p ~/projects
 	$ git clone https://github.com/hellomyzn/dots.git ~/projects/dots
 	$ cd ~/projects/dots
+	$ git remote set-url origin git@github.com:hellomyzn/dots.git
 	```
 
 3. install softwares and set up configs
