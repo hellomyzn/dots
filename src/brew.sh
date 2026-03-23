@@ -96,9 +96,3 @@ done
 
 brew cleanup
 echo "${INFO}brew installed"
-
-echo "${INFO}brew services start"
-skhd --restart-service
-brew services restart sketchybar
-# brew services restart yabai
-# brew services restart syncthing

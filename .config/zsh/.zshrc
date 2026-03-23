@@ -10,8 +10,8 @@ if [ $(uname) = "Darwin" ]; then
 fi
 
 if [ -d $HOME/myzn ]; then
-    export PATH="$PATH:$HOME/myzn/scripts"
-    export PATH="$PATH:$HOME/myzn/3rd_party"
+    export PATH="$PATH:$HOME/projects/myzn/scripts"
+    export PATH="$PATH:$HOME/projects/myzn/3rd_party"
 fi
 
 # remove text when login zsh: Last login: Mon Feb 23 00:10:48 on ttys000
@@ -35,8 +35,3 @@ fi
 # NEOFETCH
 ################################################
 neofetch
-
-export DOCKER_CONTENT_TRUST=0
-
-source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
-export PATH="$HOME/.local/bin:$PATH"

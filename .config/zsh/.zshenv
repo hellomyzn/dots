@@ -20,6 +20,10 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 # export TERM=screen-256color
 export TERM=xterm-256color
 
+export DOCKER_CONTENT_TRUST=0
+export PATH="$HOME/.local/bin:$PATH"
+
+
 setopt no_beep
 setopt auto_pushd
 setopt pushd_ignore_dups

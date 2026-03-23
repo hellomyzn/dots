@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # デフォルトスクリーンショット保存先変更
 mkdir -p ~/screenshots
