@@ -28,4 +28,4 @@ mac:
 	bash ./src/zsh.sh
 	bash ./src/activate.sh
 repo:
-	./
+	bash ./src/git-repo.sh
