@@ -91,6 +91,7 @@ Disabling System Integrity Protection
 | Amazon | https://www.amazon.co.jp/ |
 | Netflix | https://www.netflix.com/ |
 | X | https://x.com/ |
+| Discord | https://discord.com/ |
 
 ### SSH / Github
 ```bash
