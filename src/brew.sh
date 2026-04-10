@@ -78,6 +78,7 @@ casks=(
 	sequel-ace
 	claude
 	codex
+	claude-code
 	chatgpt-atlas
 	antigravity
 	adobe-creative-cloud

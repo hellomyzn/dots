@@ -118,6 +118,7 @@ $ bash ./src/git-repo.sh
 ### softwares
 - obsidian
 - gemini-cli
+- claude code
 - clipy
 - spotify
 - docker

@@ -35,3 +35,5 @@ fi
 # NEOFETCH
 ################################################
 neofetch
+
+source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
