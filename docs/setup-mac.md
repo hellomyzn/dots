@@ -44,7 +44,10 @@ add accounts
 - View -> Show Path Bar: on
 - View -> Show Status Bar: on
 - View -> Show view Options -> Show item info: on
+- View -> Show view Options -> GroupBy: Name
+- View -> Show view Options -> Use as Default
 - Show dotfiles: command + shift + .
+- 
 
 
 ## Softwares / Configs
@@ -125,6 +128,8 @@ $ bash ./src/git-repo.sh
 - iStat Menus
 - adobe creative cloud
 	- Lightroom classicをインストール
+		- Presets
+		- Export setting
 
 ### app store
 install
