@@ -1,0 +1,19 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ 'nil
+)
+(setq url-cookie-secure-storage
+ '((".udemy.com"
+  [url-cookie "__udmy_2_v57r" "c3034dfbfb3d40e68863a5c63a43d82c"
+	      "Sat Jan 09 04:44:45 2027 GMT" "/" ".udemy.com" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
+;; End:
+
+;;; cookies ends here
