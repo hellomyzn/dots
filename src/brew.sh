@@ -38,6 +38,7 @@ formulas=(
 
 	# git
 		git
+		gh
 		# for git diff
 		git-delta
 
