@@ -37,3 +37,6 @@ fi
 neofetch
 
 source /Users/miyazonoeiji/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# Added by Antigravity
+export PATH="/Users/myzn/.antigravity/antigravity/bin:$PATH"

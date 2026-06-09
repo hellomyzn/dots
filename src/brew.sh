@@ -86,6 +86,7 @@ casks=(
 	figma
 	canva
 	slack
+	steipete/tap/codexbar
 	# for sketchybar
 		font-hack-nerd-font
 		sf-symbols
