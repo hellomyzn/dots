@@ -29,7 +29,6 @@ formulas=(
 	fzf
 	bat
 	clipy
-	gemini-cli
 	# sketchybar
 		sketchybar
 		# for pomodoro
@@ -79,6 +78,7 @@ casks=(
 	sequel-ace
 	claude
 	codex
+	antigravity-cli
 	claude-code
 	chatgpt-atlas
 	antigravity

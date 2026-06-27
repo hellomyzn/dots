@@ -135,6 +135,7 @@ $ bash ./src/git-repo.sh
 install
 - kindle
 - Luminar neo
+- anki
 
 vscodeのセッティング
 
